@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stocklist — Word&#8209;Mark™</title>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Figtree:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 543 387.5" class="wm-mark">
+  <!-- Generator: Adobe Illustrator 30.6.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 109)  -->
+  <path class="st0" d="M537,25L509.5,0l-125.5,146.5L271.5,14.5l-112.5,132L33.5,0,6,25l133.5,157L0,358.5l30.5,26.5,116-145,125,147.5,125-147.5,116,145,30.5-26.5-139.5-176.5L537,25ZM271.5,74.5l105.5,123.5-105.5,124.5-105.5-124.5,105.5-123.5ZM530.5,357.5l-18,13-116-145-125,148-125-148L30.5,370.5l-18-13,133.5-168,125.5,147,125.5-147,133.5,168Z"/>
+</svg>
+    <span class="nav-name">Word&#8209;Mark™</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="stocklist.html">Stocklist</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ STOCKLIST ══════════════════════════════════════════════ -->
+<div class="stocklist-section">
+  <div class="stocklist-inner">
+    <span class="eyebrow">Where to buy</span>
+    <h2 class="section-title">Find Word&#8209;Mark™ near you</h2>
+    <p class="body-text">Word&#8209;Mark™ is currently available in the following select stores.</p>
+    <div class="stocklist-city">
+      <h3 class="stocklist-city-name">Vancouver</h3>
+      <ul class="stocklist-stores">
+        <li>Regional Assembly of Text</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Word&#8209;Mark™</div>
+  <ul class="footer-links">
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">Shipping</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Word&#8209;Mark™ · Vancouver, Canada</p>
+</footer>
+
+<script>
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  const toggle = document.getElementById('navToggle');
+  const open = links.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open);
+}
+</script>
+</body>
+</html>
