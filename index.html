@@ -201,23 +201,31 @@
       <span class="eyebrow">Contact</span>
       <h2 class="section-title">Get in touch</h2>
       <p class="body-text contact-intro">For wholesale enquiries, press, or general questions. We read every message and reply within two business days.</p>
-      <div class="form-group">
-        <label class="form-label">Name</label>
-        <input class="form-input" type="text" placeholder="Your name">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input class="form-input" type="email" placeholder="name@example.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Subject</label>
-        <input class="form-input" type="text" placeholder="Wholesale, press, or general">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Your message"></textarea>
-      </div>
-      <button class="btn">Send message</button>
+      <form id="contactForm" name="wholesale-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="wholesale-contact">
+        <input type="hidden" name="subject" value="New message from word-mark.ca (%{formName})">
+        <p style="position:absolute;left:-9999px">
+          <label>Leave this field blank: <input name="bot-field"></label>
+        </p>
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" name="name" id="cf-name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" name="email" id="cf-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" type="text" name="topic" id="cf-topic" placeholder="Wholesale, press, or general">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" name="message" id="cf-message" placeholder="Your message" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+      <p class="body-text" id="contactSuccess" style="display:none">Thanks — your message has been sent. We'll get back to you within two business days.</p>
       <div class="contact-details">
         <div class="contact-row">
           <span class="contact-label">Location</span>
@@ -225,7 +233,7 @@
         </div>
         <div class="contact-row">
           <span class="contact-label">Email</span>
-          <span class="contact-val">hello@word-mark.com</span>
+          <span class="contact-val">hello.wordmark@gmail.com</span>
         </div>
         <div class="contact-row">
           <span class="contact-label">Response time</span>
@@ -273,6 +281,34 @@ const initialSection = location.hash.replace('#', '');
 if (['home', 'about', 'contact'].includes(initialSection)) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.getElementById(initialSection).classList.add('active');
+}
+
+function encodeFormData(data) {
+  return Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k])).join('&');
+}
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = {
+      'form-name': 'wholesale-contact',
+      name: document.getElementById('cf-name').value,
+      email: document.getElementById('cf-email').value,
+      topic: document.getElementById('cf-topic').value,
+      message: document.getElementById('cf-message').value,
+    };
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeFormData(data),
+    }).then(() => {
+      contactForm.style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    }).catch(() => {
+      alert("Something went wrong sending your message. Please email hello.wordmark@gmail.com directly.");
+    });
+  });
 }
 </script>
 </body>
