@@ -389,6 +389,10 @@ section.active { display: block; }
   padding: 9rem var(--pad);
   text-align: center;
 }
+.series-desc {
+  max-width: 560px;
+  margin: 0 auto;
+}
 .series-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
