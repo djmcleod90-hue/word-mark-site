@@ -378,6 +378,40 @@ section.active { display: block; }
   margin: 1rem 0 2rem;
 }
 
+/* ─── SERIES (COMING SOON) ────────────────────────────────── */
+.series-section {
+  background: var(--cream);
+  border-bottom: var(--hair);
+}
+.series-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 9rem var(--pad);
+  text-align: center;
+}
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+  text-align: left;
+}
+.series-card { display: flex; flex-direction: column; }
+.series-img {
+  width: 100%;
+  aspect-ratio: 640 / 946;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(26,24,20,0.18);
+  margin-bottom: 1.25rem;
+}
+.series-caption {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 /* ─── ABOUT ───────────────────────────────────────────────── */
 .about-section { background: var(--cream); }
 .about-inner {
@@ -601,6 +635,10 @@ footer {
 
   /* Wholesale */
   .wholesale-inner { padding: 4rem var(--pad); }
+
+  /* Series */
+  .series-inner { padding: 4rem var(--pad); }
+  .series-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
 
   /* About */
   .about-inner { padding: 4rem var(--pad); }
