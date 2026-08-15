@@ -117,6 +117,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 .wm-mark {
   width: 32px;
