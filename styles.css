@@ -6,7 +6,7 @@
 :root {
   --ink:       #1a1814;
   --ink-soft:  #4a4640;
-  --ink-mute:  #8a8480;
+  --ink-mute:  #6a645f;
   --cream:     #f0efef;
   --cream-alt: #e3e2e2;
   --gold:      #9e7e52;
@@ -168,8 +168,11 @@ nav {
 .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ─── PAGE SECTIONS ───────────────────────────────────────── */
-section { display: none; }
-section.active { display: block; }
+/* Sections are visible by default (plain scrollable page for no-JS
+   visitors and crawlers); JS opts into the tabbed single-page view by
+   adding .js to <html>, see the inline script at the top of <head>. */
+html.js section { display: none; }
+html.js section.active { display: block; }
 
 /* ─── HERO ────────────────────────────────────────────────── */
 .hero-section {
