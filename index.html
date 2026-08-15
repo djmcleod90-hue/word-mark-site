@@ -217,6 +217,49 @@
     </div>
   </div>
 
+  <!-- Testimonials -->
+  <div class="testimonials-section">
+    <div class="testimonials-inner">
+      <span class="eyebrow">What readers are saying</span>
+      <h2 class="section-title">In their words</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonials-row">
+          <button class="carousel-btn" id="testimonialsPrev" onclick="moveTestimonials(-1)" aria-label="Previous testimonials">&#8249;</button>
+          <div class="testimonials-viewport">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"I've picked up more new words this year than the last few years combined, and I actually remember them. For me, writing things down by hand is what makes it stick."</p>
+              <span class="testimonial-author">Elena M.</span>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"This is the only thing that's gotten me to leave my phone in another room while I read. No apps or distractions. Now that my reading is fully analog, I can focus much better."</p>
+              <span class="testimonial-author">Marcus B.</span>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"I used to struggle with exactly this. Usually I would just skip over unfamiliar words because if I bothered to look them up it would distract me too much. Sometimes I would dogear a page and come back to it, but I still had to write it down somewhere to actually remember it — and I didn't have a designated place. I feel like this is a natural solution. At least it works for me."</p>
+              <span class="testimonial-author">Liza R.</span>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"It turned something I used to do haphazardly into a habit: read, write down a word, look it up later, and repeat. It's ridiculously satisfying to see my little Word-Marks fill up."</p>
+              <span class="testimonial-author">Priya K.</span>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"I'm building my vocabulary without ever putting my book down. One bookmark at a time, until I've got a complete reference."</p>
+              <span class="testimonial-author">Jamie R.</span>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"It's honestly changed how I read, in the best possible way. I'm paying attention to language again!"</p>
+              <span class="testimonial-author">Sofia L.</span>
+            </div>
+          </div>
+          </div>
+          <button class="carousel-btn" id="testimonialsNext" onclick="moveTestimonials(1)" aria-label="Next testimonials">&#8250;</button>
+        </div>
+        <a href="#" class="testimonials-cta" onclick="show('contact');document.getElementById('cf-topic').value='Review';return false">Contribute a review</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Series (Coming Soon) -->
   <div class="series-section" style="display:none;">
     <div class="series-inner">
@@ -357,6 +400,92 @@ function closeNav() {
   toggle.classList.remove('open');
   toggle.setAttribute('aria-expanded', 'false');
 }
+
+let testimonialsOffset = 0;
+let testimonialsTimer = null;
+
+function testimonialsMetrics() {
+  const track = document.getElementById('testimonialsTrack');
+  const viewport = track.parentElement;
+  const card = track.querySelector('.testimonial-card');
+  const trackStyle = getComputedStyle(track);
+  const gap = parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+  const step = card.getBoundingClientRect().width + gap;
+  const maxOffset = Math.max(0, track.scrollWidth - viewport.clientWidth);
+  return { track, step, maxOffset };
+}
+function setTestimonialsOffset(offset) {
+  const { track } = testimonialsMetrics();
+  testimonialsOffset = offset;
+  track.style.transform = `translateX(-${offset}px)`;
+}
+function moveTestimonials(dir) {
+  const { step, maxOffset } = testimonialsMetrics();
+  let next = testimonialsOffset + dir * step;
+  if (next < 0) next = maxOffset;
+  else if (next > maxOffset) next = 0;
+  setTestimonialsOffset(next);
+  restartTestimonialsAutoplay();
+}
+function autoAdvanceTestimonials() {
+  const { step, maxOffset } = testimonialsMetrics();
+  let next = testimonialsOffset + step;
+  if (next > maxOffset) next = 0;
+  setTestimonialsOffset(next);
+}
+function startTestimonialsAutoplay() {
+  stopTestimonialsAutoplay();
+  testimonialsTimer = setInterval(autoAdvanceTestimonials, 5000);
+}
+function stopTestimonialsAutoplay() {
+  if (testimonialsTimer) clearInterval(testimonialsTimer);
+}
+function restartTestimonialsAutoplay() {
+  startTestimonialsAutoplay();
+}
+window.addEventListener('resize', () => {
+  testimonialsOffset = 0;
+  const track = document.getElementById('testimonialsTrack');
+  if (track) track.style.transform = 'translateX(0)';
+});
+
+(function setupTestimonialsCarousel() {
+  const carousel = document.querySelector('.testimonials-carousel');
+  const viewport = document.querySelector('.testimonials-viewport');
+  if (!carousel || !viewport) return;
+
+  startTestimonialsAutoplay();
+  carousel.addEventListener('mouseenter', stopTestimonialsAutoplay);
+  carousel.addEventListener('mouseleave', startTestimonialsAutoplay);
+
+  let dragStartX = 0, dragStartY = 0, dragging = false;
+  viewport.addEventListener('pointerdown', e => {
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    dragging = true;
+    viewport.setPointerCapture(e.pointerId);
+  });
+  viewport.addEventListener('pointerup', e => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - dragStartX;
+    const dy = e.clientY - dragStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      moveTestimonials(dx < 0 ? 1 : -1);
+    }
+  });
+  viewport.addEventListener('pointercancel', () => { dragging = false; });
+
+  let wheelLocked = false;
+  viewport.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 10) return;
+    e.preventDefault();
+    if (wheelLocked) return;
+    wheelLocked = true;
+    moveTestimonials(e.deltaX > 0 ? 1 : -1);
+    setTimeout(() => { wheelLocked = false; }, 400);
+  }, { passive: false });
+})();
 
 const initialSection = location.hash.replace('#', '');
 if (['home', 'about', 'contact'].includes(initialSection)) {

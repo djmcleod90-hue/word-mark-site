@@ -484,6 +484,94 @@ section.active { display: block; }
   margin: 1rem 0 2rem;
 }
 
+/* ─── TESTIMONIALS ────────────────────────────────────────── */
+.testimonials-section {
+  background: var(--ink);
+}
+.testimonials-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 9rem var(--pad);
+  text-align: center;
+}
+.testimonials-inner .eyebrow { color: var(--gold); }
+.testimonials-inner .section-title { color: var(--cream); }
+.testimonials-carousel {
+  margin-top: 3.5rem;
+}
+.testimonials-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: max(0px, min(9rem, calc((100vw - 1100px) / 2)));
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+.testimonials-viewport {
+  flex: none;
+  width: 100%;
+  max-width: calc(var(--max) - 2 * var(--pad));
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.testimonials-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  transition: transform 0.4s ease;
+  text-align: left;
+}
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc((100% - 5rem) / 3);
+}
+.testimonial-quote {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: rgba(240, 239, 239, 0.82);
+  margin-bottom: 1rem;
+}
+.testimonial-author {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.testimonials-cta {
+  display: block;
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.testimonials-cta:hover { color: var(--cream); }
+.carousel-btn {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1.5px solid var(--cream);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--cream);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
+
 /* ─── SERIES (COMING SOON) ────────────────────────────────── */
 .series-section {
   background: var(--cream);
@@ -726,6 +814,13 @@ footer {
 
   /* Wholesale */
   .wholesale-inner { padding: 4rem var(--pad); }
+
+  /* Testimonials */
+  .testimonials-inner { padding: 4rem var(--pad); }
+  .testimonials-carousel { margin-top: 2.5rem; }
+  .testimonials-row { gap: 1.75rem; }
+  .testimonial-card { flex: 0 0 100%; }
+  .carousel-btn { width: 2rem; height: 2rem; font-size: 1rem; }
 
   /* Series */
   .series-inner { padding: 4rem var(--pad); }
