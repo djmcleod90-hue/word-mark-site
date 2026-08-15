@@ -184,12 +184,12 @@ html.js section.active { display: block; }
   margin: 0 auto;
   padding: 5rem var(--pad);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   align-items: center;
   gap: 4rem;
   min-height: 88vh;
 }
-.hero-left { max-width: 520px; }
+.hero-left { max-width: 620px; }
 .hero-eyebrow { margin-bottom: 1.5rem; }
 .hero-title {
   font-family: 'Aboreto', serif;
