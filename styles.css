@@ -319,7 +319,110 @@ section.active { display: block; }
   margin-top: 3rem;
   display: block;
 }
-.anatomy-mobile { display: none; }
+.anatomy-mobile { display: none; margin-top: 3rem; }
+.anatomy-mobile-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto 3rem;
+  box-shadow: 0 12px 50px rgba(26,24,20,0.22);
+}
+.anatomy-list { list-style: none; text-align: left; }
+.anatomy-list li { padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: var(--hair); }
+.anatomy-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.anatomy-num {
+  display: block;
+  font-family: 'Aboreto', serif;
+  font-size: 1.5rem;
+  color: rgba(26,24,20,0.12);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.anatomy-item-title {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.anatomy-item-body { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.9; }
+
+/* Aligned pointer diagram — only shown above 1100px, where there's room
+   for both the enlarged photo and paragraph-scale label text to fit the
+   real landmark spacing without overlapping or busting the page width. */
+.anatomy-diagram {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 2rem;
+}
+.anatomy-diagram-frame {
+  position: relative;
+  width: 400px;
+  flex: none;
+}
+.anatomy-diagram-frame img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 12px 50px rgba(26,24,20,0.22);
+}
+.anatomy-col {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 270px;
+}
+.anatomy-col.is-left { right: 100%; }
+.anatomy-col.is-right { left: 100%; }
+.anatomy-point {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-align: left;
+}
+.anatomy-col.is-right .anatomy-point { left: 1.5rem; }
+.anatomy-col.is-left .anatomy-point {
+  right: 1.5rem;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.anatomy-point::after {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  width: 1.25rem;
+  height: 0.5px;
+  background: var(--ink-mute);
+}
+.anatomy-col.is-right .anatomy-point::after { left: -1.25rem; }
+.anatomy-col.is-left .anatomy-point::after { right: -1.25rem; }
+.anatomy-point-num {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0.5px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+}
+.anatomy-point-text {
+  display: block;
+  width: 235px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ink-soft);
+}
+.anatomy-point-text strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
 
 /* ─── WHAT'S INSIDE ───────────────────────────────────────── */
 .contents-section {
@@ -543,6 +646,15 @@ footer {
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
+/* Between phone width and 1100px there isn't reliably enough room for the
+   aligned pointer diagram (photo + two label columns) without either
+   overlapping text or busting the page's 1100px content width, so this
+   range falls back to the simple stacked photo + list instead. */
+@media (max-width: 1100px) and (min-width: 701px) {
+  .anatomy-scroll { display: none; }
+  .anatomy-mobile { display: block; }
+}
+
 @media (max-width: 700px) {
   :root { --pad: 1.25rem; }
 
@@ -594,35 +706,7 @@ footer {
   /* Anatomy */
   .anatomy-inner { padding: 4rem var(--pad); }
   .anatomy-scroll { display: none; }
-  .anatomy-mobile { display: block; margin-top: 3rem; }
-  .anatomy-mobile-img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    display: block;
-    margin: 0 auto 3rem;
-    box-shadow: 0 12px 50px rgba(26,24,20,0.22);
-  }
-  .anatomy-list { list-style: none; text-align: left; }
-  .anatomy-list li { padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: var(--hair); }
-  .anatomy-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .anatomy-num {
-    display: block;
-    font-family: 'Aboreto', serif;
-    font-size: 1.5rem;
-    color: rgba(26,24,20,0.12);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-  .anatomy-item-title {
-    display: block;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 0.6rem;
-  }
-  .anatomy-item-body { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.9; }
+  .anatomy-mobile { display: block; }
 
   /* Combined section */
   .combined-inner {
