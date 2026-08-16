@@ -77,7 +77,7 @@
   <!-- How It Works -->
   <div class="how-section">
     <div class="how-inner">
-      <span class="eyebrow">Embrace analog reading, expand your mind</span>
+      <span class="eyebrow">A new way to read, fully analog</span>
       <h2 class="section-title">How it works</h2>
       <div class="steps">
         <div class="step">
@@ -206,6 +206,84 @@
       <div class="wotw-meta">/ˈvɛl-ə-kɔr/<span class="wotw-pos">n.</span></div>
       <p class="wotw-def">The strange wistfulness of used bookstores, which are somehow infused with the passage of time.</p>
       <p class="wotw-source">The Dictionary of Obscure Sorrows — John Koenig</p>
+    </div>
+  </div>
+
+  <!-- Literary Quotes -->
+  <div class="quotes-section">
+    <div class="quotes-inner">
+      <span class="eyebrow">On language</span>
+      <h2 class="section-title">Dear Reader, You Are Never Alone</h2>
+      <div class="quotes-carousel">
+        <div class="quotes-row">
+          <button class="carousel-btn" id="quotesPrev" onclick="moveQuotes(-1)" aria-label="Previous quote">&#8249;</button>
+          <div class="quotes-viewport">
+            <div class="quotes-track" id="quotesTrack">
+            <div class="quote-card">
+              <p class="quote-text">"I am still committed to the idea that the ability to think for one&#x27;s self depends upon one&#x27;s mastery of the language."</p>
+              <span class="quote-author">Joan Didion</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"Words are the tokens we exchange for meaning."</p>
+              <span class="quote-author">Ursula K. Le Guin</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"We name a thing and — bang! — it leaps into existence!"</p>
+              <span class="quote-author">Brian Friel</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"It is only by language that we rise above them, or above each other — by language, which is the parent, and not the child, of thought."</p>
+              <span class="quote-author">Oscar Wilde</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"Words are loaded pistols."</p>
+              <span class="quote-author">Jean-Paul Sartre</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"Wild tongues can&#x27;t be tamed, they can only be cut out."</p>
+              <span class="quote-author">Gloria Anzaldúa</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"All I know is what I have words for."</p>
+              <span class="quote-author">Ludwig Wittgenstein</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"Making lists of words, to thicken my active vocabulary. To have puny, not just little, hoax, not just trick, mortifying, not just embarrassing, bogus, not just fake."</p>
+              <span class="quote-author">Susan Sontag</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"We die. That may be the meaning of life. But we do language. That may be the measure of our lives."</p>
+              <span class="quote-author">Toni Morrison</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"Words are sacred. They deserve respect. If you get the right ones, in the right order, you can nudge the world a little."</p>
+              <span class="quote-author">Tom Stoppard</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"For last year&#x27;s words belong to last year&#x27;s language And next year&#x27;s words await another voice."</p>
+              <span class="quote-author">T.S. Eliot</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"I like to think that my main instrument is vocabulary."</p>
+              <span class="quote-author">Tom Waits</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"He wanted to cry quietly but not for himself: for the words, so beautiful and sad, like music."</p>
+              <span class="quote-author">James Joyce</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"I am a collector of words. They are the seeds of thought."</p>
+              <span class="quote-author">Muriel Rukeyser</span>
+            </div>
+            <div class="quote-card">
+              <p class="quote-text">"There must be satisfaction gained in accurately naming the thing that torments you."</p>
+              <span class="quote-author">Miriam Toews</span>
+            </div>
+            </div>
+          </div>
+          <button class="carousel-btn" id="quotesNext" onclick="moveQuotes(1)" aria-label="Next quote">&#8250;</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -458,6 +536,89 @@ window.addEventListener('resize', () => {
     if (wheelLocked) return;
     wheelLocked = true;
     moveTestimonials(e.deltaX > 0 ? 1 : -1);
+    setTimeout(() => { wheelLocked = false; }, 400);
+  }, { passive: false });
+})();
+
+let quotesOffset = 0;
+let quotesTimer = null;
+
+function quotesMetrics() {
+  const track = document.getElementById('quotesTrack');
+  const viewport = track.parentElement;
+  const step = viewport.clientWidth;
+  const maxOffset = step * (track.children.length - 1);
+  return { track, step, maxOffset };
+}
+function setQuotesOffset(offset) {
+  const { track } = quotesMetrics();
+  quotesOffset = offset;
+  track.style.transform = `translateX(-${offset}px)`;
+}
+function moveQuotes(dir) {
+  const { step, maxOffset } = quotesMetrics();
+  let next = quotesOffset + dir * step;
+  if (next < 0) next = maxOffset;
+  else if (next > maxOffset) next = 0;
+  setQuotesOffset(next);
+  restartQuotesAutoplay();
+}
+function autoAdvanceQuotes() {
+  const { step, maxOffset } = quotesMetrics();
+  let next = quotesOffset + step;
+  if (next > maxOffset) next = 0;
+  setQuotesOffset(next);
+}
+function startQuotesAutoplay() {
+  stopQuotesAutoplay();
+  quotesTimer = setInterval(autoAdvanceQuotes, 6500);
+}
+function stopQuotesAutoplay() {
+  if (quotesTimer) clearInterval(quotesTimer);
+}
+function restartQuotesAutoplay() {
+  startQuotesAutoplay();
+}
+window.addEventListener('resize', () => {
+  quotesOffset = 0;
+  const track = document.getElementById('quotesTrack');
+  if (track) track.style.transform = 'translateX(0)';
+});
+
+(function setupQuotesCarousel() {
+  const carousel = document.querySelector('.quotes-carousel');
+  const viewport = document.querySelector('.quotes-viewport');
+  if (!carousel || !viewport) return;
+
+  startQuotesAutoplay();
+  carousel.addEventListener('mouseenter', stopQuotesAutoplay);
+  carousel.addEventListener('mouseleave', startQuotesAutoplay);
+
+  let dragStartX = 0, dragStartY = 0, dragging = false;
+  viewport.addEventListener('pointerdown', e => {
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    dragging = true;
+    viewport.setPointerCapture(e.pointerId);
+  });
+  viewport.addEventListener('pointerup', e => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - dragStartX;
+    const dy = e.clientY - dragStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      moveQuotes(dx < 0 ? 1 : -1);
+    }
+  });
+  viewport.addEventListener('pointercancel', () => { dragging = false; });
+
+  let wheelLocked = false;
+  viewport.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 10) return;
+    e.preventDefault();
+    if (wheelLocked) return;
+    wheelLocked = true;
+    moveQuotes(e.deltaX > 0 ? 1 : -1);
     setTimeout(() => { wheelLocked = false; }, 400);
   }, { passive: false });
 })();

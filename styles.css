@@ -575,6 +575,63 @@ html.js section.active { display: block; }
 }
 .carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
 
+/* ─── LITERARY QUOTES ─────────────────────────────────────── */
+.quotes-section {
+  background: var(--ink);
+}
+.quotes-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 9rem var(--pad);
+  text-align: center;
+}
+.quotes-inner .eyebrow { color: var(--gold); }
+.quotes-inner .section-title { color: var(--cream); }
+.quotes-carousel {
+  margin-top: 3.5rem;
+}
+.quotes-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: max(0px, min(12rem, calc((100vw - 1100px) / 2)));
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+.quotes-viewport {
+  flex: none;
+  width: 100%;
+  max-width: 640px;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.quotes-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.quote-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.quote-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(240, 239, 239, 0.9);
+  margin-bottom: 1.25rem;
+}
+.quote-author {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* ─── SERIES (COMING SOON) ────────────────────────────────── */
 .series-section {
   background: var(--cream);
@@ -824,6 +881,12 @@ footer {
   .testimonials-row { gap: 1.75rem; }
   .testimonial-card { flex: 0 0 100%; }
   .carousel-btn { width: 2rem; height: 2rem; font-size: 1rem; }
+
+  /* Literary Quotes */
+  .quotes-inner { padding: 4rem var(--pad); }
+  .quotes-carousel { margin-top: 2.5rem; }
+  .quotes-row { gap: 1.25rem; }
+  .quote-text { font-size: 1.1rem; }
 
   /* Series */
   .series-inner { padding: 4rem var(--pad); }
