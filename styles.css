@@ -216,21 +216,21 @@ html.js section.active { display: block; }
   justify-content: center;
 }
 .img-cover {
-  width: 203.5px;
-  height: 280.5px;
+  width: 234px;
+  height: 322.6px;
   object-fit: cover;
   box-shadow: 0 12px 50px rgba(26,24,20,0.22);
   position: relative;
   z-index: 2;
 }
 .img-bookmark {
-  width: 165px;
-  height: 231px;
+  width: 189.8px;
+  height: 265.7px;
   object-fit: cover;
   object-position: top;
   box-shadow: 0 8px 35px rgba(26,24,20,0.12);
-  margin-left: -27.5px;
-  margin-bottom: 24px;
+  margin-left: -31.6px;
+  margin-bottom: 27.6px;
   position: relative;
   z-index: 1;
 }
@@ -853,8 +853,8 @@ footer {
   .hero-left { max-width: 100%; }
   .hero-title { font-size: 2.2rem; }
   .hero-images { justify-content: center; }
-  .img-cover { width: 154px; height: 214.5px; }
-  .img-bookmark { width: 126.5px; height: 176px; margin-left: -19.8px; margin-bottom: 17.6px; }
+  .img-cover { width: 177.1px; height: 246.7px; }
+  .img-bookmark { width: 145.5px; height: 202.4px; margin-left: -22.8px; margin-bottom: 20.2px; }
 
   /* How it works */
   .how-inner { padding: 4rem var(--pad); }
