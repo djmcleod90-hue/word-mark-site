@@ -212,7 +212,8 @@ html.js section.active { display: block; }
 }
 .hero-images {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .img-cover {
@@ -229,8 +230,7 @@ html.js section.active { display: block; }
   object-fit: cover;
   object-position: top;
   box-shadow: 0 8px 35px rgba(26,24,20,0.12);
-  margin-left: -41.3px;
-  margin-bottom: 36px;
+  margin-top: -60px;
   position: relative;
   z-index: 1;
 }
@@ -854,7 +854,7 @@ footer {
   .hero-title { font-size: 2.2rem; }
   .hero-images { justify-content: center; }
   .img-cover { width: 177.1px; height: 246.7px; }
-  .img-bookmark { width: 189.9px; height: 264px; margin-left: -29.8px; margin-bottom: 26.3px; }
+  .img-bookmark { width: 189.9px; height: 264px; margin-top: -46px; }
 
   /* How it works */
   .how-inner { padding: 4rem var(--pad); }
