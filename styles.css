@@ -224,13 +224,13 @@ html.js section.active { display: block; }
   z-index: 2;
 }
 .img-bookmark {
-  width: 215.3px;
-  height: 301.4px;
+  width: 247.6px;
+  height: 346.6px;
   object-fit: cover;
   object-position: top;
   box-shadow: 0 8px 35px rgba(26,24,20,0.12);
-  margin-left: -35.9px;
-  margin-bottom: 31.3px;
+  margin-left: -41.3px;
+  margin-bottom: 36px;
   position: relative;
   z-index: 1;
 }
@@ -854,7 +854,7 @@ footer {
   .hero-title { font-size: 2.2rem; }
   .hero-images { justify-content: center; }
   .img-cover { width: 177.1px; height: 246.7px; }
-  .img-bookmark { width: 165.1px; height: 229.6px; margin-left: -25.9px; margin-bottom: 22.9px; }
+  .img-bookmark { width: 189.9px; height: 264px; margin-left: -29.8px; margin-bottom: 26.3px; }
 
   /* How it works */
   .how-inner { padding: 4rem var(--pad); }
