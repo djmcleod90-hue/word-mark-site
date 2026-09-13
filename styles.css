@@ -377,7 +377,6 @@ html.js section.active { display: block; }
 .anatomy-diagram-frame img {
   width: 100%;
   display: block;
-  box-shadow: 0 12px 50px rgba(26,24,20,0.22);
 }
 .anatomy-col {
   position: absolute;
