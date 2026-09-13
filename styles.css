@@ -17,7 +17,13 @@
 }
 
 /* ─── BASE ────────────────────────────────────────────────── */
-html { scroll-behavior: smooth; }
+/* 110% mirrors the browser zoom the site was designed to be viewed at.
+   Since layout here is almost entirely rem-based, scaling the root
+   font-size scales type, padding, and gaps together; the few fixed-px
+   dimensions below (images, icons, diagram) are bumped 1.1x to match.
+   (CSS `zoom` was tried first but breaks the 100vw carousel breakout math,
+   causing real horizontal overflow — avoid it here.) */
+html { scroll-behavior: smooth; font-size: 110%; }
 body {
   font-family: 'Figtree', sans-serif;
   font-weight: 300;
@@ -122,7 +128,7 @@ nav {
   cursor: pointer;
 }
 .wm-mark {
-  width: 32px;
+  width: 35px;
   height: auto;
   fill: var(--ink);
 }
@@ -150,7 +156,7 @@ nav {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 5.5px;
   background: none;
   border: none;
   cursor: pointer;
@@ -158,14 +164,14 @@ nav {
 }
 .nav-toggle span {
   display: block;
-  width: 22px;
-  height: 1.5px;
+  width: 24px;
+  height: 1.65px;
   background: var(--ink);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7.15px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7.15px) rotate(-45deg); }
 
 /* ─── PAGE SECTIONS ───────────────────────────────────────── */
 /* Sections are visible by default (plain scrollable page for no-JS
@@ -210,21 +216,21 @@ html.js section.active { display: block; }
   justify-content: center;
 }
 .img-cover {
-  width: 185px;
-  height: 255px;
+  width: 203.5px;
+  height: 280.5px;
   object-fit: cover;
   box-shadow: 0 12px 50px rgba(26,24,20,0.22);
   position: relative;
   z-index: 2;
 }
 .img-bookmark {
-  width: 150px;
-  height: 210px;
+  width: 165px;
+  height: 231px;
   object-fit: cover;
   object-position: top;
   box-shadow: 0 8px 35px rgba(26,24,20,0.12);
-  margin-left: -25px;
-  margin-bottom: 22px;
+  margin-left: -27.5px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
@@ -365,7 +371,7 @@ html.js section.active { display: block; }
 }
 .anatomy-diagram-frame {
   position: relative;
-  width: 400px;
+  width: 440px;
   flex: none;
 }
 .anatomy-diagram-frame img {
@@ -377,7 +383,7 @@ html.js section.active { display: block; }
   position: absolute;
   top: 0;
   height: 100%;
-  width: 270px;
+  width: 297px;
 }
 .anatomy-col.is-left { right: 100%; }
 .anatomy-col.is-right { left: 100%; }
@@ -417,7 +423,7 @@ html.js section.active { display: block; }
 }
 .anatomy-point-text {
   display: block;
-  width: 235px;
+  width: 258.5px;
   font-size: 0.85rem;
   line-height: 1.6;
   font-weight: 300;
@@ -561,7 +567,7 @@ html.js section.active { display: block; }
   flex: none;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1.5px solid var(--cream);
+  border: 1.65px solid var(--cream);
   border-radius: 50%;
   background: transparent;
   color: var(--cream);
@@ -847,8 +853,8 @@ footer {
   .hero-left { max-width: 100%; }
   .hero-title { font-size: 2.2rem; }
   .hero-images { justify-content: center; }
-  .img-cover { width: 140px; height: 195px; }
-  .img-bookmark { width: 115px; height: 160px; margin-left: -18px; margin-bottom: 16px; }
+  .img-cover { width: 154px; height: 214.5px; }
+  .img-bookmark { width: 126.5px; height: 176px; margin-left: -19.8px; margin-bottom: 17.6px; }
 
   /* How it works */
   .how-inner { padding: 4rem var(--pad); }
