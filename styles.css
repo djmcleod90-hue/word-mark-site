@@ -23,8 +23,9 @@
    dimensions below (images, icons, diagram) are bumped 1.1x to match.
    (CSS `zoom` was tried first but breaks the 100vw carousel breakout math,
    causing real horizontal overflow — avoid it here.) */
-html { scroll-behavior: smooth; font-size: 110%; }
+html { scroll-behavior: smooth; font-size: 110%; overflow-x: hidden; }
 body {
+  overflow-x: hidden;
   font-family: 'Figtree', sans-serif;
   font-weight: 300;
   background: var(--cream);
