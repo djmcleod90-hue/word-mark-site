@@ -764,14 +764,30 @@ html.js section.active { display: block; }
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
-.stocklist-stores { list-style: none; }
-.stocklist-stores li {
-  padding: 0.65rem 0;
+.stocklist-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: var(--hair);
+}
+.stocklist-table th,
+.stocklist-table td {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
   border-bottom: var(--hair);
   font-size: 0.9rem;
+  font-weight: 400;
   color: var(--ink-soft);
 }
-.stocklist-stores li:first-child { border-top: var(--hair); }
+.stocklist-table th:first-child,
+.stocklist-table td:first-child { padding-left: 0; }
+.stocklist-table th {
+  font-family: 'Aboreto', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.stocklist-table td:last-child { color: var(--ink-mute); }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
 footer {
