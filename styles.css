@@ -174,13 +174,6 @@ nav {
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7.15px) rotate(-45deg); }
 
-/* ─── PAGE SECTIONS ───────────────────────────────────────── */
-/* Sections are visible by default (plain scrollable page for no-JS
-   visitors and crawlers); JS opts into the tabbed single-page view by
-   adding .js to <html>, see the inline script at the top of <head>. */
-html.js section { display: none; }
-html.js section.active { display: block; }
-
 /* ─── HERO ────────────────────────────────────────────────── */
 .hero-section {
   background: var(--cream);
