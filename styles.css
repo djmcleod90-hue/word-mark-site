@@ -83,6 +83,20 @@ body {
   text-decoration: none;
 }
 .btn:hover { background: var(--ink); color: var(--cream); }
+.btn[hidden] { display: none; }
+.btn-text {
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.4em;
+  transition: color 0.2s;
+}
+.btn-text:hover { color: var(--gold-deep); }
 
 /* ─── ANNOUNCEMENT BANNER ─────────────────────────────────── */
 .announce-bar {
@@ -190,6 +204,12 @@ nav {
   min-height: 88vh;
 }
 .hero-left { max-width: 620px; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
 .hero-eyebrow { margin-bottom: 1.5rem; }
 .hero-title {
   font-family: 'Aboreto', serif;

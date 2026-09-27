@@ -32,8 +32,7 @@
 <!-- ══ BUY ══════════════════════════════════════════════════ -->
 <div class="buy-section">
   <div class="buy-inner">
-    <h2 class="section-title">Buy Word&#8209;Mark™</h2>
-    <p class="body-text" id="buyIntro">Order online and we'll post it to you.</p>
+    <h2 class="section-title" id="buyTitle">Buy Word&#8209;Mark™</h2>
     <a class="btn" id="buyButton" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy now</a>
     <p class="body-text buy-status" id="buyStatus" hidden></p>
   </div>
@@ -48,10 +47,11 @@
 <script>
 // Stripe Payment Link can redirect back here after payment (set in the Stripe Dashboard)
 if (new URLSearchParams(location.search).has('session_id')) {
-  document.getElementById('buyIntro').hidden = true;
   document.getElementById('buyButton').hidden = true;
   const status = document.getElementById('buyStatus');
-  status.textContent = 'Thank you — your order is confirmed. A receipt is on its way to your inbox.';
+  document.getElementById('buyTitle').textContent = 'Thank you';
+  document.title = 'Thank you — Word\u2011Mark™';
+  status.textContent = 'Your order is confirmed. A receipt is on its way to your inbox.';
   status.hidden = false;
 }
 
