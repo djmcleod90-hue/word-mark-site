@@ -61,10 +61,7 @@
         <span class="eyebrow hero-eyebrow">Made in Vancouver, Canada</span>
         <h1 class="hero-title">A better kind of bookmark</h1>
         <p class="hero-body">Vocabulary bookmark and reading system for readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#how-it-works" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">Discover the product</a>
-          <a class="btn-text" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy online</a>
-        </div>
+        <a class="btn" href="#how-it-works" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">Discover the product</a>
       </div>
       <div class="hero-images">
         <img src="hero-cover.jpg" alt="Word-Mark cover" class="img-cover">
@@ -329,21 +326,6 @@
     </div>
   </div>
 
-  <!-- Buy Online -->
-  <div class="buy-home-section">
-    <div class="buy-home-inner">
-      <a href="product-flatlay-large.jpg" class="buy-home-zoom" id="buyZoom" aria-label="View larger image of the packaging">
-        <img src="product-flatlay.jpg" alt="Word-Mark packaging, front and back" class="buy-home-img" width="1600" height="1048" loading="lazy">
-      </a>
-      <div class="buy-home-text-col">
-        <span class="eyebrow">Buy online</span>
-        <p class="buy-home-heading">Order your Word&#8209;Mark™</p>
-        <p class="body-text buy-home-text">$22 + $4 shipping<br>Ships within Canada</p>
-        <a class="btn" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy now</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Wholesale -->
   <div class="wholesale-section">
     <div class="wholesale-inner">
@@ -363,24 +345,7 @@
   <p class="footer-copy">© 2026 Word&#8209;Mark™ · Vancouver, Canada</p>
 </footer>
 
-<dialog class="lightbox" id="lightbox" aria-label="Word-Mark packaging, front and back">
-  <img alt="Word-Mark packaging, front and back">
-</dialog>
-
 <script>
-// Buy online image: open full size in a lightbox; click anywhere or Esc to close
-(function () {
-  const link = document.getElementById('buyZoom');
-  const box = document.getElementById('lightbox');
-  if (!link || !box || !box.showModal) return;
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    box.querySelector('img').src = link.href;
-    box.showModal();
-  });
-  box.addEventListener('click', function () { box.close(); });
-})();
-
 function toggleNav() {
   const links = document.getElementById('navLinks');
   const toggle = document.getElementById('navToggle');
