@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Word&#8209;Mark™</title>
+<title>Word&#8209;Mark™ Vocabulary Bookmark | Made in Vancouver</title>
 <meta name="description" content="The vocabulary bookmark for readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow.">
 <link rel="canonical" href="https://word-mark.ca/">
 
@@ -62,7 +62,7 @@
         <h1 class="hero-title">A better kind of bookmark</h1>
         <p class="hero-body">Vocabulary bookmark and reading system for readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow.</p>
         <div class="hero-actions">
-          <button class="btn" onclick="document.querySelector('.how-section').scrollIntoView({behavior:'smooth'})">Discover the product</button>
+          <a class="btn" href="#how-it-works" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">Discover the product</a>
           <a class="btn-text" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy online</a>
         </div>
       </div>
@@ -74,7 +74,7 @@
   </div>
 
   <!-- How It Works -->
-  <div class="how-section">
+  <div class="how-section" id="how-it-works">
     <div class="how-inner">
       <span class="eyebrow">A new way to read, fully analog</span>
       <h2 class="section-title">How it works</h2>
@@ -338,7 +338,7 @@
       <div class="buy-home-text-col">
         <span class="eyebrow">Buy online</span>
         <p class="buy-home-heading">Order your Word&#8209;Mark™</p>
-        <p class="body-text buy-home-text">CA$22 + CA$4 shipping</p>
+        <p class="body-text buy-home-text">$22 + $4 shipping<br>Ships within Canada</p>
         <a class="btn" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy now</a>
       </div>
     </div>
@@ -364,7 +364,7 @@
 </footer>
 
 <dialog class="lightbox" id="lightbox" aria-label="Word-Mark packaging, front and back">
-  <img src="" alt="Word-Mark packaging, front and back">
+  <img alt="Word-Mark packaging, front and back">
 </dialog>
 
 <script>
