@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stocklist — Word&#8209;Mark™</title>
+<title>Buy — Word&#8209;Mark™</title>
 <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Figtree:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,43 +29,13 @@
   </button>
 </nav>
 
-<!-- ══ STOCKLIST ══════════════════════════════════════════════ -->
-<div class="stocklist-section">
-  <div class="stocklist-inner">
-    <h2 class="section-title">Where to find it</h2>
-    <p class="body-text">Word&#8209;Mark™ is available in the following stores.</p>
-    <div class="stocklist-city">
-      <h3 class="stocklist-city-name">Vancouver</h3>
-      <table class="stocklist-table">
-        <thead>
-          <tr><th>Store</th><th>Address</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Regional Assembly of Text</td>
-            <td>3934 Main St · Riley Park</td>
-          </tr>
-          <tr>
-            <td>Upstart &amp; Crow</td>
-            <td>1387 Railspur Alley · Granville Island</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="stocklist-online">
-      <h3 class="stocklist-city-name">Online</h3>
-      <p class="body-text">Prefer to order online? We'll post it to you.</p>
-      <a class="btn" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy now</a>
-    </div>
-  </div>
-</div>
-
-<!-- Wholesale -->
-<div class="wholesale-section">
-  <div class="wholesale-inner">
-    <span class="eyebrow">Wholesale</span>
-    <p class="wholesale-heading">Interested in stocking Word&#8209;Mark™?</p>
-    <a class="btn" href="contact.html">Get in touch</a>
+<!-- ══ BUY ══════════════════════════════════════════════════ -->
+<div class="buy-section">
+  <div class="buy-inner">
+    <h2 class="section-title">Buy Word&#8209;Mark™</h2>
+    <p class="body-text" id="buyIntro">Order online and we'll post it to you.</p>
+    <a class="btn" id="buyButton" href="https://buy.stripe.com/4gMcN72tz4vMcRxbO7ak000">Buy now</a>
+    <p class="body-text buy-status" id="buyStatus" hidden></p>
   </div>
 </div>
 
@@ -76,6 +46,15 @@
 </footer>
 
 <script>
+// Stripe Payment Link can redirect back here after payment (set in the Stripe Dashboard)
+if (new URLSearchParams(location.search).has('session_id')) {
+  document.getElementById('buyIntro').hidden = true;
+  document.getElementById('buyButton').hidden = true;
+  const status = document.getElementById('buyStatus');
+  status.textContent = 'Thank you — your order is confirmed. A receipt is on its way to your inbox.';
+  status.hidden = false;
+}
+
 function toggleNav() {
   const links = document.getElementById('navLinks');
   const toggle = document.getElementById('navToggle');
