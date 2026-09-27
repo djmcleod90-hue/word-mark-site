@@ -93,10 +93,10 @@ body {
   color: var(--ink);
   text-decoration: none;
   padding-bottom: 0.35rem;
-  border-bottom: 0.5px solid var(--gold);
-  transition: border-color 0.2s;
+  /* hairline stops at the last letter, not the trailing letter-spacing */
+  background: linear-gradient(var(--gold), var(--gold)) no-repeat left bottom / calc(100% - 0.18em) 0.5px;
 }
-.btn-text:hover { border-bottom-color: var(--ink); }
+.btn-text:hover { background-image: linear-gradient(var(--ink), var(--ink)); }
 
 /* ─── ANNOUNCEMENT BANNER ─────────────────────────────────── */
 .announce-bar {
@@ -207,7 +207,7 @@ nav {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   gap: 1.25rem 2rem;
 }
 .hero-eyebrow { margin-bottom: 1.5rem; }
