@@ -928,3 +928,25 @@ footer {
   }
   .footer-links { justify-content: center; }
 }
+
+/* ─── POLICY PAGES ────────────────────────────────────────── */
+.policy-section .section-title { margin-bottom: 0.75rem; }
+.policy-updated { font-size: 0.8rem; color: var(--ink-mute); margin-bottom: 3rem; }
+.policy-heading {
+  font-family: 'Aboreto', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  margin: 3rem 0 1rem;
+}
+.policy-section .body-text a { color: var(--ink); }
+.policy-section .body-text strong, .policy-list strong { font-weight: 500; color: var(--ink); }
+.policy-list {
+  margin: 0 0 1.5rem 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.9;
+}
+.policy-list li { margin-bottom: 0.5rem; }
+.policy-list a { color: var(--ink); }
