@@ -1,0 +1,9 @@
+# The website's files are copied into public/ and published from there, so the app service's code
+# (netlify/), its packages (node_modules/) and settings files are never served on word-mark.ca.
+[build]
+  command = "mkdir -p public && rsync -a --delete --exclude public --exclude node_modules --exclude netlify --exclude scripts --exclude .git --exclude .claude --exclude .gitignore --exclude package.json --exclude package-lock.json --exclude netlify.toml --exclude tsconfig.json ./ public/"
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
