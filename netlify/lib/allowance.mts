@@ -20,7 +20,8 @@ export interface Device {
   failedCodes: number;
 }
 
-export interface Allowance { left: number; leftToday: number }
+/** `free` is how many of `left` are the free ones every phone starts with. */
+export interface Allowance { left: number; leftToday: number; free: number }
 
 export function dayIn(now: Date): string {
   return now.toLocaleDateString("en-CA", { timeZone: "America/Vancouver" }); // YYYY-MM-DD
@@ -28,7 +29,7 @@ export function dayIn(now: Date): string {
 
 export function allowanceOf(device: Device): Allowance {
   const left = device.free + device.bought;
-  return { left, leftToday: Math.min(left, Math.max(0, LIMITS.perDay - device.today)) };
+  return { left, leftToday: Math.min(left, Math.max(0, LIMITS.perDay - device.today)), free: device.free };
 }
 
 const deviceKey = (id: string) => `devices/${id}`;
