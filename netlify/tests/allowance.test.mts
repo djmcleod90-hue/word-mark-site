@@ -28,7 +28,7 @@ const day2 = new Date("2026-10-04T18:00:00Z");
 
 test("a new phone gets 5 free readings, then none", async () => {
   const store = memoryStore();
-  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 5, leftToday: 5 });
+  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 5, leftToday: 5, free: 5 });
   for (let i = 0; i < 5; i++) await spendScan(store, phone, day1);
   assert.equal((await checkScan(store, phone, day1)).check, "none-left");
 });
@@ -36,11 +36,11 @@ test("a new phone gets 5 free readings, then none", async () => {
 test("a code adds 15, and the daily cap of 10 applies", async () => {
   const store = memoryStore();
   assert.equal((await redeemCode(store, phone, makeCode(1, SECRET), SECRET, day1)).result, "added");
-  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 20, leftToday: 10 });
+  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 20, leftToday: 10, free: 5 });
   for (let i = 0; i < LIMITS.perDay; i++) await spendScan(store, phone, day1);
   assert.equal((await checkScan(store, phone, day1)).check, "daily-limit");
   // Next day (Vancouver time) the cap resets; 10 readings remain in total.
-  assert.deepEqual((await checkScan(store, phone, day2)), { check: "ok", allowance: { left: 10, leftToday: 10 } });
+  assert.deepEqual((await checkScan(store, phone, day2)), { check: "ok", allowance: { left: 10, leftToday: 10, free: 0 } });
 });
 
 test("a code works once, across phones", async () => {
@@ -72,5 +72,5 @@ test("too many wrong codes in a day are refused", async () => {
 test("two readings at once from the same phone are both counted", async () => {
   const store = memoryStore();
   await Promise.all([spendScan(store, phone, day1), spendScan(store, phone, day1)]);
-  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 3, leftToday: 3 });
+  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 3, leftToday: 3, free: 3 });
 });
