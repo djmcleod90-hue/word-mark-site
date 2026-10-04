@@ -16,8 +16,10 @@ export default async (req: Request) => {
   if (!isLookupWord(word)) return json({ error: "Not a word" }, 400);
 
   const store = getStore({ name: "word-mark-etymology", consistency: "strong" });
-  const kept = await store.get(`word/${word}`, { type: "json" }) as { origin: string } | null;
-  if (kept) return json({ word, origin: kept.origin || null });
+  // Found origins are kept for good; "none found" is rechecked after a month, in case the lookup improves.
+  const kept = await store.get(`word/${word}`, { type: "json" }) as { origin: string; at: string } | null;
+  const isFresh = kept && (kept.origin || Date.now() - Date.parse(kept.at) < 30 * 86_400_000);
+  if (kept && isFresh) return json({ word, origin: kept.origin || null });
 
   const day = new Date().toLocaleDateString("en-CA", { timeZone: "America/Vancouver" });
   const countKey = `count/${day}/${id}`;
