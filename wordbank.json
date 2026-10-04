@@ -1,0 +1,2825 @@
+{
+ "version": 1,
+ "words": [
+  {
+   "word": "abeyance",
+   "pos": "noun",
+   "definition": "A state of temporary suspension"
+  },
+  {
+   "word": "abjure",
+   "pos": "verb",
+   "definition": "To solemnly renounce a belief or claim"
+  },
+  {
+   "word": "abnegation",
+   "pos": "noun",
+   "definition": "The denial or giving up of one's own interests"
+  },
+  {
+   "word": "abrogate",
+   "pos": "verb",
+   "definition": "To repeal or do away with a law or agreement"
+  },
+  {
+   "word": "abstemious",
+   "pos": "adjective",
+   "definition": "Sparing in eating and drinking"
+  },
+  {
+   "word": "abstruse",
+   "pos": "adjective",
+   "definition": "Difficult to understand; obscure"
+  },
+  {
+   "word": "accretion",
+   "pos": "noun",
+   "definition": "Gradual growth by the addition of layers"
+  },
+  {
+   "word": "acerbic",
+   "pos": "adjective",
+   "definition": "Sharp and biting in tone"
+  },
+  {
+   "word": "acrimony",
+   "pos": "noun",
+   "definition": "Bitterness or ill feeling"
+  },
+  {
+   "word": "adroit",
+   "pos": "adjective",
+   "definition": "Clever and skilful, especially with the hands or mind"
+  },
+  {
+   "word": "adumbrate",
+   "pos": "verb",
+   "definition": "To outline faintly or foreshadow"
+  },
+  {
+   "word": "aegis",
+   "pos": "noun",
+   "definition": "Protection or sponsorship"
+  },
+  {
+   "word": "affable",
+   "pos": "adjective",
+   "definition": "Friendly and easy to talk to"
+  },
+  {
+   "word": "aggrandize",
+   "pos": "verb",
+   "definition": "To make greater in power, rank or reputation"
+  },
+  {
+   "word": "alacrity",
+   "pos": "noun",
+   "definition": "Cheerful readiness or eagerness"
+  },
+  {
+   "word": "ameliorate",
+   "pos": "verb",
+   "definition": "To make something bad better"
+  },
+  {
+   "word": "amorphous",
+   "pos": "adjective",
+   "definition": "Without a clear shape or form"
+  },
+  {
+   "word": "anachronism",
+   "pos": "noun",
+   "definition": "Something out of its proper time"
+  },
+  {
+   "word": "anathema",
+   "pos": "noun",
+   "definition": "Something or someone intensely disliked"
+  },
+  {
+   "word": "ancillary",
+   "pos": "adjective",
+   "definition": "Providing support; secondary"
+  },
+  {
+   "word": "animus",
+   "pos": "noun",
+   "definition": "Hostility or ill will"
+  },
+  {
+   "word": "antediluvian",
+   "pos": "adjective",
+   "definition": "Ridiculously old-fashioned"
+  },
+  {
+   "word": "antipathy",
+   "pos": "noun",
+   "definition": "A deep-seated dislike"
+  },
+  {
+   "word": "aphorism",
+   "pos": "noun",
+   "definition": "A short, pithy statement of a truth"
+  },
+  {
+   "word": "apocryphal",
+   "pos": "adjective",
+   "definition": "Of doubtful authenticity, though widely repeated"
+  },
+  {
+   "word": "apogee",
+   "pos": "noun",
+   "definition": "The highest point; the climax"
+  },
+  {
+   "word": "apostasy",
+   "pos": "noun",
+   "definition": "The abandonment of a belief or cause"
+  },
+  {
+   "word": "apposite",
+   "pos": "adjective",
+   "definition": "Apt in the circumstances"
+  },
+  {
+   "word": "approbation",
+   "pos": "noun",
+   "definition": "Approval or praise"
+  },
+  {
+   "word": "arcane",
+   "pos": "adjective",
+   "definition": "Understood by few; mysterious"
+  },
+  {
+   "word": "ardent",
+   "pos": "adjective",
+   "definition": "Passionate and enthusiastic"
+  },
+  {
+   "word": "arduous",
+   "pos": "adjective",
+   "definition": "Requiring great effort"
+  },
+  {
+   "word": "artifice",
+   "pos": "noun",
+   "definition": "Clever trickery or skill"
+  },
+  {
+   "word": "ascetic",
+   "pos": "adjective",
+   "definition": "Practising severe self-discipline and abstention"
+  },
+  {
+   "word": "assiduous",
+   "pos": "adjective",
+   "definition": "Showing great care and perseverance"
+  },
+  {
+   "word": "assuage",
+   "pos": "verb",
+   "definition": "To ease or soothe a feeling"
+  },
+  {
+   "word": "atavistic",
+   "pos": "adjective",
+   "definition": "Reverting to something ancestral or primitive"
+  },
+  {
+   "word": "attenuate",
+   "pos": "verb",
+   "definition": "To weaken or reduce in force"
+  },
+  {
+   "word": "audacious",
+   "pos": "adjective",
+   "definition": "Showing bold, daring disregard for risk"
+  },
+  {
+   "word": "augur",
+   "pos": "verb",
+   "definition": "To portend a good or bad outcome"
+  },
+  {
+   "word": "auspicious",
+   "pos": "adjective",
+   "definition": "Promising success; favourable"
+  },
+  {
+   "word": "austere",
+   "pos": "adjective",
+   "definition": "Severely plain and simple"
+  },
+  {
+   "word": "avarice",
+   "pos": "noun",
+   "definition": "Extreme greed for wealth"
+  },
+  {
+   "word": "avuncular",
+   "pos": "adjective",
+   "definition": "Kind and friendly, like an uncle"
+  },
+  {
+   "word": "badinage",
+   "pos": "noun",
+   "definition": "Witty, playful conversation"
+  },
+  {
+   "word": "baleful",
+   "pos": "adjective",
+   "definition": "Threatening harm; menacing"
+  },
+  {
+   "word": "banal",
+   "pos": "adjective",
+   "definition": "Lacking originality; dull"
+  },
+  {
+   "word": "bathos",
+   "pos": "noun",
+   "definition": "An abrupt, ludicrous drop from the lofty to the trivial"
+  },
+  {
+   "word": "beguile",
+   "pos": "verb",
+   "definition": "To charm, often in a deceptive way"
+  },
+  {
+   "word": "belie",
+   "pos": "verb",
+   "definition": "To give a false impression of"
+  },
+  {
+   "word": "bellicose",
+   "pos": "adjective",
+   "definition": "Eager to fight"
+  },
+  {
+   "word": "benighted",
+   "pos": "adjective",
+   "definition": "In a state of ignorance"
+  },
+  {
+   "word": "bereft",
+   "pos": "adjective",
+   "definition": "Deprived of something; lonely and abandoned"
+  },
+  {
+   "word": "bilious",
+   "pos": "adjective",
+   "definition": "Bad-tempered; also, sickly in colour"
+  },
+  {
+   "word": "blandishment",
+   "pos": "noun",
+   "definition": "Flattery meant to persuade"
+  },
+  {
+   "word": "blithe",
+   "pos": "adjective",
+   "definition": "Cheerfully carefree, sometimes too much so"
+  },
+  {
+   "word": "bombast",
+   "pos": "noun",
+   "definition": "Pompous, inflated language"
+  },
+  {
+   "word": "bonhomie",
+   "pos": "noun",
+   "definition": "Cheerful friendliness"
+  },
+  {
+   "word": "boorish",
+   "pos": "adjective",
+   "definition": "Rough and bad-mannered"
+  },
+  {
+   "word": "bowdlerize",
+   "pos": "verb",
+   "definition": "To remove material considered improper from a text"
+  },
+  {
+   "word": "brusque",
+   "pos": "adjective",
+   "definition": "Abrupt or offhand in speech or manner"
+  },
+  {
+   "word": "bucolic",
+   "pos": "adjective",
+   "definition": "Relating to the pleasant aspects of country life"
+  },
+  {
+   "word": "bumptious",
+   "pos": "adjective",
+   "definition": "Irritatingly self-assertive"
+  },
+  {
+   "word": "burgeon",
+   "pos": "verb",
+   "definition": "To grow or increase rapidly"
+  },
+  {
+   "word": "byzantine",
+   "pos": "adjective",
+   "definition": "Excessively complicated and intricate"
+  },
+  {
+   "word": "cabal",
+   "pos": "noun",
+   "definition": "A secret group of plotters"
+  },
+  {
+   "word": "cacophony",
+   "pos": "noun",
+   "definition": "A harsh, discordant mixture of sounds"
+  },
+  {
+   "word": "cadence",
+   "pos": "noun",
+   "definition": "The rise and fall of a voice or rhythm"
+  },
+  {
+   "word": "cajole",
+   "pos": "verb",
+   "definition": "To persuade by flattery or coaxing"
+  },
+  {
+   "word": "callow",
+   "pos": "adjective",
+   "definition": "Young and inexperienced"
+  },
+  {
+   "word": "calumny",
+   "pos": "noun",
+   "definition": "A false statement made to damage someone's reputation"
+  },
+  {
+   "word": "canard",
+   "pos": "noun",
+   "definition": "A false or baseless rumour"
+  },
+  {
+   "word": "candour",
+   "pos": "noun",
+   "definition": "Frankness and honesty"
+  },
+  {
+   "word": "capricious",
+   "pos": "adjective",
+   "definition": "Given to sudden changes of mood or behaviour"
+  },
+  {
+   "word": "captious",
+   "pos": "adjective",
+   "definition": "Inclined to find fault over trifles"
+  },
+  {
+   "word": "carapace",
+   "pos": "noun",
+   "definition": "A hard protective shell"
+  },
+  {
+   "word": "castigate",
+   "pos": "verb",
+   "definition": "To reprimand severely"
+  },
+  {
+   "word": "catharsis",
+   "pos": "noun",
+   "definition": "Release of strong emotion, bringing relief"
+  },
+  {
+   "word": "caustic",
+   "pos": "adjective",
+   "definition": "Sarcastic in a scathing way"
+  },
+  {
+   "word": "cavil",
+   "pos": "verb",
+   "definition": "To raise petty objections"
+  },
+  {
+   "word": "celerity",
+   "pos": "noun",
+   "definition": "Swiftness of movement"
+  },
+  {
+   "word": "censure",
+   "pos": "noun",
+   "definition": "Formal, severe disapproval"
+  },
+  {
+   "word": "chagrin",
+   "pos": "noun",
+   "definition": "Annoyance at having failed or been humiliated"
+  },
+  {
+   "word": "chicanery",
+   "pos": "noun",
+   "definition": "Trickery used to deceive"
+  },
+  {
+   "word": "chimera",
+   "pos": "noun",
+   "definition": "An illusion or fanciful hope that can never be realized"
+  },
+  {
+   "word": "choleric",
+   "pos": "adjective",
+   "definition": "Bad-tempered or irritable"
+  },
+  {
+   "word": "churlish",
+   "pos": "adjective",
+   "definition": "Rude in a mean-spirited way"
+  },
+  {
+   "word": "circumlocution",
+   "pos": "noun",
+   "definition": "Using many words where few would do"
+  },
+  {
+   "word": "clamour",
+   "pos": "noun",
+   "definition": "A loud and confused noise, especially of protest"
+  },
+  {
+   "word": "clandestine",
+   "pos": "adjective",
+   "definition": "Kept secret or done secretively"
+  },
+  {
+   "word": "cloying",
+   "pos": "adjective",
+   "definition": "Sickeningly sweet or sentimental"
+  },
+  {
+   "word": "cogent",
+   "pos": "adjective",
+   "definition": "Clear, logical and convincing"
+  },
+  {
+   "word": "cognizant",
+   "pos": "adjective",
+   "definition": "Having knowledge or awareness"
+  },
+  {
+   "word": "colloquy",
+   "pos": "noun",
+   "definition": "A formal conversation or dialogue"
+  },
+  {
+   "word": "comity",
+   "pos": "noun",
+   "definition": "Courtesy and considerate behaviour toward others"
+  },
+  {
+   "word": "commensurate",
+   "pos": "adjective",
+   "definition": "In proportion to; corresponding in size or degree"
+  },
+  {
+   "word": "compunction",
+   "pos": "noun",
+   "definition": "A feeling of guilt that prevents wrongdoing"
+  },
+  {
+   "word": "concomitant",
+   "pos": "adjective",
+   "definition": "Naturally accompanying or associated"
+  },
+  {
+   "word": "conflagration",
+   "pos": "noun",
+   "definition": "A large, destructive fire"
+  },
+  {
+   "word": "congenial",
+   "pos": "adjective",
+   "definition": "Pleasant because suited to one's tastes"
+  },
+  {
+   "word": "connive",
+   "pos": "verb",
+   "definition": "To secretly allow or conspire in wrongdoing"
+  },
+  {
+   "word": "consternation",
+   "pos": "noun",
+   "definition": "Anxiety or dismay, often at something unexpected"
+  },
+  {
+   "word": "contrite",
+   "pos": "adjective",
+   "definition": "Feeling remorse for wrongdoing"
+  },
+  {
+   "word": "contumely",
+   "pos": "noun",
+   "definition": "Insolent or insulting treatment"
+  },
+  {
+   "word": "convivial",
+   "pos": "adjective",
+   "definition": "Friendly, lively and enjoyable"
+  },
+  {
+   "word": "copious",
+   "pos": "adjective",
+   "definition": "Abundant in supply"
+  },
+  {
+   "word": "coquette",
+   "pos": "noun",
+   "definition": "A woman who flirts lightheartedly"
+  },
+  {
+   "word": "corollary",
+   "pos": "noun",
+   "definition": "A natural consequence or result"
+  },
+  {
+   "word": "coterie",
+   "pos": "noun",
+   "definition": "A small, exclusive group of people"
+  },
+  {
+   "word": "countenance",
+   "pos": "noun",
+   "definition": "A person's face or expression"
+  },
+  {
+   "word": "covet",
+   "pos": "verb",
+   "definition": "To yearn to possess something belonging to another"
+  },
+  {
+   "word": "credulous",
+   "pos": "adjective",
+   "definition": "Too ready to believe things"
+  },
+  {
+   "word": "crepuscular",
+   "pos": "adjective",
+   "definition": "Relating to twilight"
+  },
+  {
+   "word": "cupidity",
+   "pos": "noun",
+   "definition": "Greed for money or possessions"
+  },
+  {
+   "word": "curmudgeon",
+   "pos": "noun",
+   "definition": "A bad-tempered, often older person"
+  },
+  {
+   "word": "cursory",
+   "pos": "adjective",
+   "definition": "Hasty and not thorough"
+  },
+  {
+   "word": "dalliance",
+   "pos": "noun",
+   "definition": "A casual romantic or sexual relationship"
+  },
+  {
+   "word": "dearth",
+   "pos": "noun",
+   "definition": "A scarcity or lack"
+  },
+  {
+   "word": "debacle",
+   "pos": "noun",
+   "definition": "A sudden, humiliating failure"
+  },
+  {
+   "word": "debonair",
+   "pos": "adjective",
+   "definition": "Confident, stylish and charming"
+  },
+  {
+   "word": "decorous",
+   "pos": "adjective",
+   "definition": "Polite and in good taste"
+  },
+  {
+   "word": "defenestrate",
+   "pos": "verb",
+   "definition": "To throw out of a window"
+  },
+  {
+   "word": "deference",
+   "pos": "noun",
+   "definition": "Polite submission and respect"
+  },
+  {
+   "word": "deleterious",
+   "pos": "adjective",
+   "definition": "Causing harm or damage"
+  },
+  {
+   "word": "demagogue",
+   "pos": "noun",
+   "definition": "A leader who exploits popular prejudice"
+  },
+  {
+   "word": "demur",
+   "pos": "verb",
+   "definition": "To raise doubts or show reluctance"
+  },
+  {
+   "word": "denouement",
+   "pos": "noun",
+   "definition": "The final resolution of a plot"
+  },
+  {
+   "word": "deprecate",
+   "pos": "verb",
+   "definition": "To express disapproval of"
+  },
+  {
+   "word": "deride",
+   "pos": "verb",
+   "definition": "To mock with contempt"
+  },
+  {
+   "word": "desiccate",
+   "pos": "verb",
+   "definition": "To remove the moisture from"
+  },
+  {
+   "word": "desultory",
+   "pos": "adjective",
+   "definition": "Lacking a plan or purpose; half-hearted"
+  },
+  {
+   "word": "diaphanous",
+   "pos": "adjective",
+   "definition": "Light, delicate and translucent"
+  },
+  {
+   "word": "diatribe",
+   "pos": "noun",
+   "definition": "A forceful, bitter verbal attack"
+  },
+  {
+   "word": "didactic",
+   "pos": "adjective",
+   "definition": "Intended to teach, often moralizing"
+  },
+  {
+   "word": "diffident",
+   "pos": "adjective",
+   "definition": "Modest or shy from a lack of confidence"
+  },
+  {
+   "word": "dilatory",
+   "pos": "adjective",
+   "definition": "Slow to act; causing delay"
+  },
+  {
+   "word": "dilettante",
+   "pos": "noun",
+   "definition": "A dabbler in the arts without real commitment"
+  },
+  {
+   "word": "discomfit",
+   "pos": "verb",
+   "definition": "To make uneasy or embarrassed"
+  },
+  {
+   "word": "disconsolate",
+   "pos": "adjective",
+   "definition": "Unhappy beyond comfort"
+  },
+  {
+   "word": "discursive",
+   "pos": "adjective",
+   "definition": "Wandering from subject to subject"
+  },
+  {
+   "word": "disparate",
+   "pos": "adjective",
+   "definition": "Essentially different in kind"
+  },
+  {
+   "word": "dissemble",
+   "pos": "verb",
+   "definition": "To conceal one's true motives or feelings"
+  },
+  {
+   "word": "dissolute",
+   "pos": "adjective",
+   "definition": "Lax in morals; given to vice"
+  },
+  {
+   "word": "dissonance",
+   "pos": "noun",
+   "definition": "A lack of harmony"
+  },
+  {
+   "word": "diurnal",
+   "pos": "adjective",
+   "definition": "Of or during the daytime"
+  },
+  {
+   "word": "doggerel",
+   "pos": "noun",
+   "definition": "Badly written, comic verse"
+  },
+  {
+   "word": "dogmatic",
+   "pos": "adjective",
+   "definition": "Asserting opinions as undeniably true"
+  },
+  {
+   "word": "dolorous",
+   "pos": "adjective",
+   "definition": "Feeling or expressing great sorrow"
+  },
+  {
+   "word": "dour",
+   "pos": "adjective",
+   "definition": "Severe or gloomy in manner"
+  },
+  {
+   "word": "draconian",
+   "pos": "adjective",
+   "definition": "Excessively harsh and severe"
+  },
+  {
+   "word": "dulcet",
+   "pos": "adjective",
+   "definition": "Sweet and soothing to the ear"
+  },
+  {
+   "word": "duplicity",
+   "pos": "noun",
+   "definition": "Deceitfulness; double-dealing"
+  },
+  {
+   "word": "ebullient",
+   "pos": "adjective",
+   "definition": "Cheerful and full of energy"
+  },
+  {
+   "word": "eclectic",
+   "pos": "adjective",
+   "definition": "Drawing on a wide range of sources"
+  },
+  {
+   "word": "edify",
+   "pos": "verb",
+   "definition": "To instruct or improve morally or intellectually"
+  },
+  {
+   "word": "efface",
+   "pos": "verb",
+   "definition": "To erase; to make oneself inconspicuous"
+  },
+  {
+   "word": "effervescent",
+   "pos": "adjective",
+   "definition": "Bubbly; vivacious and enthusiastic"
+  },
+  {
+   "word": "effete",
+   "pos": "adjective",
+   "definition": "Weak and ineffectual; overrefined"
+  },
+  {
+   "word": "efficacious",
+   "pos": "adjective",
+   "definition": "Producing the intended result"
+  },
+  {
+   "word": "effrontery",
+   "pos": "noun",
+   "definition": "Shameless boldness"
+  },
+  {
+   "word": "effulgent",
+   "pos": "adjective",
+   "definition": "Shining brightly; radiant"
+  },
+  {
+   "word": "egregious",
+   "pos": "adjective",
+   "definition": "Outstandingly bad; shocking"
+  },
+  {
+   "word": "eldritch",
+   "pos": "adjective",
+   "definition": "Weird and sinister or ghostly"
+  },
+  {
+   "word": "elegy",
+   "pos": "noun",
+   "definition": "A mournful poem, often for the dead"
+  },
+  {
+   "word": "elucidate",
+   "pos": "verb",
+   "definition": "To make clear; explain"
+  },
+  {
+   "word": "emollient",
+   "pos": "adjective",
+   "definition": "Soothing; attempting to calm"
+  },
+  {
+   "word": "empyrean",
+   "pos": "noun",
+   "definition": "The highest heaven; the sky"
+  },
+  {
+   "word": "encomium",
+   "pos": "noun",
+   "definition": "A speech or text in high praise"
+  },
+  {
+   "word": "enervate",
+   "pos": "verb",
+   "definition": "To drain of energy or vitality"
+  },
+  {
+   "word": "engender",
+   "pos": "verb",
+   "definition": "To cause or give rise to"
+  },
+  {
+   "word": "ennui",
+   "pos": "noun",
+   "definition": "Listless weariness from lack of interest"
+  },
+  {
+   "word": "ephemeral",
+   "pos": "adjective",
+   "definition": "Lasting a very short time"
+  },
+  {
+   "word": "epicure",
+   "pos": "noun",
+   "definition": "A person devoted to refined food and drink"
+  },
+  {
+   "word": "epigram",
+   "pos": "noun",
+   "definition": "A short, witty saying"
+  },
+  {
+   "word": "epiphany",
+   "pos": "noun",
+   "definition": "A sudden, striking realization"
+  },
+  {
+   "word": "epistolary",
+   "pos": "adjective",
+   "definition": "Written in the form of letters"
+  },
+  {
+   "word": "epithet",
+   "pos": "noun",
+   "definition": "A descriptive word or phrase attached to a name"
+  },
+  {
+   "word": "equanimity",
+   "pos": "noun",
+   "definition": "Calmness and composure, especially under strain"
+  },
+  {
+   "word": "equivocate",
+   "pos": "verb",
+   "definition": "To speak ambiguously to avoid commitment"
+  },
+  {
+   "word": "erstwhile",
+   "pos": "adjective",
+   "definition": "Former"
+  },
+  {
+   "word": "erudite",
+   "pos": "adjective",
+   "definition": "Having or showing great learning"
+  },
+  {
+   "word": "esoteric",
+   "pos": "adjective",
+   "definition": "Understood only by a small group"
+  },
+  {
+   "word": "ethereal",
+   "pos": "adjective",
+   "definition": "Extremely delicate and light; heavenly"
+  },
+  {
+   "word": "euphony",
+   "pos": "noun",
+   "definition": "Pleasing sound, especially in words"
+  },
+  {
+   "word": "evanescent",
+   "pos": "adjective",
+   "definition": "Quickly fading from sight or memory"
+  },
+  {
+   "word": "exculpate",
+   "pos": "verb",
+   "definition": "To clear from blame"
+  },
+  {
+   "word": "execrable",
+   "pos": "adjective",
+   "definition": "Extremely bad or unpleasant"
+  },
+  {
+   "word": "exegesis",
+   "pos": "noun",
+   "definition": "Critical explanation of a text"
+  },
+  {
+   "word": "exigent",
+   "pos": "adjective",
+   "definition": "Pressing; demanding"
+  },
+  {
+   "word": "expiate",
+   "pos": "verb",
+   "definition": "To atone for guilt or sin"
+  },
+  {
+   "word": "expunge",
+   "pos": "verb",
+   "definition": "To erase or remove completely"
+  },
+  {
+   "word": "extemporaneous",
+   "pos": "adjective",
+   "definition": "Spoken or done without preparation"
+  },
+  {
+   "word": "extirpate",
+   "pos": "verb",
+   "definition": "To destroy completely; root out"
+  },
+  {
+   "word": "facetious",
+   "pos": "adjective",
+   "definition": "Treating serious matters with flippant humour"
+  },
+  {
+   "word": "factotum",
+   "pos": "noun",
+   "definition": "An employee who does all kinds of work"
+  },
+  {
+   "word": "fallacious",
+   "pos": "adjective",
+   "definition": "Based on a mistaken belief"
+  },
+  {
+   "word": "fastidious",
+   "pos": "adjective",
+   "definition": "Very attentive to accuracy and detail; fussy"
+  },
+  {
+   "word": "fatuous",
+   "pos": "adjective",
+   "definition": "Silly and pointless"
+  },
+  {
+   "word": "fecund",
+   "pos": "adjective",
+   "definition": "Fertile; intellectually productive"
+  },
+  {
+   "word": "feckless",
+   "pos": "adjective",
+   "definition": "Lacking initiative or strength of character"
+  },
+  {
+   "word": "felicitous",
+   "pos": "adjective",
+   "definition": "Well chosen; apt"
+  },
+  {
+   "word": "fervid",
+   "pos": "adjective",
+   "definition": "Intensely enthusiastic, sometimes excessively"
+  },
+  {
+   "word": "fetid",
+   "pos": "adjective",
+   "definition": "Smelling extremely unpleasant"
+  },
+  {
+   "word": "fetter",
+   "pos": "verb",
+   "definition": "To restrain or restrict"
+  },
+  {
+   "word": "fiat",
+   "pos": "noun",
+   "definition": "An authoritative decree"
+  },
+  {
+   "word": "flagrant",
+   "pos": "adjective",
+   "definition": "Conspicuously offensive"
+  },
+  {
+   "word": "florid",
+   "pos": "adjective",
+   "definition": "Elaborately ornate; also, flushed red"
+  },
+  {
+   "word": "foible",
+   "pos": "noun",
+   "definition": "A minor weakness or eccentricity"
+  },
+  {
+   "word": "foment",
+   "pos": "verb",
+   "definition": "To stir up trouble or rebellion"
+  },
+  {
+   "word": "forbearance",
+   "pos": "noun",
+   "definition": "Patient self-control and restraint"
+  },
+  {
+   "word": "fortuitous",
+   "pos": "adjective",
+   "definition": "Happening by chance, often luckily"
+  },
+  {
+   "word": "fractious",
+   "pos": "adjective",
+   "definition": "Irritable and quarrelsome; unruly"
+  },
+  {
+   "word": "froward",
+   "pos": "adjective",
+   "definition": "Difficult to deal with; contrary"
+  },
+  {
+   "word": "fugacious",
+   "pos": "adjective",
+   "definition": "Fleeting; tending to disappear"
+  },
+  {
+   "word": "fulminate",
+   "pos": "verb",
+   "definition": "To protest strongly and loudly"
+  },
+  {
+   "word": "fulsome",
+   "pos": "adjective",
+   "definition": "Excessively complimentary or flattering"
+  },
+  {
+   "word": "furtive",
+   "pos": "adjective",
+   "definition": "Sly and secretive"
+  },
+  {
+   "word": "fustian",
+   "pos": "noun",
+   "definition": "Pompous or pretentious language"
+  },
+  {
+   "word": "gainsay",
+   "pos": "verb",
+   "definition": "To deny or contradict"
+  },
+  {
+   "word": "gambit",
+   "pos": "noun",
+   "definition": "An opening move made to gain an advantage"
+  },
+  {
+   "word": "garrulous",
+   "pos": "adjective",
+   "definition": "Excessively talkative"
+  },
+  {
+   "word": "gauche",
+   "pos": "adjective",
+   "definition": "Socially awkward"
+  },
+  {
+   "word": "germane",
+   "pos": "adjective",
+   "definition": "Relevant to the subject"
+  },
+  {
+   "word": "gewgaw",
+   "pos": "noun",
+   "definition": "A showy but worthless trinket"
+  },
+  {
+   "word": "gibe",
+   "pos": "noun",
+   "definition": "An insulting or mocking remark"
+  },
+  {
+   "word": "glib",
+   "pos": "adjective",
+   "definition": "Fluent but insincere and shallow"
+  },
+  {
+   "word": "gloaming",
+   "pos": "noun",
+   "definition": "Twilight; dusk"
+  },
+  {
+   "word": "gossamer",
+   "pos": "adjective",
+   "definition": "Very light, thin and delicate"
+  },
+  {
+   "word": "grandiloquent",
+   "pos": "adjective",
+   "definition": "Pompous or extravagant in language"
+  },
+  {
+   "word": "gregarious",
+   "pos": "adjective",
+   "definition": "Fond of company; sociable"
+  },
+  {
+   "word": "guile",
+   "pos": "noun",
+   "definition": "Sly or cunning intelligence"
+  },
+  {
+   "word": "gustatory",
+   "pos": "adjective",
+   "definition": "Relating to the sense of taste"
+  },
+  {
+   "word": "halcyon",
+   "pos": "adjective",
+   "definition": "Idyllically happy and peaceful, as in times past"
+  },
+  {
+   "word": "hapless",
+   "pos": "adjective",
+   "definition": "Unfortunate"
+  },
+  {
+   "word": "harangue",
+   "pos": "noun",
+   "definition": "A lengthy, aggressive speech"
+  },
+  {
+   "word": "harbinger",
+   "pos": "noun",
+   "definition": "A sign of what is to come"
+  },
+  {
+   "word": "hauteur",
+   "pos": "noun",
+   "definition": "Haughtiness of manner"
+  },
+  {
+   "word": "hector",
+   "pos": "verb",
+   "definition": "To talk to in a bullying way"
+  },
+  {
+   "word": "hegemony",
+   "pos": "noun",
+   "definition": "Dominance of one group over others"
+  },
+  {
+   "word": "heterodox",
+   "pos": "adjective",
+   "definition": "Not conforming to accepted standards or beliefs"
+  },
+  {
+   "word": "hiatus",
+   "pos": "noun",
+   "definition": "A pause or gap in a sequence"
+  },
+  {
+   "word": "hidebound",
+   "pos": "adjective",
+   "definition": "Unwilling to change because of convention"
+  },
+  {
+   "word": "hirsute",
+   "pos": "adjective",
+   "definition": "Hairy"
+  },
+  {
+   "word": "histrionic",
+   "pos": "adjective",
+   "definition": "Overly theatrical or dramatic"
+  },
+  {
+   "word": "homily",
+   "pos": "noun",
+   "definition": "A moralizing lecture"
+  },
+  {
+   "word": "hubris",
+   "pos": "noun",
+   "definition": "Excessive pride or self-confidence"
+  },
+  {
+   "word": "hyperbole",
+   "pos": "noun",
+   "definition": "Deliberate exaggeration"
+  },
+  {
+   "word": "iconoclast",
+   "pos": "noun",
+   "definition": "One who attacks cherished beliefs or institutions"
+  },
+  {
+   "word": "idiosyncrasy",
+   "pos": "noun",
+   "definition": "A peculiar habit or way of behaving"
+  },
+  {
+   "word": "idyll",
+   "pos": "noun",
+   "definition": "An extremely happy, peaceful or picturesque scene"
+  },
+  {
+   "word": "ignominy",
+   "pos": "noun",
+   "definition": "Public shame or disgrace"
+  },
+  {
+   "word": "imbroglio",
+   "pos": "noun",
+   "definition": "A complicated, embarrassing situation"
+  },
+  {
+   "word": "immutable",
+   "pos": "adjective",
+   "definition": "Unchanging over time"
+  },
+  {
+   "word": "impasse",
+   "pos": "noun",
+   "definition": "A situation in which no progress is possible"
+  },
+  {
+   "word": "impecunious",
+   "pos": "adjective",
+   "definition": "Having little or no money"
+  },
+  {
+   "word": "imperious",
+   "pos": "adjective",
+   "definition": "Arrogant and domineering"
+  },
+  {
+   "word": "impervious",
+   "pos": "adjective",
+   "definition": "Unable to be affected; impenetrable"
+  },
+  {
+   "word": "impetuous",
+   "pos": "adjective",
+   "definition": "Acting quickly without thought"
+  },
+  {
+   "word": "implacable",
+   "pos": "adjective",
+   "definition": "Unable to be appeased"
+  },
+  {
+   "word": "importune",
+   "pos": "verb",
+   "definition": "To ask persistently and annoyingly"
+  },
+  {
+   "word": "imprecation",
+   "pos": "noun",
+   "definition": "A spoken curse"
+  },
+  {
+   "word": "impudent",
+   "pos": "adjective",
+   "definition": "Disrespectfully bold"
+  },
+  {
+   "word": "impugn",
+   "pos": "verb",
+   "definition": "To dispute the truth or honesty of"
+  },
+  {
+   "word": "inchoate",
+   "pos": "adjective",
+   "definition": "Just begun and not fully formed"
+  },
+  {
+   "word": "incipient",
+   "pos": "adjective",
+   "definition": "In an initial stage; beginning to happen"
+  },
+  {
+   "word": "incorrigible",
+   "pos": "adjective",
+   "definition": "Not able to be corrected or reformed"
+  },
+  {
+   "word": "indefatigable",
+   "pos": "adjective",
+   "definition": "Persisting tirelessly"
+  },
+  {
+   "word": "indolent",
+   "pos": "adjective",
+   "definition": "Wanting to avoid activity; lazy"
+  },
+  {
+   "word": "ineffable",
+   "pos": "adjective",
+   "definition": "Too great to be expressed in words"
+  },
+  {
+   "word": "ineluctable",
+   "pos": "adjective",
+   "definition": "Unable to be resisted or avoided"
+  },
+  {
+   "word": "inexorable",
+   "pos": "adjective",
+   "definition": "Impossible to stop or prevent"
+  },
+  {
+   "word": "ingenuous",
+   "pos": "adjective",
+   "definition": "Innocent and unsuspecting"
+  },
+  {
+   "word": "inglenook",
+   "pos": "noun",
+   "definition": "A cosy space beside a large fireplace"
+  },
+  {
+   "word": "inimical",
+   "pos": "adjective",
+   "definition": "Tending to obstruct or harm; hostile"
+  },
+  {
+   "word": "iniquity",
+   "pos": "noun",
+   "definition": "Grossly immoral behaviour"
+  },
+  {
+   "word": "innocuous",
+   "pos": "adjective",
+   "definition": "Not harmful or offensive"
+  },
+  {
+   "word": "insidious",
+   "pos": "adjective",
+   "definition": "Proceeding in a subtle way, but with harmful effects"
+  },
+  {
+   "word": "insipid",
+   "pos": "adjective",
+   "definition": "Lacking flavour or interest"
+  },
+  {
+   "word": "insouciant",
+   "pos": "adjective",
+   "definition": "Casually unconcerned"
+  },
+  {
+   "word": "intransigent",
+   "pos": "adjective",
+   "definition": "Unwilling to change one's views"
+  },
+  {
+   "word": "inure",
+   "pos": "verb",
+   "definition": "To accustom to something unpleasant"
+  },
+  {
+   "word": "invective",
+   "pos": "noun",
+   "definition": "Insulting, abusive language"
+  },
+  {
+   "word": "inveigle",
+   "pos": "verb",
+   "definition": "To persuade by deception or flattery"
+  },
+  {
+   "word": "inveterate",
+   "pos": "adjective",
+   "definition": "Having a long-established habit"
+  },
+  {
+   "word": "irascible",
+   "pos": "adjective",
+   "definition": "Easily made angry"
+  },
+  {
+   "word": "itinerant",
+   "pos": "adjective",
+   "definition": "Travelling from place to place"
+  },
+  {
+   "word": "jejune",
+   "pos": "adjective",
+   "definition": "Naive and simplistic; also, dull"
+  },
+  {
+   "word": "jettison",
+   "pos": "verb",
+   "definition": "To throw away or abandon"
+  },
+  {
+   "word": "jocose",
+   "pos": "adjective",
+   "definition": "Playful or humorous"
+  },
+  {
+   "word": "jocund",
+   "pos": "adjective",
+   "definition": "Cheerful and lighthearted"
+  },
+  {
+   "word": "juxtapose",
+   "pos": "verb",
+   "definition": "To place side by side for contrast"
+  },
+  {
+   "word": "labyrinthine",
+   "pos": "adjective",
+   "definition": "Intricate and confusing, like a maze"
+  },
+  {
+   "word": "lachrymose",
+   "pos": "adjective",
+   "definition": "Tearful; inclined to weep"
+  },
+  {
+   "word": "laconic",
+   "pos": "adjective",
+   "definition": "Using very few words"
+  },
+  {
+   "word": "lambent",
+   "pos": "adjective",
+   "definition": "Softly glowing or flickering"
+  },
+  {
+   "word": "lampoon",
+   "pos": "verb",
+   "definition": "To publicly ridicule through satire"
+  },
+  {
+   "word": "languid",
+   "pos": "adjective",
+   "definition": "Relaxed and unhurried; lacking energy"
+  },
+  {
+   "word": "largesse",
+   "pos": "noun",
+   "definition": "Generosity in giving"
+  },
+  {
+   "word": "lassitude",
+   "pos": "noun",
+   "definition": "Physical or mental weariness"
+  },
+  {
+   "word": "legerdemain",
+   "pos": "noun",
+   "definition": "Sleight of hand; deceptive skill"
+  },
+  {
+   "word": "levity",
+   "pos": "noun",
+   "definition": "Humour or frivolity, especially when out of place"
+  },
+  {
+   "word": "libertine",
+   "pos": "noun",
+   "definition": "A person who freely indulges in sensual pleasures"
+  },
+  {
+   "word": "licentious",
+   "pos": "adjective",
+   "definition": "Promiscuous and unprincipled"
+  },
+  {
+   "word": "liminal",
+   "pos": "adjective",
+   "definition": "At a boundary or threshold; in between"
+  },
+  {
+   "word": "limpid",
+   "pos": "adjective",
+   "definition": "Clear and transparent"
+  },
+  {
+   "word": "lissome",
+   "pos": "adjective",
+   "definition": "Slim, supple and graceful"
+  },
+  {
+   "word": "litany",
+   "pos": "noun",
+   "definition": "A tedious recital or repetitive series"
+  },
+  {
+   "word": "loquacious",
+   "pos": "adjective",
+   "definition": "Tending to talk a great deal"
+  },
+  {
+   "word": "lubricious",
+   "pos": "adjective",
+   "definition": "Lewd; also, smooth and slippery"
+  },
+  {
+   "word": "lucre",
+   "pos": "noun",
+   "definition": "Money, especially gained dishonourably"
+  },
+  {
+   "word": "lucubration",
+   "pos": "noun",
+   "definition": "Laborious study, especially at night"
+  },
+  {
+   "word": "lugubrious",
+   "pos": "adjective",
+   "definition": "Looking or sounding sad and dismal"
+  },
+  {
+   "word": "lurid",
+   "pos": "adjective",
+   "definition": "Vivid in a shocking or garish way"
+  },
+  {
+   "word": "machination",
+   "pos": "noun",
+   "definition": "A plot or scheme"
+  },
+  {
+   "word": "magnanimous",
+   "pos": "adjective",
+   "definition": "Generous or forgiving, especially to a rival"
+  },
+  {
+   "word": "malaise",
+   "pos": "noun",
+   "definition": "A general feeling of unease or discomfort"
+  },
+  {
+   "word": "malapropism",
+   "pos": "noun",
+   "definition": "The mistaken use of a word in place of a similar-sounding one"
+  },
+  {
+   "word": "malediction",
+   "pos": "noun",
+   "definition": "A curse"
+  },
+  {
+   "word": "malevolent",
+   "pos": "adjective",
+   "definition": "Wishing harm on others"
+  },
+  {
+   "word": "malinger",
+   "pos": "verb",
+   "definition": "To pretend illness to avoid duty"
+  },
+  {
+   "word": "martinet",
+   "pos": "noun",
+   "definition": "A strict disciplinarian"
+  },
+  {
+   "word": "maudlin",
+   "pos": "adjective",
+   "definition": "Self-pityingly or tearfully sentimental"
+  },
+  {
+   "word": "mawkish",
+   "pos": "adjective",
+   "definition": "Sentimental in an exaggerated way"
+  },
+  {
+   "word": "mellifluous",
+   "pos": "adjective",
+   "definition": "Sweet or musical; pleasant to hear"
+  },
+  {
+   "word": "mendacious",
+   "pos": "adjective",
+   "definition": "Not telling the truth; lying"
+  },
+  {
+   "word": "mendicant",
+   "pos": "noun",
+   "definition": "A beggar"
+  },
+  {
+   "word": "mercurial",
+   "pos": "adjective",
+   "definition": "Subject to sudden changes of mood"
+  },
+  {
+   "word": "meretricious",
+   "pos": "adjective",
+   "definition": "Showily attractive but of little value"
+  },
+  {
+   "word": "miasma",
+   "pos": "noun",
+   "definition": "An unpleasant or unhealthy atmosphere"
+  },
+  {
+   "word": "milieu",
+   "pos": "noun",
+   "definition": "A person's social environment"
+  },
+  {
+   "word": "minatory",
+   "pos": "adjective",
+   "definition": "Expressing a threat"
+  },
+  {
+   "word": "misanthrope",
+   "pos": "noun",
+   "definition": "A person who dislikes humankind"
+  },
+  {
+   "word": "modicum",
+   "pos": "noun",
+   "definition": "A small quantity"
+  },
+  {
+   "word": "mollify",
+   "pos": "verb",
+   "definition": "To calm someone's anger"
+  },
+  {
+   "word": "mordant",
+   "pos": "adjective",
+   "definition": "Sharply sarcastic"
+  },
+  {
+   "word": "moribund",
+   "pos": "adjective",
+   "definition": "At the point of death; in terminal decline"
+  },
+  {
+   "word": "morose",
+   "pos": "adjective",
+   "definition": "Sullen and ill-tempered"
+  },
+  {
+   "word": "mumpsimus",
+   "pos": "noun",
+   "definition": "A stubborn adherence to error despite correction"
+  },
+  {
+   "word": "munificent",
+   "pos": "adjective",
+   "definition": "Very generous"
+  },
+  {
+   "word": "nadir",
+   "pos": "noun",
+   "definition": "The lowest point"
+  },
+  {
+   "word": "nascent",
+   "pos": "adjective",
+   "definition": "Just beginning to develop"
+  },
+  {
+   "word": "nebulous",
+   "pos": "adjective",
+   "definition": "Unclear, vague or ill-defined"
+  },
+  {
+   "word": "nefarious",
+   "pos": "adjective",
+   "definition": "Wicked or criminal"
+  },
+  {
+   "word": "neophyte",
+   "pos": "noun",
+   "definition": "A beginner"
+  },
+  {
+   "word": "noisome",
+   "pos": "adjective",
+   "definition": "Disgusting, especially in smell; harmful"
+  },
+  {
+   "word": "nostrum",
+   "pos": "noun",
+   "definition": "A favourite but ineffective remedy"
+  },
+  {
+   "word": "nugatory",
+   "pos": "adjective",
+   "definition": "Of no value or importance"
+  },
+  {
+   "word": "numinous",
+   "pos": "adjective",
+   "definition": "Having a strong spiritual or divine quality"
+  },
+  {
+   "word": "obdurate",
+   "pos": "adjective",
+   "definition": "Stubbornly refusing to change"
+  },
+  {
+   "word": "obfuscate",
+   "pos": "verb",
+   "definition": "To make obscure or unclear"
+  },
+  {
+   "word": "obloquy",
+   "pos": "noun",
+   "definition": "Strong public criticism; disgrace"
+  },
+  {
+   "word": "obsequious",
+   "pos": "adjective",
+   "definition": "Excessively eager to please or obey"
+  },
+  {
+   "word": "obstreperous",
+   "pos": "adjective",
+   "definition": "Noisy and difficult to control"
+  },
+  {
+   "word": "obtuse",
+   "pos": "adjective",
+   "definition": "Slow to understand"
+  },
+  {
+   "word": "obviate",
+   "pos": "verb",
+   "definition": "To remove a need or difficulty"
+  },
+  {
+   "word": "odious",
+   "pos": "adjective",
+   "definition": "Extremely unpleasant; repulsive"
+  },
+  {
+   "word": "officious",
+   "pos": "adjective",
+   "definition": "Asserting authority in an annoyingly interfering way"
+  },
+  {
+   "word": "onerous",
+   "pos": "adjective",
+   "definition": "Involving heavy effort; burdensome"
+  },
+  {
+   "word": "opprobrium",
+   "pos": "noun",
+   "definition": "Harsh public criticism"
+  },
+  {
+   "word": "opulent",
+   "pos": "adjective",
+   "definition": "Ostentatiously rich and luxurious"
+  },
+  {
+   "word": "ossify",
+   "pos": "verb",
+   "definition": "To become rigid and unable to change"
+  },
+  {
+   "word": "ostensible",
+   "pos": "adjective",
+   "definition": "Stated or appearing true, but not necessarily so"
+  },
+  {
+   "word": "ostentatious",
+   "pos": "adjective",
+   "definition": "Designed to impress; showy"
+  },
+  {
+   "word": "oubliette",
+   "pos": "noun",
+   "definition": "A secret dungeon reached through a trapdoor"
+  },
+  {
+   "word": "palaver",
+   "pos": "noun",
+   "definition": "Prolonged, idle fuss or talk"
+  },
+  {
+   "word": "palimpsest",
+   "pos": "noun",
+   "definition": "A manuscript written over an earlier, partly erased text"
+  },
+  {
+   "word": "palliate",
+   "pos": "verb",
+   "definition": "To make less severe without curing"
+  },
+  {
+   "word": "pallid",
+   "pos": "adjective",
+   "definition": "Pale; lacking vigour"
+  },
+  {
+   "word": "panacea",
+   "pos": "noun",
+   "definition": "A cure for all ills"
+  },
+  {
+   "word": "panache",
+   "pos": "noun",
+   "definition": "Flamboyant confidence of style"
+  },
+  {
+   "word": "panegyric",
+   "pos": "noun",
+   "definition": "A public speech or text in praise of someone"
+  },
+  {
+   "word": "paragon",
+   "pos": "noun",
+   "definition": "A model of excellence"
+  },
+  {
+   "word": "pariah",
+   "pos": "noun",
+   "definition": "An outcast"
+  },
+  {
+   "word": "parsimonious",
+   "pos": "adjective",
+   "definition": "Unwilling to spend money; stingy"
+  },
+  {
+   "word": "pastiche",
+   "pos": "noun",
+   "definition": "A work imitating the style of another"
+  },
+  {
+   "word": "paucity",
+   "pos": "noun",
+   "definition": "A scarcity"
+  },
+  {
+   "word": "peccadillo",
+   "pos": "noun",
+   "definition": "A small, relatively unimportant offence"
+  },
+  {
+   "word": "pedantic",
+   "pos": "adjective",
+   "definition": "Excessively concerned with minor details or rules"
+  },
+  {
+   "word": "pellucid",
+   "pos": "adjective",
+   "definition": "Translucently clear; easy to understand"
+  },
+  {
+   "word": "penchant",
+   "pos": "noun",
+   "definition": "A strong liking or inclination"
+  },
+  {
+   "word": "penumbra",
+   "pos": "noun",
+   "definition": "A partly shaded outer region; a borderland"
+  },
+  {
+   "word": "penurious",
+   "pos": "adjective",
+   "definition": "Extremely poor; also, stingy"
+  },
+  {
+   "word": "perambulate",
+   "pos": "verb",
+   "definition": "To walk or travel through"
+  },
+  {
+   "word": "peregrination",
+   "pos": "noun",
+   "definition": "A long, meandering journey"
+  },
+  {
+   "word": "perfidious",
+   "pos": "adjective",
+   "definition": "Deceitful and untrustworthy"
+  },
+  {
+   "word": "perfunctory",
+   "pos": "adjective",
+   "definition": "Done with minimal effort or reflection"
+  },
+  {
+   "word": "peripatetic",
+   "pos": "adjective",
+   "definition": "Travelling from place to place"
+  },
+  {
+   "word": "pernicious",
+   "pos": "adjective",
+   "definition": "Having a harmful effect, often gradually"
+  },
+  {
+   "word": "perspicacious",
+   "pos": "adjective",
+   "definition": "Having keen insight and understanding"
+  },
+  {
+   "word": "pertinacious",
+   "pos": "adjective",
+   "definition": "Holding firmly to an opinion or course of action"
+  },
+  {
+   "word": "petrichor",
+   "pos": "noun",
+   "definition": "The pleasant smell of rain on dry earth"
+  },
+  {
+   "word": "petulant",
+   "pos": "adjective",
+   "definition": "Childishly sulky or bad-tempered"
+  },
+  {
+   "word": "phlegmatic",
+   "pos": "adjective",
+   "definition": "Calm and unemotional"
+  },
+  {
+   "word": "picaresque",
+   "pos": "adjective",
+   "definition": "Relating to the adventures of a likeable rogue"
+  },
+  {
+   "word": "piquant",
+   "pos": "adjective",
+   "definition": "Pleasantly sharp in taste; stimulating"
+  },
+  {
+   "word": "pithy",
+   "pos": "adjective",
+   "definition": "Concise and full of meaning"
+  },
+  {
+   "word": "placate",
+   "pos": "verb",
+   "definition": "To make less angry"
+  },
+  {
+   "word": "platitude",
+   "pos": "noun",
+   "definition": "A remark used too often to be interesting"
+  },
+  {
+   "word": "plaudit",
+   "pos": "noun",
+   "definition": "An expression of praise"
+  },
+  {
+   "word": "plethora",
+   "pos": "noun",
+   "definition": "An excess"
+  },
+  {
+   "word": "poignant",
+   "pos": "adjective",
+   "definition": "Evoking a keen sense of sadness or regret"
+  },
+  {
+   "word": "polemic",
+   "pos": "noun",
+   "definition": "A strong verbal or written attack"
+  },
+  {
+   "word": "portent",
+   "pos": "noun",
+   "definition": "A sign that something momentous will happen"
+  },
+  {
+   "word": "prattle",
+   "pos": "verb",
+   "definition": "To talk at length in a foolish way"
+  },
+  {
+   "word": "precocious",
+   "pos": "adjective",
+   "definition": "Having developed abilities at an unusually early age"
+  },
+  {
+   "word": "predilection",
+   "pos": "noun",
+   "definition": "A preference or special liking"
+  },
+  {
+   "word": "prescient",
+   "pos": "adjective",
+   "definition": "Having knowledge of events before they happen"
+  },
+  {
+   "word": "prevaricate",
+   "pos": "verb",
+   "definition": "To speak evasively"
+  },
+  {
+   "word": "probity",
+   "pos": "noun",
+   "definition": "Strong moral principles; integrity"
+  },
+  {
+   "word": "proclivity",
+   "pos": "noun",
+   "definition": "A natural tendency"
+  },
+  {
+   "word": "prodigal",
+   "pos": "adjective",
+   "definition": "Spending money or resources recklessly"
+  },
+  {
+   "word": "prodigious",
+   "pos": "adjective",
+   "definition": "Remarkably great in size or degree"
+  },
+  {
+   "word": "profligate",
+   "pos": "adjective",
+   "definition": "Recklessly extravagant or wasteful"
+  },
+  {
+   "word": "prolix",
+   "pos": "adjective",
+   "definition": "Tediously lengthy"
+  },
+  {
+   "word": "propitious",
+   "pos": "adjective",
+   "definition": "Giving a good chance of success"
+  },
+  {
+   "word": "prosaic",
+   "pos": "adjective",
+   "definition": "Commonplace; lacking poetic beauty"
+  },
+  {
+   "word": "proscribe",
+   "pos": "verb",
+   "definition": "To forbid"
+  },
+  {
+   "word": "protean",
+   "pos": "adjective",
+   "definition": "Able to change frequently or easily"
+  },
+  {
+   "word": "puerile",
+   "pos": "adjective",
+   "definition": "Childishly silly"
+  },
+  {
+   "word": "pugnacious",
+   "pos": "adjective",
+   "definition": "Eager or quick to argue or fight"
+  },
+  {
+   "word": "pulchritude",
+   "pos": "noun",
+   "definition": "Physical beauty"
+  },
+  {
+   "word": "punctilious",
+   "pos": "adjective",
+   "definition": "Showing great attention to correct behaviour"
+  },
+  {
+   "word": "pusillanimous",
+   "pos": "adjective",
+   "definition": "Showing a lack of courage"
+  },
+  {
+   "word": "quagmire",
+   "pos": "noun",
+   "definition": "An awkward, complex or hazardous situation"
+  },
+  {
+   "word": "qualm",
+   "pos": "noun",
+   "definition": "An uneasy feeling of doubt"
+  },
+  {
+   "word": "quiddity",
+   "pos": "noun",
+   "definition": "The inherent nature of a thing; a quibble"
+  },
+  {
+   "word": "querulous",
+   "pos": "adjective",
+   "definition": "Complaining in a whining manner"
+  },
+  {
+   "word": "quiescent",
+   "pos": "adjective",
+   "definition": "In a state of inactivity"
+  },
+  {
+   "word": "quixotic",
+   "pos": "adjective",
+   "definition": "Exceedingly idealistic; unrealistic"
+  },
+  {
+   "word": "quotidian",
+   "pos": "adjective",
+   "definition": "Of or occurring every day; ordinary"
+  },
+  {
+   "word": "raconteur",
+   "pos": "noun",
+   "definition": "A skilled teller of stories"
+  },
+  {
+   "word": "raillery",
+   "pos": "noun",
+   "definition": "Good-humoured teasing"
+  },
+  {
+   "word": "rancour",
+   "pos": "noun",
+   "definition": "Bitterness or resentfulness"
+  },
+  {
+   "word": "rapacious",
+   "pos": "adjective",
+   "definition": "Aggressively greedy"
+  },
+  {
+   "word": "rapprochement",
+   "pos": "noun",
+   "definition": "A re-establishment of friendly relations"
+  },
+  {
+   "word": "rarefied",
+   "pos": "adjective",
+   "definition": "Esoteric; distant from ordinary life"
+  },
+  {
+   "word": "recalcitrant",
+   "pos": "adjective",
+   "definition": "Uncooperative toward authority"
+  },
+  {
+   "word": "recondite",
+   "pos": "adjective",
+   "definition": "Little known; abstruse"
+  },
+  {
+   "word": "redolent",
+   "pos": "adjective",
+   "definition": "Strongly reminiscent of; fragrant"
+  },
+  {
+   "word": "redoubtable",
+   "pos": "adjective",
+   "definition": "Formidable, especially as an opponent"
+  },
+  {
+   "word": "refulgent",
+   "pos": "adjective",
+   "definition": "Shining brightly"
+  },
+  {
+   "word": "refractory",
+   "pos": "adjective",
+   "definition": "Stubborn or unmanageable"
+  },
+  {
+   "word": "remonstrate",
+   "pos": "verb",
+   "definition": "To make a forcefully reproachful protest"
+  },
+  {
+   "word": "replete",
+   "pos": "adjective",
+   "definition": "Filled or well supplied"
+  },
+  {
+   "word": "reprobate",
+   "pos": "noun",
+   "definition": "An unprincipled person"
+  },
+  {
+   "word": "repudiate",
+   "pos": "verb",
+   "definition": "To refuse to accept; to reject"
+  },
+  {
+   "word": "requite",
+   "pos": "verb",
+   "definition": "To return a favour or avenge a wrong"
+  },
+  {
+   "word": "rescind",
+   "pos": "verb",
+   "definition": "To revoke or cancel"
+  },
+  {
+   "word": "reticent",
+   "pos": "adjective",
+   "definition": "Not revealing one's thoughts readily"
+  },
+  {
+   "word": "reverie",
+   "pos": "noun",
+   "definition": "A state of pleasant daydreaming"
+  },
+  {
+   "word": "ribald",
+   "pos": "adjective",
+   "definition": "Referring to sex in an amusingly rude way"
+  },
+  {
+   "word": "rococo",
+   "pos": "adjective",
+   "definition": "Extravagantly ornate"
+  },
+  {
+   "word": "rubicund",
+   "pos": "adjective",
+   "definition": "Ruddy; having a healthy red colour"
+  },
+  {
+   "word": "ruminate",
+   "pos": "verb",
+   "definition": "To think deeply about something"
+  },
+  {
+   "word": "ruse",
+   "pos": "noun",
+   "definition": "An action intended to deceive"
+  },
+  {
+   "word": "sacrosanct",
+   "pos": "adjective",
+   "definition": "Too important to be interfered with"
+  },
+  {
+   "word": "sagacious",
+   "pos": "adjective",
+   "definition": "Having keen judgment; wise"
+  },
+  {
+   "word": "salacious",
+   "pos": "adjective",
+   "definition": "Having undue interest in sexual matters"
+  },
+  {
+   "word": "salient",
+   "pos": "adjective",
+   "definition": "Most noticeable or important"
+  },
+  {
+   "word": "salubrious",
+   "pos": "adjective",
+   "definition": "Health-giving; pleasant"
+  },
+  {
+   "word": "sanguine",
+   "pos": "adjective",
+   "definition": "Optimistic, especially in a bad situation"
+  },
+  {
+   "word": "sardonic",
+   "pos": "adjective",
+   "definition": "Grimly mocking or cynical"
+  },
+  {
+   "word": "satiate",
+   "pos": "verb",
+   "definition": "To satisfy fully"
+  },
+  {
+   "word": "saturnine",
+   "pos": "adjective",
+   "definition": "Slow and gloomy; sullen"
+  },
+  {
+   "word": "scintilla",
+   "pos": "noun",
+   "definition": "A tiny trace"
+  },
+  {
+   "word": "scurrilous",
+   "pos": "adjective",
+   "definition": "Making scandalous claims to damage a reputation"
+  },
+  {
+   "word": "sedulous",
+   "pos": "adjective",
+   "definition": "Showing dedication and diligence"
+  },
+  {
+   "word": "sempiternal",
+   "pos": "adjective",
+   "definition": "Eternal and unchanging"
+  },
+  {
+   "word": "sententious",
+   "pos": "adjective",
+   "definition": "Given to pompous moralizing"
+  },
+  {
+   "word": "seraphic",
+   "pos": "adjective",
+   "definition": "Angelically serene"
+  },
+  {
+   "word": "serendipity",
+   "pos": "noun",
+   "definition": "Finding good things by chance"
+  },
+  {
+   "word": "servile",
+   "pos": "adjective",
+   "definition": "Excessively willing to serve or please"
+  },
+  {
+   "word": "sesquipedalian",
+   "pos": "adjective",
+   "definition": "Characterized by long words"
+  },
+  {
+   "word": "shibboleth",
+   "pos": "noun",
+   "definition": "A custom or phrase that distinguishes a group"
+  },
+  {
+   "word": "sibilant",
+   "pos": "adjective",
+   "definition": "Making a hissing sound"
+  },
+  {
+   "word": "simulacrum",
+   "pos": "noun",
+   "definition": "An image or imitation, often unsatisfactory"
+  },
+  {
+   "word": "sinecure",
+   "pos": "noun",
+   "definition": "A paid position requiring little work"
+  },
+  {
+   "word": "sinuous",
+   "pos": "adjective",
+   "definition": "Having many curves and turns"
+  },
+  {
+   "word": "sobriquet",
+   "pos": "noun",
+   "definition": "A nickname"
+  },
+  {
+   "word": "solecism",
+   "pos": "noun",
+   "definition": "A grammatical mistake; a breach of etiquette"
+  },
+  {
+   "word": "solicitous",
+   "pos": "adjective",
+   "definition": "Showing interest or concern"
+  },
+  {
+   "word": "somnolent",
+   "pos": "adjective",
+   "definition": "Sleepy; drowsy"
+  },
+  {
+   "word": "sonorous",
+   "pos": "adjective",
+   "definition": "Deep and full in sound"
+  },
+  {
+   "word": "sophistry",
+   "pos": "noun",
+   "definition": "Clever but false argument meant to deceive"
+  },
+  {
+   "word": "soporific",
+   "pos": "adjective",
+   "definition": "Tending to induce sleep"
+  },
+  {
+   "word": "spurious",
+   "pos": "adjective",
+   "definition": "False, though seeming genuine"
+  },
+  {
+   "word": "stentorian",
+   "pos": "adjective",
+   "definition": "Very loud and powerful, of a voice"
+  },
+  {
+   "word": "stolid",
+   "pos": "adjective",
+   "definition": "Calm and showing little emotion"
+  },
+  {
+   "word": "stratagem",
+   "pos": "noun",
+   "definition": "A plan to outwit an opponent"
+  },
+  {
+   "word": "stultify",
+   "pos": "verb",
+   "definition": "To make feel dull or stifled"
+  },
+  {
+   "word": "stygian",
+   "pos": "adjective",
+   "definition": "Extremely dark and gloomy"
+  },
+  {
+   "word": "subterfuge",
+   "pos": "noun",
+   "definition": "Deceit used to achieve a goal"
+  },
+  {
+   "word": "supercilious",
+   "pos": "adjective",
+   "definition": "Behaving as if superior to others"
+  },
+  {
+   "word": "surfeit",
+   "pos": "noun",
+   "definition": "An excessive amount"
+  },
+  {
+   "word": "surreptitious",
+   "pos": "adjective",
+   "definition": "Done secretly"
+  },
+  {
+   "word": "susurrus",
+   "pos": "noun",
+   "definition": "A whispering or rustling sound"
+  },
+  {
+   "word": "sybarite",
+   "pos": "noun",
+   "definition": "A person devoted to luxury and pleasure"
+  },
+  {
+   "word": "sycophant",
+   "pos": "noun",
+   "definition": "A person who flatters to gain advantage"
+  },
+  {
+   "word": "syllogism",
+   "pos": "noun",
+   "definition": "Deductive reasoning from two premises"
+  },
+  {
+   "word": "taciturn",
+   "pos": "adjective",
+   "definition": "Reserved; saying little"
+  },
+  {
+   "word": "tantamount",
+   "pos": "adjective",
+   "definition": "Equivalent in seriousness to"
+  },
+  {
+   "word": "tawdry",
+   "pos": "adjective",
+   "definition": "Showy but cheap and of poor quality"
+  },
+  {
+   "word": "temerity",
+   "pos": "noun",
+   "definition": "Excessive confidence or boldness"
+  },
+  {
+   "word": "tenebrous",
+   "pos": "adjective",
+   "definition": "Dark; shadowy"
+  },
+  {
+   "word": "tenuous",
+   "pos": "adjective",
+   "definition": "Very weak or slight"
+  },
+  {
+   "word": "termagant",
+   "pos": "noun",
+   "definition": "A harsh-tempered or overbearing woman"
+  },
+  {
+   "word": "threnody",
+   "pos": "noun",
+   "definition": "A song or poem of lament"
+  },
+  {
+   "word": "timorous",
+   "pos": "adjective",
+   "definition": "Showing nervousness or fear"
+  },
+  {
+   "word": "tintinnabulation",
+   "pos": "noun",
+   "definition": "A ringing or tinkling sound"
+  },
+  {
+   "word": "tirade",
+   "pos": "noun",
+   "definition": "A long, angry speech"
+  },
+  {
+   "word": "torpid",
+   "pos": "adjective",
+   "definition": "Mentally or physically inactive; sluggish"
+  },
+  {
+   "word": "tractable",
+   "pos": "adjective",
+   "definition": "Easy to control or influence"
+  },
+  {
+   "word": "transmogrify",
+   "pos": "verb",
+   "definition": "To transform in a surprising or magical way"
+  },
+  {
+   "word": "trenchant",
+   "pos": "adjective",
+   "definition": "Vigorous and incisive"
+  },
+  {
+   "word": "trepidation",
+   "pos": "noun",
+   "definition": "A feeling of fear about what may happen"
+  },
+  {
+   "word": "truculent",
+   "pos": "adjective",
+   "definition": "Eager to argue or fight; defiant"
+  },
+  {
+   "word": "turgid",
+   "pos": "adjective",
+   "definition": "Tediously pompous; also, swollen"
+  },
+  {
+   "word": "turpitude",
+   "pos": "noun",
+   "definition": "Depravity; wickedness"
+  },
+  {
+   "word": "umbrage",
+   "pos": "noun",
+   "definition": "Offence or annoyance"
+  },
+  {
+   "word": "unctuous",
+   "pos": "adjective",
+   "definition": "Excessively flattering; oily"
+  },
+  {
+   "word": "undulate",
+   "pos": "verb",
+   "definition": "To move with a smooth wavelike motion"
+  },
+  {
+   "word": "upbraid",
+   "pos": "verb",
+   "definition": "To scold"
+  },
+  {
+   "word": "urbane",
+   "pos": "adjective",
+   "definition": "Courteous and refined"
+  },
+  {
+   "word": "usurp",
+   "pos": "verb",
+   "definition": "To take a position or power illegally"
+  },
+  {
+   "word": "vacillate",
+   "pos": "verb",
+   "definition": "To waver between opinions"
+  },
+  {
+   "word": "vacuous",
+   "pos": "adjective",
+   "definition": "Showing a lack of thought or intelligence"
+  },
+  {
+   "word": "vainglorious",
+   "pos": "adjective",
+   "definition": "Excessively proud of oneself"
+  },
+  {
+   "word": "valedictory",
+   "pos": "adjective",
+   "definition": "Serving as a farewell"
+  },
+  {
+   "word": "vapid",
+   "pos": "adjective",
+   "definition": "Offering nothing stimulating; bland"
+  },
+  {
+   "word": "variegated",
+   "pos": "adjective",
+   "definition": "Marked with patches of different colours"
+  },
+  {
+   "word": "vehement",
+   "pos": "adjective",
+   "definition": "Showing strong feeling; forceful"
+  },
+  {
+   "word": "venal",
+   "pos": "adjective",
+   "definition": "Open to bribery; corrupt"
+  },
+  {
+   "word": "venerable",
+   "pos": "adjective",
+   "definition": "Respected because of age or wisdom"
+  },
+  {
+   "word": "verbose",
+   "pos": "adjective",
+   "definition": "Using more words than needed"
+  },
+  {
+   "word": "verdant",
+   "pos": "adjective",
+   "definition": "Green with grass or vegetation"
+  },
+  {
+   "word": "verisimilitude",
+   "pos": "noun",
+   "definition": "The appearance of being true or real"
+  },
+  {
+   "word": "vernacular",
+   "pos": "noun",
+   "definition": "The ordinary language of a region"
+  },
+  {
+   "word": "vertiginous",
+   "pos": "adjective",
+   "definition": "Extremely high or steep; causing dizziness"
+  },
+  {
+   "word": "vicarious",
+   "pos": "adjective",
+   "definition": "Experienced through another person's actions"
+  },
+  {
+   "word": "vicissitude",
+   "pos": "noun",
+   "definition": "A change of circumstances, often unwelcome"
+  },
+  {
+   "word": "vilify",
+   "pos": "verb",
+   "definition": "To speak about in an abusively disparaging way"
+  },
+  {
+   "word": "virago",
+   "pos": "noun",
+   "definition": "A domineering, violent or bad-tempered woman"
+  },
+  {
+   "word": "virulent",
+   "pos": "adjective",
+   "definition": "Extremely severe or harmful; bitterly hostile"
+  },
+  {
+   "word": "viscous",
+   "pos": "adjective",
+   "definition": "Thick and sticky"
+  },
+  {
+   "word": "vitriolic",
+   "pos": "adjective",
+   "definition": "Filled with bitter criticism"
+  },
+  {
+   "word": "vituperate",
+   "pos": "verb",
+   "definition": "To blame or insult in strong language"
+  },
+  {
+   "word": "vivacious",
+   "pos": "adjective",
+   "definition": "Attractively lively"
+  },
+  {
+   "word": "vociferous",
+   "pos": "adjective",
+   "definition": "Expressing opinions loudly and forcefully"
+  },
+  {
+   "word": "volition",
+   "pos": "noun",
+   "definition": "The faculty of using one's will"
+  },
+  {
+   "word": "voluble",
+   "pos": "adjective",
+   "definition": "Speaking fluently and incessantly"
+  },
+  {
+   "word": "voracious",
+   "pos": "adjective",
+   "definition": "Wanting great quantities; insatiable"
+  },
+  {
+   "word": "waggish",
+   "pos": "adjective",
+   "definition": "Humorous in a playful way"
+  },
+  {
+   "word": "wanton",
+   "pos": "adjective",
+   "definition": "Deliberate and unprovoked; also, unrestrained"
+  },
+  {
+   "word": "welter",
+   "pos": "noun",
+   "definition": "A confused mass or jumble"
+  },
+  {
+   "word": "whimsy",
+   "pos": "noun",
+   "definition": "Playfully quaint or fanciful behaviour"
+  },
+  {
+   "word": "widdershins",
+   "pos": "adverb",
+   "definition": "In a direction contrary to the sun's course; anticlockwise"
+  },
+  {
+   "word": "wistful",
+   "pos": "adjective",
+   "definition": "Having a feeling of vague, regretful longing"
+  },
+  {
+   "word": "wizened",
+   "pos": "adjective",
+   "definition": "Shrivelled or wrinkled with age"
+  },
+  {
+   "word": "woebegone",
+   "pos": "adjective",
+   "definition": "Sad or miserable in appearance"
+  },
+  {
+   "word": "wraith",
+   "pos": "noun",
+   "definition": "A ghost or ghostlike image"
+  },
+  {
+   "word": "zealot",
+   "pos": "noun",
+   "definition": "A person who is fanatical in their beliefs"
+  },
+  {
+   "word": "zeitgeist",
+   "pos": "noun",
+   "definition": "The defining spirit or mood of an era"
+  },
+  {
+   "word": "zenith",
+   "pos": "noun",
+   "definition": "The highest point reached"
+  },
+  {
+   "word": "zephyr",
+   "pos": "noun",
+   "definition": "A soft, gentle breeze"
+  }
+ ]
+}
