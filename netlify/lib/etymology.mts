@@ -28,6 +28,26 @@ export function cleanMarkup(text: string): string {
     .trim();
 }
 
+/** American spellings Merriam-Webster uses, and their Canadian forms. Word-Mark writes in Canadian English. */
+const CANADIAN: [RegExp, string][] = [
+  ...["color", "honor", "favor", "labor", "behavior", "humor", "odor", "vapor", "rumor", "neighbor", "harbor", "flavor", "savor", "valor", "vigor", "rancor", "candor", "clamor", "ardor", "fervor", "splendor", "armor", "parlor"]
+    .map((us): [RegExp, string] => [new RegExp(`\\b(${us.slice(0, -2)})or(s|ed|ing|ful|able|ably|less|ite|ites)?\\b`, "gi"), "$1our$2"]),
+  ...["center", "theater", "fiber", "somber", "specter", "caliber", "luster", "saber", "scepter", "meager", "liter"]
+    .map((us): [RegExp, string] => [new RegExp(`\\b(${us.slice(0, -2)})er(s|ed)?\\b`, "gi"), "$1re$2"]),
+  [/\b(gr)ay(s|ed|ish)?\b/gi, "$1ey$2"],
+  [/\b(def|off)ense(s)?\b/gi, "$1ence$2"],
+  [/\b(travel|label|model|cancel|marvel|quarrel|revel|shovel|tunnel|signal|counsel|fuel|duel|level)(ed|ing|er|ers)\b/gi, "$1l$2"],
+  [/\bjewelry\b/gi, "jewellery"],
+  [/\bskeptic/gi, "sceptic"],
+];
+
+/** Converts to Canadian spelling, leaving foreign words (in *italics*) as they are. */
+export function canadianSpelling(text: string): string {
+  return text.split(/(\*[^*]*\*)/).map((part) =>
+    part.startsWith("*") ? part : CANADIAN.reduce((t, [pattern, replacement]) => t.replace(pattern, replacement), part),
+  ).join("");
+}
+
 /** Picks the entry for this word (or a form of it, like "candour" or "defenestrated") and returns its etymology. */
 export function originFromEntries(word: string, entries: unknown[]): string {
   const target = word.toLowerCase();
@@ -36,7 +56,7 @@ export function originFromEntries(word: string, entries: unknown[]): string {
   const entry = found.find((e) => headword(e) === target)
     ?? found.find((e) => (e.meta?.stems ?? []).some((s) => s.toLowerCase() === target));
   const text = entry?.et?.filter(([kind]) => kind === "text").map(([, t]) => String(t)).join(" ") ?? "";
-  const origin = cleanMarkup(text);
+  const origin = canadianSpelling(cleanMarkup(text));
   if (!origin) return "";
   return origin[0].toUpperCase() + origin.slice(1) + (/[.!?]$/.test(origin) ? "" : ".");
 }
