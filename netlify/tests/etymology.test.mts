@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { americanSpellings, canadianSpelling, cleanMarkup, originFromEntries } from "../lib/etymology.mts";
+import { americanSpellings, baseWords, canadianSpelling, cleanMarkup, composeOrigin, findEntry } from "../lib/etymology.mts";
 
 test("turns Merriam-Webster markup into plain text with italics", () => {
   assert.equal(
@@ -10,17 +10,37 @@ test("turns Merriam-Webster markup into plain text with italics", () => {
   assert.equal(cleanMarkup("{et_link|defenestration|defenestration}, back-formation"), "defenestration, back-formation");
 });
 
+const origin = (word: string, entries: unknown[]) => { const f = findEntry(word, entries); return f ? composeOrigin(f) : ""; };
+
 test("finds the entry by headword, or by one of its forms", () => {
   const entries = [
-    { meta: { id: "candor", stems: ["candor", "candour", "candors"] }, et: [["text", "Latin {it}candor{/it}, from {it}candēre{/it} to shine"]] },
+    { meta: { id: "candor", stems: ["candor", "candour", "candors"] }, et: [["text", "Latin {it}candor{/it}, from {it}candēre{/it} to shine"]], date: "1653" },
   ];
-  assert.equal(originFromEntries("candour", entries), "Latin *candor*, from *candēre* to shine.");
-  assert.equal(originFromEntries("candor", entries), "Latin *candor*, from *candēre* to shine.");
+  assert.equal(origin("candour", entries), "Latin *candor*, from *candēre* to shine. First known use: 1653.");
+  assert.equal(origin("candor", entries), "Latin *candor*, from *candēre* to shine. First known use: 1653.");
 });
 
 test("no origin when the word isn't found (Merriam-Webster sends spelling suggestions)", () => {
-  assert.equal(originFromEntries("beazel", ["bezel", "beagle"]), "");
-  assert.equal(originFromEntries("lugubrious", [{ meta: { id: "lugubrious" } }]), "");
+  assert.equal(origin("beazel", ["bezel", "beagle"]), "");
+  assert.equal(origin("lugubrious", [{ meta: { id: "lugubrious" } }]), "");
+});
+
+test("a bare language means the word came unchanged from it", () => {
+  const argot = [{ meta: { id: "argot" }, et: [["text", "French"]], date: "1843" }];
+  assert.equal(origin("argot", argot), "From French *argot*. First known use: 1843.");
+  const found = findEntry("x", [{ meta: { id: "x" }, et: [["text", "Middle English"]], date: "14th century" }])!;
+  assert.equal(composeOrigin(found), "From Middle English *x*. First known use: 14th century.");
+});
+
+test("a word formed in English gets the etymology of the word it came from", () => {
+  const pedantic = findEntry("pedantic", [{ meta: { id: "pedantic" }, date: "1600" }])!;
+  const pedant = findEntry("pedant", [{ meta: { id: "pedant" }, et: [["text", "Italian {it}pedante{/it}"]], date: "1588" }])!;
+  assert.equal(composeOrigin(pedantic, { found: pedant, suffix: "-ic" }),
+    "From *pedant* + *-ic*. *Pedant*: Italian *pedante*. First known use: 1600.");
+  assert.deepEqual(baseWords("pedantic").map((b) => b.base), ["pedant"]);
+  assert.deepEqual(baseWords("boorish").map((b) => b.base), ["boor"]);
+  assert.deepEqual(baseWords("waggish").map((b) => b.base), ["wag", "wagg"]);
+  assert.deepEqual(baseWords("prodigious").map((b) => b.base), ["prodigy", "prodigio", "prodigi"]);
 });
 
 test("origins are given in Canadian spelling, but foreign words are left alone", () => {
