@@ -17,7 +17,7 @@ export default async (req: Request) => {
 
   const store = getStore({ name: "word-mark-etymology", consistency: "strong" });
   // Found origins are kept for good; "none found" is rechecked after a month, in case the lookup improves.
-  const kept = await store.get(`v3/word/${word}`, { type: "json" }) as { origin: string; at: string } | null;
+  const kept = await store.get(`v4/word/${word}`, { type: "json" }) as { origin: string; at: string } | null;
   const isFresh = kept && (kept.origin || Date.now() - Date.parse(kept.at) < 30 * 86_400_000);
   if (kept && isFresh) return json({ word, origin: kept.origin || null });
 
@@ -29,7 +29,7 @@ export default async (req: Request) => {
 
   try {
     const origin = await originOf(word);
-    await store.setJSON(`v3/word/${word}`, { origin, at: new Date().toISOString() });
+    await store.setJSON(`v4/word/${word}`, { origin, at: new Date().toISOString() });
     return json({ word, origin: origin || null });
   } catch (error) {
     if (!(error instanceof LookupUnavailable)) console.error(error);
