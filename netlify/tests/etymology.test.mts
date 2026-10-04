@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { canadianSpelling, cleanMarkup, originFromEntries } from "../lib/etymology.mts";
+import { americanSpellings, canadianSpelling, cleanMarkup, originFromEntries } from "../lib/etymology.mts";
 
 test("turns Merriam-Webster markup into plain text with italics", () => {
   assert.equal(
@@ -28,4 +28,13 @@ test("origins are given in Canadian spelling, but foreign words are left alone",
   assert.equal(canadianSpelling("gray, center, defense, traveled, skeptical"), "grey, centre, defence, travelled, sceptical");
   assert.equal(canadianSpelling("Gray, Theater"), "Grey, Theatre");
   assert.equal(canadianSpelling("door, motor, error, meter, level"), "door, motor, error, meter, level");
+});
+
+test("Canadian spellings have American ones to try", () => {
+  assert.deepEqual(americanSpellings("candour"), ["candor"]);
+  assert.deepEqual(americanSpellings("clamours"), ["clamors"]);
+  assert.deepEqual(americanSpellings("centre"), ["center"]);
+  assert.deepEqual(americanSpellings("defence"), ["defense"]);
+  assert.deepEqual(americanSpellings("travelled"), ["traveled"]);
+  assert.deepEqual(americanSpellings("lugubrious"), []);
 });

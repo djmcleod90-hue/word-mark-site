@@ -61,8 +61,31 @@ export function originFromEntries(word: string, entries: unknown[]): string {
   return origin[0].toUpperCase() + origin.slice(1) + (/[.!?]$/.test(origin) ? "" : ".");
 }
 
-/** The word's origin, or "" if Merriam-Webster doesn't give one. */
+/** American spellings to try when Merriam-Webster doesn't know a Canadian one, e.g. "candour" → "candor". */
+export function americanSpellings(word: string): string[] {
+  const rules: [RegExp, string][] = [
+    [/our(s|ed|ing|ful|able|ably|less|ite|ites)?$/, "or$1"],
+    [/([^aeiou])re(s|d)?$/, "$1er$2"],
+    [/(def|off|pret)ence(s)?$/, "$1ense$2"],
+    [/([aeiou])ll(ed|ing|er|ers)$/, "$1l$2"],
+    [/^grey/, "gray"],
+    [/ogue$/, "og"],
+    [/^sceptic/, "skeptic"],
+  ];
+  const variants = rules.map(([pattern, replacement]) => word.replace(pattern, replacement));
+  return [...new Set(variants)].filter((v) => v !== word);
+}
+
+/** The word's origin, or "" if Merriam-Webster doesn't give one, under this spelling or its American one. */
 export async function originOf(word: string): Promise<string> {
+  for (const spelling of [word, ...americanSpellings(word)]) {
+    const origin = await lookUp(spelling);
+    if (origin) return origin;
+  }
+  return "";
+}
+
+async function lookUp(word: string): Promise<string> {
   const key = process.env.MW_DICTIONARY_KEY;
   if (!key) throw new LookupUnavailable("MW_DICTIONARY_KEY is not set");
   const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${encodeURIComponent(word)}?key=${encodeURIComponent(key)}`;
