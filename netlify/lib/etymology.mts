@@ -21,6 +21,7 @@ export function cleanMarkup(text: string): string {
     .replace(/\{(?:et_link|a_link|d_link|i_link|mat|sx|dxt)\|([^|}]*)[^}]*\}/g, "$1")
     .replace(/\{ldquo\}/g, "“").replace(/\{rdquo\}/g, "”")
     .replace(/\{bc\}/g, ": ")
+    .replace(/\{[a-z_]+\|[^}]*\}/g, "")                      // any other tag with fields, e.g. {ds||1||}
     .replace(/\{\/?[a-z_]+\}/g, "")                          // any other tag, e.g. {sc}, {inf}, {sup}
     .replace(/\s+([,;.])/g, "$1")
     .replace(/\s{2,}/g, " ")
@@ -142,9 +143,9 @@ export function americanSpellings(word: string): string[] {
 export async function originOf(word: string): Promise<string> {
   let found: Found | null = null;
   for (const spelling of [word, ...americanSpellings(word)]) {
-    found = await lookUp(spelling);
-    if (found?.etymology) return composeOrigin(found);
-    if (found) break;
+    const entry = await lookUp(spelling);
+    if (entry?.etymology) return composeOrigin(entry);
+    found ??= entry; // e.g. "candour" has its own entry, without an etymology: keep trying "candor"
   }
   // At most three more lookups for the word it was formed from.
   for (const { base, suffix } of baseWords(word.toLowerCase()).slice(0, 3)) {

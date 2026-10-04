@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { americanSpellings, baseWords, canadianSpelling, cleanMarkup, composeOrigin, findEntry } from "../lib/etymology.mts";
+import { americanSpellings, baseWords, originOf, canadianSpelling, cleanMarkup, composeOrigin, findEntry } from "../lib/etymology.mts";
 
 test("turns Merriam-Webster markup into plain text with italics", () => {
   assert.equal(
@@ -57,4 +57,26 @@ test("Canadian spellings have American ones to try", () => {
   assert.deepEqual(americanSpellings("defence"), ["defense"]);
   assert.deepEqual(americanSpellings("travelled"), ["traveled"]);
   assert.deepEqual(americanSpellings("lugubrious"), []);
+});
+
+test("strips tags with fields, like the date's sense marker", () => {
+  assert.equal(cleanMarkup("1628{ds||1||}"), "1628");
+});
+
+test("a Canadian spelling with its own empty entry still finds the American one", async () => {
+  const replies: Record<string, unknown[]> = {
+    candour: [{ meta: { id: "candour" } }],
+    candor: [{ meta: { id: "candor" }, et: [["text", "Latin {it}candor{/it}"]], date: "1653" }],
+  };
+  const realFetch = globalThis.fetch;
+  process.env.MW_DICTIONARY_KEY = "test";
+  globalThis.fetch = (async (url: string) => {
+    const word = decodeURIComponent(String(url).split("/json/")[1].split("?")[0]);
+    return new Response(JSON.stringify(replies[word] ?? []));
+  }) as typeof fetch;
+  try {
+    assert.equal(await originOf("candour"), "Latin *candor*. First known use: 1653.");
+  } finally {
+    globalThis.fetch = realFetch;
+  }
 });
