@@ -135,3 +135,14 @@ export async function redeemCode(store: Store, id: string, input: string, secret
   const { device: updated } = await updateDevice(store, id, now, (d) => { d.bought += LIMITS.perCode; });
   return { result: "added", allowance: allowanceOf(updated) };
 }
+
+// ---- In-app purchases: each Apple transaction is credited once, like a pack code.
+
+export type PurchaseResult = "added" | "already-added";
+
+export async function creditPurchase(store: Store, id: string, transactionId: string, scans: number, now: Date): Promise<{ result: PurchaseResult; allowance: Allowance }> {
+  const claimed = await store.setJSON(`purchases/${transactionId}`, { device: id, scans, at: now.toISOString() }, { onlyIfNew: true });
+  if (!claimed) return { result: "already-added", allowance: await currentAllowance(store, id, now) };
+  const { device } = await updateDevice(store, id, now, (d) => { d.bought += scans; });
+  return { result: "added", allowance: allowanceOf(device) };
+}
