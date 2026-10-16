@@ -19,6 +19,7 @@ export function cleanMarkup(text: string): string {
     .replace(/\{dx_ety\}.*?\{\/dx_ety\}/g, "")              // "see …" cross-references
     .replace(/\{(?:it|qword)\}(.*?)\{\/(?:it|qword)\}/g, "*$1*")
     .replace(/\{(?:et_link|a_link|d_link|i_link|mat|sx|dxt)\|([^|}]*)[^}]*\}/g, "$1")
+    .replace(/(\p{L}):\d+\b/gu, "$1")                        // sense numbers on cross-references, "effect:1"
     .replace(/\{ldquo\}/g, "“").replace(/\{rdquo\}/g, "”")
     .replace(/\{bc\}/g, ": ")
     .replace(/\{[a-z_]+\|[^}]*\}/g, "")                      // any other tag with fields, e.g. {ds||1||}
