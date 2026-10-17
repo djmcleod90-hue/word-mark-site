@@ -1,4 +1,4 @@
-// How many AI readings each phone may use: a few free ones, more from pack codes, and a daily cap.
+// How many Close Reads (AI readings) each phone may use: a few free ones, more from pack codes, and a daily cap.
 // Pure logic over a small key-value store, so it can be tested without Netlify.
 
 import { createHmac } from "node:crypto";

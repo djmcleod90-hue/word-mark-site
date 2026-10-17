@@ -1,4 +1,4 @@
-// POST /api/read-card — the AI reading of one side of a bookmark, within the phone's allowance.
+// POST /api/read-card — the Close Read of one side of a bookmark, within the phone's allowance.
 
 import type { Config } from "@netlify/functions";
 import { checkScan, spendScan } from "../lib/allowance.mts";

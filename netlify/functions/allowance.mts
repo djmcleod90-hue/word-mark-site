@@ -1,4 +1,4 @@
-// GET /api/allowance — how many AI readings this phone has left.
+// GET /api/allowance — how many Close Reads this phone has left.
 
 import type { Config } from "@netlify/functions";
 import { currentAllowance } from "../lib/allowance.mts";
