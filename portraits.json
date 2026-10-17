@@ -1,0 +1,330 @@
+{
+  "version": 3,
+  "categories": [
+    {
+      "id": "novelists",
+      "name": "Novelists",
+      "color": "#A71919"
+    },
+    {
+      "id": "dramatists",
+      "name": "Dramatists",
+      "color": "#043E0E"
+    },
+    {
+      "id": "poets",
+      "name": "Poets",
+      "color": "#39033A"
+    },
+    {
+      "id": "philosophers",
+      "name": "Philosophers",
+      "color": "#1A0076"
+    },
+    {
+      "id": "essayists",
+      "name": "Essayists",
+      "color": "#C19A23"
+    }
+  ],
+  "portraits": [
+    {
+      "id": "joyce",
+      "name": "James Joyce",
+      "years": "1882–1941",
+      "category": "novelists",
+      "quote": "He wanted to cry quietly but not for himself: for the words, so beautiful and sad, like music.",
+      "facts": [
+        "Ulysses (1922) unfolds over a single day — 16 June 1904, now celebrated as Bloomsday.",
+        "The physicist Murray Gell-Mann named the quark after a line in Finnegans Wake.",
+        "Spent most of his adult life abroad, writing about Dublin."
+      ]
+    },
+    {
+      "id": "toews",
+      "name": "Miriam Toews",
+      "years": "born 1964",
+      "category": "novelists",
+      "quote": "There must be satisfaction gained in accurately naming the thing that torments you.",
+      "facts": [
+        "Grew up in the Mennonite town of Steinbach, Manitoba.",
+        "Women Talking became a 2022 film that won the Oscar for Best Adapted Screenplay.",
+        "A Complicated Kindness won the Governor General's Award for Fiction (2004)."
+      ]
+    },
+    {
+      "id": "morrison",
+      "name": "Toni Morrison",
+      "years": "1931–2019",
+      "category": "novelists",
+      "quote": "We die. That may be the meaning of life. But we do language. That may be the measure of our lives.",
+      "facts": [
+        "The first Black woman to win the Nobel Prize in Literature (1993) — this quote is from her Nobel lecture.",
+        "Worked as an editor at Random House before her own novels took over.",
+        "Beloved won the Pulitzer Prize for Fiction in 1988."
+      ]
+    },
+    {
+      "id": "woolf",
+      "facts": [
+        "Co-founded the Hogarth Press with her husband, Leonard, first printing books by hand at home.",
+        "The line on this bookmark comes from “Craftsmanship,” a 1937 BBC radio talk — the only known recording of her voice.",
+        "Mrs Dalloway (1925) follows a single day in London."
+      ],
+      "name": "Virginia Woolf",
+      "years": "1882–1941",
+      "category": "novelists",
+      "quote": "Words do not live in dictionaries; they live in the mind."
+    },
+    {
+      "id": "wodehouse",
+      "facts": [
+        "Created Bertie Wooster and his unflappable valet, Jeeves.",
+        "Wrote more than 90 books over a career of more than 70 years.",
+        "The line on this bookmark, from The Code of the Woosters (1938), gave new life to the word “gruntled.”"
+      ],
+      "name": "P.G. Wodehouse",
+      "years": "1881–1975",
+      "category": "novelists",
+      "quote": "I could see that, if not actually disgruntled, he was far from being gruntled."
+    },
+    {
+      "id": "stoppard",
+      "name": "Tom Stoppard",
+      "years": "1937–2025",
+      "category": "dramatists",
+      "quote": "Words are sacred. They deserve respect. If you get the right ones, in the right order, you can nudge the world a little.",
+      "facts": [
+        "Born Tomáš Sträussler in Czechoslovakia.",
+        "Co-wrote the Oscar-winning screenplay for Shakespeare in Love (1998).",
+        "The Real Thing (1982) is a play about a playwright — and about getting words exactly right."
+      ]
+    },
+    {
+      "id": "friel",
+      "name": "Brian Friel",
+      "years": "1929–2015",
+      "category": "dramatists",
+      "quote": "We name a thing and — bang! — it leaps into existence!",
+      "facts": [
+        "Translations (1980) is set in 1833 Donegal, as British soldiers rename Irish places for a map — the line on this bookmark is spoken there.",
+        "Co-founded the Field Day Theatre Company with the actor Stephen Rea.",
+        "Dancing at Lughnasa (1990) won the Tony Award for Best Play."
+      ]
+    },
+    {
+      "id": "wilde",
+      "name": "Oscar Wilde",
+      "years": "1854–1900",
+      "category": "dramatists",
+      "quote": "Mere words! Was there anything so real as words?",
+      "facts": [
+        "Won Oxford's Newdigate Prize for poetry as a student.",
+        "Wrote one novel: The Picture of Dorian Gray (1890)."
+      ]
+    },
+    {
+      "id": "sophocles",
+      "facts": [
+        "Wrote more than 120 plays, of which only seven survive complete.",
+        "Aristotle held up his Oedipus the King as a model tragedy.",
+        "Also served Athens as a general, alongside Pericles."
+      ],
+      "name": "Sophocles",
+      "years": "c. 497–406 BCE",
+      "category": "dramatists",
+      "quote": "A little word hath often marred, or made, men's fortunes."
+    },
+    {
+      "id": "shakespeare",
+      "facts": [
+        "Is credited with the earliest recorded uses of hundreds of English words, among them “lonely” and “bedroom.”",
+        "The line on this bookmark is said of a pair of show-off scholars in Love's Labour's Lost.",
+        "The same play contains “honorificabilitudinitatibus,” the longest word in his works."
+      ],
+      "name": "William Shakespeare",
+      "years": "1564–1616",
+      "category": "dramatists",
+      "quote": "They have been at a great feast of languages and stolen the scraps."
+    },
+    {
+      "id": "eliot",
+      "name": "T.S. Eliot",
+      "years": "1888–1965",
+      "category": "poets",
+      "quote": "For last year's words belong to last year's language / And next year's words await another voice.",
+      "facts": [
+        "Worked at Lloyds Bank in London while writing The Waste Land.",
+        "His Old Possum's Book of Practical Cats became the musical Cats.",
+        "Won the Nobel Prize in Literature in 1948."
+      ]
+    },
+    {
+      "id": "waits",
+      "name": "Tom Waits",
+      "years": "born 1949",
+      "category": "poets",
+      "quote": "I like to think that my main instrument is vocabulary.",
+      "facts": [
+        "Earned an Oscar nomination for his score to One from the Heart (1982).",
+        "Was inducted into the Rock and Roll Hall of Fame in 2011.",
+        "Writes many of his songs with his wife, Kathleen Brennan."
+      ]
+    },
+    {
+      "id": "dickinson",
+      "name": "Emily Dickinson",
+      "years": "1830–1886",
+      "category": "poets",
+      "quote": "I know nothing in the world that has as much power as a word.",
+      "facts": [
+        "Fewer than a dozen of her nearly 1,800 poems were published in her lifetime.",
+        "Her family's 1844 Webster's dictionary was such a constant companion that scholars call it her lexicon.",
+        "The quote on this bookmark comes from one of her letters."
+      ]
+    },
+    {
+      "id": "nabokov",
+      "name": "Vladimir Nabokov",
+      "years": "1899–1977",
+      "category": "poets",
+      "quote": "Form a habit of searching with unflinching patience for the right word.",
+      "facts": [
+        "Wrote his novels first in Russian, then in English, and translated his own work.",
+        "A serious butterfly expert, he worked at Harvard's Museum of Comparative Zoology.",
+        "Saw letters in colours — a form of synaesthesia he described in his memoir, Speak, Memory."
+      ]
+    },
+    {
+      "id": "neruda",
+      "facts": [
+        "Born Ricardo Eliécer Neftalí Reyes Basoalto; he took his pen name as a teenager.",
+        "Won the Nobel Prize in Literature in 1971.",
+        "Wrote odes to everyday things, from tomatoes to his socks."
+      ],
+      "name": "Pablo Neruda",
+      "years": "1904–1973",
+      "category": "poets",
+      "quote": "Everything exists in the word."
+    },
+    {
+      "id": "wittgenstein",
+      "name": "Ludwig Wittgenstein",
+      "years": "1889–1951",
+      "category": "philosophers",
+      "quote": "The limits of my language mean the limits of my world.",
+      "facts": [
+        "Published just one book of philosophy in his lifetime, the Tractatus (1921).",
+        "Gave away the fortune he inherited.",
+        "Spent several years teaching at village schools in rural Austria."
+      ]
+    },
+    {
+      "id": "anzaldua",
+      "name": "Gloria Anzaldúa",
+      "years": "1942–2004",
+      "category": "philosophers",
+      "quote": "Wild tongues can't be tamed, they can only be cut out.",
+      "facts": [
+        "Borderlands/La Frontera (1987) moves between English, Spanish and Nahuatl, sometimes within a sentence.",
+        "Co-edited This Bridge Called My Back (1981) with Cherríe Moraga.",
+        "Grew up in the Rio Grande Valley of South Texas."
+      ]
+    },
+    {
+      "id": "confucius",
+      "name": "Confucius",
+      "years": "551–479 BCE",
+      "category": "philosophers",
+      "quote": "If names be not correct, language is not in accordance with the truth of things.",
+      "facts": [
+        "His followers gathered his teachings into the Analects.",
+        "“Confucius” is a Latinised form of Kong Fuzi, “Master Kong.”"
+      ]
+    },
+    {
+      "id": "murdoch",
+      "facts": [
+        "Taught philosophy at Oxford before and alongside writing 26 novels.",
+        "The Sea, the Sea won the Booker Prize in 1978.",
+        "Her life with the critic John Bayley was told in his memoir Elegy for Iris and the 2001 film Iris."
+      ],
+      "name": "Iris Murdoch",
+      "years": "1919–1999",
+      "category": "philosophers",
+      "quote": "The fundamental distinctions can only be made in words. Words are spirit."
+    },
+    {
+      "id": "thoreau",
+      "facts": [
+        "Lived for two years and two months in a cabin he built by Walden Pond.",
+        "His essay “Civil Disobedience” influenced Gandhi and Martin Luther King Jr.",
+        "Worked in his family's pencil business and improved the pencils it made."
+      ],
+      "name": "Henry David Thoreau",
+      "years": "1817–1862",
+      "category": "philosophers",
+      "quote": "A written word is the choicest of relics."
+    },
+    {
+      "id": "hazlitt",
+      "name": "Henry Hazlitt",
+      "years": "1894–1993",
+      "category": "essayists",
+      "quote": "If you do not know the words, you can hardly know the thing.",
+      "facts": [
+        "Wrote Thinking as a Science, where this quote comes from, at just 21.",
+        "Best known for Economics in One Lesson (1946).",
+        "Was a journalist for The New York Times and Newsweek."
+      ]
+    },
+    {
+      "id": "solnit",
+      "facts": [
+        "Has written more than 20 books, on walking, hope, disasters and more.",
+        "Her essay “Men Explain Things to Me” (2008) helped inspire the word “mansplaining.”",
+        "Lives in San Francisco, the subject of her atlas Infinite City (2010)."
+      ],
+      "name": "Rebecca Solnit",
+      "years": "born 1961",
+      "category": "essayists",
+      "quote": "You can use the power of words to bury meaning or to excavate it."
+    },
+    {
+      "id": "smith",
+      "facts": [
+        "Published her first novel, White Teeth (2000), at 24.",
+        "Has taught creative writing at New York University.",
+        "The line on this bookmark comes from “That Crafty Feeling,” a talk about how she writes."
+      ],
+      "name": "Zadie Smith",
+      "years": "born 1975",
+      "category": "essayists",
+      "quote": "I can change the whole nature of the thing by changing a few words."
+    },
+    {
+      "id": "camus",
+      "facts": [
+        "Won the Nobel Prize in Literature in 1957.",
+        "Born in French Algeria, the setting of The Stranger (1942) and The Plague (1947).",
+        "Edited the Resistance newspaper Combat during the Second World War."
+      ],
+      "name": "Albert Camus",
+      "years": "1913–1960",
+      "category": "essayists",
+      "quote": "To misname an object is to add to the misery of this world."
+    },
+    {
+      "id": "didion",
+      "name": "Joan Didion",
+      "years": "1934–2021",
+      "category": "essayists",
+      "quote": "The ability to think for one's self depends upon one's mastery of the language.",
+      "facts": [
+        "Kept notebooks all her life, and wrote an essay, “On Keeping a Notebook,” about why.",
+        "Borrowed the title of Slouching Towards Bethlehem (1968) from a line of Yeats.",
+        "Won the National Book Award for The Year of Magical Thinking (2005)."
+      ]
+    }
+  ]
+}
