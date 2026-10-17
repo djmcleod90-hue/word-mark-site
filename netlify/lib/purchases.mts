@@ -1,4 +1,4 @@
-// In-app purchases of Full scans: checks Apple's signature on the purchase before crediting it.
+// In-app purchases of Close Reads: checks Apple's signature on the purchase before crediting it.
 
 import { Environment, SignedDataVerifier, type JWSTransactionDecodedPayload } from "@apple/app-store-server-library";
 import { APPLE_ROOT_CA_G3 } from "./apple-roots.mts";
