@@ -1,4 +1,4 @@
-// POST /api/purchase — credits Full scans bought in the app, after checking Apple's signature.
+// POST /api/purchase — credits Close Reads bought in the app, after checking Apple's signature.
 
 import type { Config } from "@netlify/functions";
 import { creditPurchase } from "../lib/allowance.mts";
