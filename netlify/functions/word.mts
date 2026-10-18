@@ -19,7 +19,7 @@ export default async (req: Request) => {
 
   const store = getStore({ name: "word-mark-etymology", consistency: "strong" });
   // Found words are kept for good; "not found" is rechecked after a month, in case the lookup improves.
-  const kept = await store.get(`details-v1/word/${word}`, { type: "json" }) as (WordDetails & { at: string }) | null;
+  const kept = await store.get(`details-v2/word/${word}`, { type: "json" }) as (WordDetails & { at: string }) | null;
   const found = (d: WordDetails) => !!(d.origin || d.ipa || d.partOfSpeech || d.examples.length);
   if (kept && (found(kept) || Date.now() - Date.parse(kept.at) < 30 * 86_400_000)) return json(reply(word, kept));
 
@@ -31,7 +31,7 @@ export default async (req: Request) => {
 
   try {
     const details = await detailsOf(word);
-    await store.setJSON(`details-v1/word/${word}`, { ...details, at: new Date().toISOString() });
+    await store.setJSON(`details-v2/word/${word}`, { ...details, at: new Date().toISOString() });
     return json(reply(word, details));
   } catch (error) {
     if (!(error instanceof LookupUnavailable)) console.error(error);
