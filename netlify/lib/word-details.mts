@@ -102,7 +102,9 @@ export function entryDetails(word: string, entries: unknown[]): Omit<WordDetails
     }
   }
   // An inflected form ("defenestrated"): the base word's part of speech and examples, but not its pronunciation.
-  const form = all.find((e) => (e.meta?.stems ?? []).some((s) => s.toLowerCase() === target));
+  // Prefer the entry it's built on ("defenestrate") to others listing it ("defenestration").
+  const forms = all.filter((e) => (e.meta?.stems ?? []).some((s) => s.toLowerCase() === target));
+  const form = forms.find((e) => target.startsWith(headword(e))) ?? forms[0];
   if (form) return { ipa: "", partOfSpeech: form.fl ?? "", examples: pickExamples(examplesIn(form.def)) };
   return null;
 }
@@ -115,9 +117,15 @@ export async function detailsOf(word: string, fetch: EntriesFor = fetchEntries):
     return fetched.get(spelling)!;
   };
   const origin = await originOf(word, entriesFor);
+  // A Canadian spelling's own entry may only point to the American one ("candour" → "candor"): fill its gaps from there.
+  const result: WordDetails = { origin, ipa: "", partOfSpeech: "", examples: [] };
   for (const spelling of [word, ...americanSpellings(word)]) {
     const details = entryDetails(spelling, await entriesFor(spelling));
-    if (details) return { origin, ...details };
+    if (!details) continue;
+    result.ipa ||= details.ipa;
+    result.partOfSpeech ||= details.partOfSpeech;
+    if (!result.examples.length) result.examples = details.examples;
+    if (result.ipa && result.partOfSpeech && result.examples.length) break;
   }
-  return { origin, ipa: "", partOfSpeech: "", examples: [] };
+  return result;
 }
