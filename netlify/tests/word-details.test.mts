@@ -74,3 +74,19 @@ test("one fetch per spelling serves the origin and the details", async () => {
   assert.equal(details.origin, "Middle English *cherlish*. First known use: before 12th century.");
   assert.equal(details.ipa, "ˈtʃərlɪʃ");
 });
+
+test("an inflected form takes the entry it's built on", () => {
+  const entries = [
+    { meta: { id: "defenestration", stems: ["defenestration", "defenestrate", "defenestrated"] }, fl: "noun" },
+    { meta: { id: "defenestrate", stems: ["defenestrate", "defenestrated"] }, fl: "verb" },
+  ];
+  assert.equal(entryDetails("defenestrated", entries)?.partOfSpeech, "verb");
+});
+
+test("a Canadian spelling's bare entry is filled in from the American one", async () => {
+  const details = await detailsOf("candour", async (word) => word === "candour"
+    ? [{ meta: { id: "candour", stems: ["candour"] }, hwi: { prs: [{ mw: "ˈkan-dər" }] } }]
+    : word === "candor" ? [{ meta: { id: "candor", stems: ["candor"] }, fl: "noun", et: [["text", "Latin {it}candor{/it}"]] }] : []);
+  assert.equal(details.ipa, "ˈkændər");
+  assert.equal(details.partOfSpeech, "noun");
+});
