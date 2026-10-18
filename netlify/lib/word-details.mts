@@ -8,6 +8,8 @@ export interface WordDetails {
   origin: string;
   /** The pronunciation in IPA, e.g. "ˈtʃərlɪʃ"; "" if Merriam-Webster gives none for this word. */
   ipa: string;
+  /** Merriam-Webster's recording of the word (an MP3 address); "" if they have none. */
+  audio: string;
   /** e.g. "adjective", "noun", "transitive verb"; "" if unknown. */
   partOfSpeech: string;
   /** Up to two, with the word in **bold**, e.g. "A **churlish** refusal". */
@@ -37,7 +39,14 @@ export function mwToIPA(mw: string): string {
   return ipa;
 }
 
-interface Pronunciation { mw?: string }
+interface Pronunciation { mw?: string; sound?: { audio?: string } }
+
+/** The address of a Merriam-Webster recording, from its file name (their documented folder rule). */
+export function audioURL(file: string): string {
+  if (!/^[\w-]+$/.test(file)) return "";
+  const folder = file.startsWith("bix") ? "bix" : file.startsWith("gg") ? "gg" : /^[a-z]/i.test(file) ? file[0].toLowerCase() : "number";
+  return `https://media.merriam-webster.com/audio/prons/en/us/mp3/${folder}/${file}.mp3`;
+}
 interface MWEntry {
   meta?: { id?: string; stems?: string[] };
   hwi?: { prs?: Pronunciation[] };
@@ -84,28 +93,30 @@ export function entryDetails(word: string, entries: unknown[]): Omit<WordDetails
   const all = (entries as MWEntry[]).filter((e) => typeof e === "object" && e?.meta);
   const headword = (e: MWEntry) => (e.meta?.id ?? "").split(":")[0].toLowerCase();
   const ipaOf = (prs?: Pronunciation[]) => mwToIPA(prs?.find((p) => p.mw)?.mw ?? "");
+  const audioOf = (prs?: Pronunciation[]) => audioURL(prs?.find((p) => p.sound?.audio)?.sound?.audio ?? "");
 
   const own = all.find((e) => headword(e) === target);
   if (own) {
-    return { ipa: ipaOf(own.hwi?.prs), partOfSpeech: own.fl ?? "", examples: pickExamples(examplesIn(own.def)) };
+    return { ipa: ipaOf(own.hwi?.prs), audio: audioOf(own.hwi?.prs), partOfSpeech: own.fl ?? "", examples: pickExamples(examplesIn(own.def)) };
   }
   for (const entry of all) {
     // A spelling variant ("candour" under "candor") is said like the headword unless it has its own pronunciation.
     const variant = entry.vrs?.find((v) => plain(v.va) === target);
     if (variant) {
-      return { ipa: ipaOf(variant.prs ?? entry.hwi?.prs), partOfSpeech: entry.fl ?? "", examples: pickExamples(examplesIn(entry.def)) };
+      const prs = variant.prs ?? entry.hwi?.prs;
+      return { ipa: ipaOf(prs), audio: audioOf(prs), partOfSpeech: entry.fl ?? "", examples: pickExamples(examplesIn(entry.def)) };
     }
     // A word run on at the end of another's entry ("churlishly" under "churlish").
     const runOn = entry.uros?.find((u) => plain(u.ure) === target);
     if (runOn) {
-      return { ipa: ipaOf(runOn.prs), partOfSpeech: runOn.fl ?? "", examples: pickExamples(examplesIn(runOn.utxt)) };
+      return { ipa: ipaOf(runOn.prs), audio: audioOf(runOn.prs), partOfSpeech: runOn.fl ?? "", examples: pickExamples(examplesIn(runOn.utxt)) };
     }
   }
   // An inflected form ("defenestrated"): the base word's part of speech and examples, but not its pronunciation.
   // Prefer the entry it's built on ("defenestrate") to others listing it ("defenestration").
   const forms = all.filter((e) => (e.meta?.stems ?? []).some((s) => s.toLowerCase() === target));
   const form = forms.find((e) => target.startsWith(headword(e))) ?? forms[0];
-  if (form) return { ipa: "", partOfSpeech: form.fl ?? "", examples: pickExamples(examplesIn(form.def)) };
+  if (form) return { ipa: "", audio: "", partOfSpeech: form.fl ?? "", examples: pickExamples(examplesIn(form.def)) };
   return null;
 }
 
@@ -118,11 +129,11 @@ export async function detailsOf(word: string, fetch: EntriesFor = fetchEntries):
   };
   const origin = await originOf(word, entriesFor);
   // A Canadian spelling's own entry may only point to the American one ("candour" → "candor"): fill its gaps from there.
-  const result: WordDetails = { origin, ipa: "", partOfSpeech: "", examples: [] };
+  const result: WordDetails = { origin, ipa: "", audio: "", partOfSpeech: "", examples: [] };
   for (const spelling of [word, ...americanSpellings(word)]) {
     const details = entryDetails(spelling, await entriesFor(spelling));
     if (!details) continue;
-    result.ipa ||= details.ipa;
+    if (!result.ipa) { result.ipa = details.ipa; result.audio = details.audio; }
     result.partOfSpeech ||= details.partOfSpeech;
     if (!result.examples.length) result.examples = details.examples;
     if (result.ipa && result.partOfSpeech && result.examples.length) break;
