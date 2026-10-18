@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { detailsOf, entryDetails, mwToIPA } from "../lib/word-details.mts";
+import { audioURL, detailsOf, entryDetails, mwToIPA } from "../lib/word-details.mts";
 
 test("turns Merriam-Webster's respelling into IPA", () => {
   assert.equal(mwToIPA("ˈchər-lish"), "ˈtʃərlɪʃ");
@@ -39,6 +39,7 @@ const churlish = {
 test("finds pronunciation, part of speech and examples, preferring whole sentences", () => {
   assert.deepEqual(entryDetails("churlish", [churlish]), {
     ipa: "ˈtʃərlɪʃ",
+    audio: "https://media.merriam-webster.com/audio/prons/en/us/mp3/c/churli01.mp3",
     partOfSpeech: "adjective",
     examples: [
       "His **churlish** behaviour toward the neighbours was noticed by everyone",
@@ -48,7 +49,7 @@ test("finds pronunciation, part of speech and examples, preferring whole sentenc
 });
 
 test("a run-on word has its own pronunciation and part of speech", () => {
-  assert.deepEqual(entryDetails("churlishly", [churlish]), { ipa: "ˈtʃərlɪʃli", partOfSpeech: "adverb", examples: [] });
+  assert.deepEqual(entryDetails("churlishly", [churlish]), { ipa: "ˈtʃərlɪʃli", audio: "", partOfSpeech: "adverb", examples: [] });
 });
 
 test("an inflected form gets no pronunciation; spelling suggestions get nothing", () => {
@@ -89,4 +90,15 @@ test("a Canadian spelling's bare entry is filled in from the American one", asyn
     : word === "candor" ? [{ meta: { id: "candor", stems: ["candor"] }, fl: "noun", et: [["text", "Latin {it}candor{/it}"]] }] : []);
   assert.equal(details.ipa, "ˈkændər");
   assert.equal(details.partOfSpeech, "noun");
+});
+
+test("recording addresses follow Merriam-Webster's folder rule", () => {
+  const base = "https://media.merriam-webster.com/audio/prons/en/us/mp3/";
+  assert.equal(audioURL("hadal001"), `${base}h/hadal001.mp3`);
+  assert.equal(audioURL("bixbol01"), `${base}bix/bixbol01.mp3`);
+  assert.equal(audioURL("ggmail01"), `${base}gg/ggmail01.mp3`);
+  assert.equal(audioURL("3d000001"), `${base}number/3d000001.mp3`);
+  assert.equal(audioURL("_test01"), `${base}number/_test01.mp3`);
+  assert.equal(audioURL("../x"), "");
+  assert.equal(audioURL(""), "");
 });
