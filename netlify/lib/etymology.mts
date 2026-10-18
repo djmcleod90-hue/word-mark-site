@@ -141,7 +141,8 @@ export function americanSpellings(word: string): string[] {
 
 /** The word's origin, or "" if Merriam-Webster doesn't give one (under this spelling, its American one,
  * or, for a word formed in English like "pedantic", the word it was formed from). */
-export async function originOf(word: string): Promise<string> {
+export async function originOf(word: string, entriesFor: EntriesFor = fetchEntries): Promise<string> {
+  const lookUp = async (spelling: string) => findEntry(spelling, await entriesFor(spelling));
   let found: Found | null = null;
   for (const spelling of [word, ...americanSpellings(word)]) {
     const entry = await lookUp(spelling);
@@ -158,7 +159,10 @@ export async function originOf(word: string): Promise<string> {
   return "";
 }
 
-async function lookUp(word: string): Promise<Found | null> {
+/** Merriam-Webster's entries for a spelling (or its spelling suggestions, if it has none). */
+export type EntriesFor = (word: string) => Promise<unknown[]>;
+
+export async function fetchEntries(word: string): Promise<unknown[]> {
   const key = process.env.MW_DICTIONARY_KEY;
   if (!key) throw new LookupUnavailable("MW_DICTIONARY_KEY is not set");
   const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${encodeURIComponent(word)}?key=${encodeURIComponent(key)}`;
@@ -166,5 +170,5 @@ async function lookUp(word: string): Promise<Found | null> {
   if (!response.ok) throw new LookupUnavailable(`Merriam-Webster replied ${response.status}`);
   const body = await response.json().catch(() => null);
   if (!Array.isArray(body)) throw new LookupUnavailable("Unexpected reply from Merriam-Webster");
-  return findEntry(word, body);
+  return body;
 }
