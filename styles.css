@@ -7,10 +7,10 @@
   --ink:       #1a1814;
   --ink-soft:  #4a4640;
   --ink-mute:  #6a645f;
-  --cream:     #f0efef;
-  --cream-alt: #e3e2e2;
-  --gold:      #9e7e52;
-  --gold-deep: #7a5f38;
+  --cream:     #f4f1ea;   /* warm book paper, as in the app */
+  --cream-alt: #e9e3d6;
+  --gold:      #c08a2b;   /* bright gilt, on black */
+  --gold-deep: #855c16;   /* readable gold text on both paper tones */
   --hair:      0.5px solid rgba(26,24,20,0.15);
   --pad:       3rem;          /* horizontal page padding */
   --max:       1100px;        /* max content width      */
@@ -534,7 +534,7 @@ nav {
   font-size: 0.9rem;
   line-height: 1.8;
   font-style: italic;
-  color: rgba(240, 239, 239, 0.82);
+  color: rgba(244, 241, 234, 0.82);
   margin-bottom: 1rem;
 }
 .testimonial-author {
@@ -621,7 +621,7 @@ nav {
   line-height: 1.6;
   font-style: italic;
   font-weight: 300;
-  color: rgba(240, 239, 239, 0.9);
+  color: rgba(244, 241, 234, 0.9);
   margin-bottom: 1.25rem;
 }
 .quote-author {
