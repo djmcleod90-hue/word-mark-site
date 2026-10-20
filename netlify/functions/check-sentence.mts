@@ -3,7 +3,7 @@
 import type { Config } from "@netlify/functions";
 import { getStore } from "@netlify/blobs";
 import { checkSentence, cleanRequest } from "../lib/sentence.mts";
-import { deviceID, json } from "../lib/http.mts";
+import { attestedJSON, deviceID, json } from "../lib/http.mts";
 
 /** Checks a phone may ask for in a day. */
 const DAILY_CHECKS = 20;
@@ -12,9 +12,9 @@ export default async (req: Request) => {
   if (req.method !== "POST") return json({ error: "Use POST" }, 405);
   const id = deviceID(req);
   if (!id) return json({ error: "Missing device ID" }, 400);
-  let body: unknown;
-  try { body = await req.json(); } catch { return json({ error: "Expected JSON" }, 400); }
-  const request = cleanRequest(body);
+  const attested = await attestedJSON(req, id, "check-sentence");
+  if ("response" in attested) return attested.response;
+  const request = cleanRequest(attested.body);
   if (!request) return json({ error: "Expected a word and a sentence" }, 400);
 
   const store = getStore({ name: "word-mark-sentences", consistency: "strong" });

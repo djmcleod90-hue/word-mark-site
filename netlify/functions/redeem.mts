@@ -2,7 +2,7 @@
 
 import type { Config } from "@netlify/functions";
 import { redeemCode } from "../lib/allowance.mts";
-import { blobStore, deviceID, json } from "../lib/http.mts";
+import { attestedJSON, blobStore, deviceID, json } from "../lib/http.mts";
 
 export default async (req: Request) => {
   if (req.method !== "POST") return json({ error: "Use POST" }, 405);
@@ -11,8 +11,9 @@ export default async (req: Request) => {
   const secret = process.env.CODE_SECRET;
   if (!secret) return json({ error: "Codes aren't set up yet" }, 503);
 
-  let body: { code?: unknown };
-  try { body = await req.json(); } catch { return json({ error: "Expected JSON" }, 400); }
+  const attested = await attestedJSON(req, id, "redeem");
+  if ("response" in attested) return attested.response;
+  const body = (attested.body ?? {}) as { code?: unknown };
   const code = typeof body.code === "string" ? body.code.slice(0, 40) : "";
 
   const { result, allowance } = await redeemCode(blobStore(), id, code, secret, new Date());
