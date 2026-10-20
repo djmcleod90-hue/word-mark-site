@@ -23,15 +23,15 @@ Say it is not correct only when the word is missing; when it is only mentioned o
 
 When in doubt, it is correct. Telling a reader they are wrong when they are right is far worse than letting a borderline sentence pass.
 
-First think it through in "reasoning": what the word means, how the sentence uses it, and whether that use fits. Then give the verdict, and feedback for the reader: at most 25 words, warm and specific, in Canadian spelling, addressed to the reader as "you". If correct, say briefly what works. If not, name exactly how the word itself is misused and hint how to fix it, without writing a full sentence for them. Never mention AI, models or grading.`;
+First write a short "assessment": what the word means, how the sentence uses it, and whether that use fits. Then give the verdict, and feedback for the reader: at most 25 words, warm and specific, in Canadian spelling, addressed to the reader as "you". If correct, say briefly what works. If not, name exactly how the word itself is misused and hint how to fix it, without writing a full sentence for them. Never mention AI, models or grading.`;
 
 const APPEAL = `The reader believes an earlier check wrongly rejected this sentence. Review it afresh and carefully, as an experienced lexicographer would. The earlier check may well have been mistaken, for example by doubting facts about the world or by inventing a usage rule. Overturn it whenever the word is used with its meaning in a sentence that could make sense. Uphold it only if the word itself is clearly misused, and then explain precisely, and kindly, why.`;
 
 const SCHEMA = {
   type: "object",
   additionalProperties: false,
-  required: ["reasoning", "correct", "feedback"],
-  properties: { reasoning: { type: "string" }, correct: { type: "boolean" }, feedback: { type: "string" } },
+  required: ["assessment", "correct", "feedback"],
+  properties: { assessment: { type: "string" }, correct: { type: "boolean" }, feedback: { type: "string" } },
 };
 
 const client = new Anthropic(); // reads ANTHROPIC_API_KEY from the environment
@@ -67,9 +67,9 @@ export async function checkSentence(request: SentenceRequest): Promise<Verdict> 
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const response = await client.messages.create(params as Anthropic.MessageCreateParamsNonStreaming);
-      if (response.stop_reason === "refusal") throw new Error("Request declined");
+      if (response.stop_reason === "refusal") throw new Error(`Request declined by ${model}`);
       const text = response.content.find((b) => b.type === "text");
-      const parsed = JSON.parse(text?.type === "text" ? text.text : "{}") as Partial<Verdict> & { reasoning?: string };
+      const parsed = JSON.parse(text?.type === "text" ? text.text : "{}") as Partial<Verdict> & { assessment?: string };
       if (typeof parsed.correct !== "boolean") throw new Error("No verdict in reply");
       console.log(`check-sentence ${request.appealOf !== undefined ? "appeal" : "check"} model=${model} correct=${parsed.correct}`);
       return { correct: parsed.correct, feedback: String(parsed.feedback ?? "").trim() };
