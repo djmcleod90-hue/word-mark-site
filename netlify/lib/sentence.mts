@@ -62,10 +62,10 @@ export async function checkSentence(request: SentenceRequest): Promise<Verdict> 
     model,
     // Thinking before the verdict, so the verdict isn't a snap judgement it then has to justify.
     max_tokens: 3000,
-    thinking: { type: "enabled", budget_tokens: 2000 },
+    thinking: { type: "adaptive" },
     system,
     messages: [{ role: "user" as const, content: user }],
-    output_config: { format: { type: "json_schema" as const, schema: SCHEMA } },
+    output_config: { effort: "medium", format: { type: "json_schema" as const, schema: SCHEMA } },
   };
   let lastError: unknown;
   for (let attempt = 0; attempt < 2; attempt++) {
