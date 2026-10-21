@@ -2,7 +2,7 @@
 
 import type { Config } from "@netlify/functions";
 import { checkScan, spendScan } from "../lib/allowance.mts";
-import { blobStore, deviceID, json } from "../lib/http.mts";
+import { attestedJSON, blobStore, deviceID, json } from "../lib/http.mts";
 import { transcribe, type Entry } from "../lib/transcribe.mts";
 
 export default async (req: Request) => {
@@ -10,8 +10,9 @@ export default async (req: Request) => {
   const id = deviceID(req);
   if (!id) return json({ error: "Missing device ID" }, 400);
 
-  let body: { image?: unknown; draft?: unknown };
-  try { body = await req.json(); } catch { return json({ error: "Expected JSON" }, 400); }
+  const attested = await attestedJSON(req, id, "read-card");
+  if ("response" in attested) return attested.response;
+  const body = (attested.body ?? {}) as { image?: unknown; draft?: unknown };
   const image = typeof body.image === "string" ? body.image : "";
   // A JPEG in base64 starts with "/9j/"; ~4 MB of base64 is far more than a card photo needs.
   if (!image.startsWith("/9j/") || image.length > 4_000_000) return json({ error: "Expected a JPEG photo of the card" }, 400);
