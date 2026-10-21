@@ -25,7 +25,7 @@ export default async (req: Request) => {
   await store.set(countKey, String(count + 1));
 
   try {
-    const verdict = await checkSentence(request.word, request.definition, request.sentence);
+    const verdict = await checkSentence(request);
     return json({ ...verdict, left: DAILY_CHECKS - count - 1 });
   } catch (error) {
     console.error("check-sentence failed", error);
