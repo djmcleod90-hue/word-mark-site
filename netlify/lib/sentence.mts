@@ -11,6 +11,18 @@ export const sentenceModel = () => process.env.SENTENCE_MODEL || "claude-sonnet-
 /** A reader's appeal gets the most careful review. */
 export const appealModel = () => process.env.APPEAL_MODEL || "claude-opus-5-5";
 
+const PRICES: Record<string, [number, number]> = { // US$ per million input / output tokens
+  "claude-haiku-4-5": [1, 5],
+  "claude-sonnet-5-5": [2, 10],
+  "claude-opus-5-5": [4, 20],
+};
+
+/** What a request cost, in US cents, from the tokens it used. */
+export function costCents(model: string, usage: { input_tokens: number; output_tokens: number }): number {
+  const [inPrice, outPrice] = PRICES[model] ?? [0, 0];
+  return ((usage.input_tokens * inPrice + usage.output_tokens * outPrice) / 1_000_000) * 100;
+}
+
 const INSTRUCTIONS = `You check sentences for a vocabulary app. A reader has been learning a word and has written (or spoken) a sentence using it, to show they know what it means. Decide whether the sentence uses the word with its meaning.
 
 Judge the word, not the world. You are only checking that the reader knows what the word means and how it is used. Never reject a sentence because you doubt a fact, a situation, a layout or an arrangement: boats, buildings, machines, places, people and lives all differ, and the reader knows their own. If the sentence would make sense with the word's meaning in some reasonable situation, it is correct. For example, for "adjacent", "Our kitchen is adjacent to the garage" is correct even if most kitchens aren't: the reader knows their own house.
@@ -76,7 +88,9 @@ export async function checkSentence(request: SentenceRequest): Promise<Verdict> 
       const text = response.content.find((b) => b.type === "text");
       const parsed = JSON.parse(text?.type === "text" ? text.text : "{}") as Partial<Verdict>;
       if (typeof parsed.correct !== "boolean") throw new Error("No verdict in reply");
-      console.log(`check-sentence ${request.appealOf !== undefined ? "appeal" : "check"} model=${model} correct=${parsed.correct}`);
+      const { input_tokens, output_tokens } = response.usage;
+      console.log(`check-sentence ${request.appealOf !== undefined ? "appeal" : "check"} model=${model} correct=${parsed.correct}`
+        + ` in=${input_tokens} out=${output_tokens} cost=${costCents(model, response.usage).toFixed(2)}c`);
       return { correct: parsed.correct, feedback: String(parsed.feedback ?? "").trim() };
     } catch (error) {
       lastError = error;

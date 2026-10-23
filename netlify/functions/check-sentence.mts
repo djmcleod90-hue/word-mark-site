@@ -7,6 +7,8 @@ import { attestedJSON, deviceID, json } from "../lib/http.mts";
 
 /** Checks a phone may ask for in a day. */
 const DAILY_CHECKS = 20;
+/** Of those, appeals (which use the costliest model) a phone may make in a day. */
+const DAILY_APPEALS = 5;
 
 export default async (req: Request) => {
   if (req.method !== "POST") return json({ error: "Use POST" }, 405);
@@ -22,6 +24,12 @@ export default async (req: Request) => {
   const countKey = `count/${day}/${id}`;
   const count = Number(await store.get(countKey) ?? 0);
   if (count >= DAILY_CHECKS) return json({ error: "daily-limit" }, 429);
+  if (request.appealOf !== undefined) {
+    const appealKey = `appeals/${day}/${id}`;
+    const appeals = Number(await store.get(appealKey) ?? 0);
+    if (appeals >= DAILY_APPEALS) return json({ error: "appeal-limit" }, 429);
+    await store.set(appealKey, String(appeals + 1));
+  }
   await store.set(countKey, String(count + 1));
 
   try {

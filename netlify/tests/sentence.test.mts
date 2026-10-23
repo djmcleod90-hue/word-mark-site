@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { appealModel, cleanRequest, prompt, sentenceModel } from "../lib/sentence.mts";
+import { appealModel, cleanRequest, costCents, prompt, sentenceModel } from "../lib/sentence.mts";
 
 test("accepts a word and sentence, tidying spaces", () => {
   assert.deepEqual(cleanRequest({ word: " lugubrious ", definition: "sad", sentence: "His  lugubrious\nface." }),
@@ -28,4 +28,10 @@ test("a first check uses the sentence model and says nothing of appeals", () => 
   assert.equal(check.model, sentenceModel());
   assert.doesNotMatch(check.system, /earlier check/);
   assert.match(check.system, /Judge the word, not the world/);
+});
+
+test("costs come from the tokens used and each model's price", () => {
+  assert.equal(costCents("claude-sonnet-5-5", { input_tokens: 1_000_000, output_tokens: 0 }), 200);
+  assert.equal(costCents("claude-opus-5-5", { input_tokens: 0, output_tokens: 1_000_000 }), 2000);
+  assert.equal(costCents("unknown-model", { input_tokens: 500, output_tokens: 500 }), 0);
 });
