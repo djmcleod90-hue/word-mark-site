@@ -313,6 +313,14 @@
    ]
   },
   {
+   "word": "apricity",
+   "pos": "noun",
+   "definition": "The warmth of the sun on a winter's day",
+   "origin": "From Latin *aprīcitās* \"sunniness,\" from *aprīcus* \"sunny\". First known use: 1623.",
+   "ipa": "əˈprɪsəti",
+   "examples": []
+  },
+  {
    "word": "arcane",
    "pos": "adjective",
    "definition": "Understood by few; mysterious",
@@ -2163,6 +2171,14 @@
    ]
   },
   {
+   "word": "forswunk",
+   "pos": "adjective",
+   "definition": "Worn out from too much work",
+   "origin": "Middle English *forswonke*, from Old English *forswuncen*, past participle of *forswincan* \"to toil hard,\" from *for-* (intensive) + *swincan* \"to toil\".",
+   "ipa": "fɔrˈswʌŋk",
+   "examples": []
+  },
+  {
    "word": "fortuitous",
    "pos": "adjective",
    "definition": "Happening by chance, often luckily",
@@ -3005,6 +3021,14 @@
    "examples": []
   },
   {
+   "word": "lalochezia",
+   "pos": "noun",
+   "definition": "The relief of stress, anxiety, pain or frustration through swearing",
+   "origin": "From Greek *lalia* \"speech, talk\" + *chezein* \"to relieve oneself\". A medical term, first used in the early 20th century.",
+   "ipa": "ˌlæloʊˈkiziə",
+   "examples": []
+  },
+  {
    "word": "lambent",
    "pos": "adjective",
    "definition": "Softly glowing or flickering",
@@ -3285,6 +3309,14 @@
    ]
   },
   {
+   "word": "matutolypea",
+   "pos": "noun",
+   "definition": "Getting out of bed in a bad mood",
+   "origin": "A modern coinage, not a dictionary entry: from *Matuta*, the Roman goddess of the dawn, + Greek *lypē* \"grief, sorrow\".",
+   "ipa": "məˌtutoʊlaɪˈpiə",
+   "examples": []
+  },
+  {
    "word": "maudlin",
    "pos": "adjective",
    "definition": "Self-pityingly or tearfully sentimental",
@@ -3294,6 +3326,14 @@
     "… a mob of **maudlin** rummies … sing hymns … — Joseph Mitchell",
     "Would crack open another beer and become **maudlin** — Patrick Moore"
    ]
+  },
+  {
+   "word": "maw-worm",
+   "pos": "noun",
+   "definition": "A hypocrite who makes a show of piety; originally, a worm living in the stomach or gut",
+   "origin": "From *maw* \"stomach\" + *worm*. The \"hypocrite\" sense comes from Mawworm, a canting preacher in Isaac Bickerstaffe's play *The Hypocrite* (1769).",
+   "ipa": "ˈmɔˌwɜrm",
+   "examples": []
   },
   {
    "word": "mawkish",
@@ -4327,6 +4367,14 @@
    "examples": [
     "A **querulous** voice"
    ]
+  },
+  {
+   "word": "quiddling",
+   "pos": "adjective",
+   "definition": "Fussing over trifles; wasting time on things that don't matter",
+   "origin": "From the verb *quiddle* \"to trifle, dawdle,\" of uncertain origin.",
+   "ipa": "ˈkwɪdlɪŋ",
+   "examples": []
   },
   {
    "word": "quiescent",
