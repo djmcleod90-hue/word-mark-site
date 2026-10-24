@@ -154,6 +154,16 @@
    ]
   },
   {
+   "word": "agonizing",
+   "pos": "adjective",
+   "definition": "Causing great physical or mental pain",
+   "origin": "From present participle of agonize. First known use: 1570.",
+   "ipa": "ˈægəˌnaɪzɪŋ",
+   "examples": [
+    "An **agonizing** injury"
+   ]
+  },
+  {
    "word": "alacrity",
    "pos": "noun",
    "definition": "Cheerful readiness or eagerness",
@@ -162,6 +172,14 @@
    "examples": [
     "Accepted the invitation with **alacrity**"
    ]
+  },
+  {
+   "word": "alexithymia",
+   "pos": "noun",
+   "definition": "Difficulty recognizing and describing one's own emotions",
+   "origin": "New Latin, from Greek *a-* without + *lexis* word + *thymos* spirit, feeling; coined by psychiatrist Peter Sifneos in 1973.",
+   "ipa": "əˌlɛksəˈθaɪmiə",
+   "examples": []
   },
   {
    "word": "ameliorate",
@@ -252,6 +270,17 @@
    ]
   },
   {
+   "word": "antiquated",
+   "pos": "adjective",
+   "definition": "Old-fashioned or outdated; too old to be useful",
+   "origin": "From *antiquate* to make old, from Late Latin *antiquare*, from Latin *antiquus* ancient.",
+   "ipa": "ˈæntəˌkweɪtəd",
+   "examples": [
+    "**Antiquated** ideas",
+    "**Antiquated** methods of farming"
+   ]
+  },
+  {
    "word": "aphorism",
    "pos": "noun",
    "definition": "A short, pithy statement of a truth",
@@ -284,12 +313,31 @@
    ]
   },
   {
+   "word": "aponia",
+   "pos": "noun",
+   "definition": "Freedom from bodily pain, prized by the Epicureans as a highest good",
+   "origin": "Greek *aponia*, from *a-* without + *ponos* pain, toil.",
+   "ipa": "əˈpoʊniə",
+   "examples": []
+  },
+  {
    "word": "apostasy",
    "pos": "noun",
    "definition": "The abandonment of a belief or cause",
    "origin": "Middle English *apostasie,* borrowed from Anglo-French, borrowed from Late Latin *apostasia,* borrowed from Greek *apostasía* \"defection, revolt, (Septuagint) rebellion against God\" (Late Greek, \"defection, apostasy\"), variant (with *-ia* -ia) of *apóstasis,* from *aposta-,* variant stem of *aphístamai, aphístasthai* \"to stand away from, keep aloof from, revolt,\" middle voice of *aphístēmi, aphistánai* \"to put away, remove, cause to revolt\" (from *aph-,* assimilated variant of *apo-* apo- + *histánai* \"to cause to stand, place\") + *-sis* -sis. First known use: 14th century.",
    "ipa": "əˈpɑstəsi",
    "examples": []
+  },
+  {
+   "word": "apotheosis",
+   "pos": "noun",
+   "definition": "The highest point of something; elevation to divine status",
+   "origin": "Borrowed from Late Latin *apotheōsis* \"transformation into a god, deification,\" borrowed from Greek *apothéōsis,* from *apotheō-,* variant stem of *apotheóō, apotheoûn* \"to transform into a god, deify\" (from *apo-* apo- + *theoûn* \"to make a god of,\" verbal derivative of *theós* \"god\") + -sis -sis. First known use: circa 1580.",
+   "ipa": "əˌpɑθiˈoʊsəs",
+   "examples": [
+    "The **apotheosis** of Hollywood glamour",
+    "… Nelson Rockefeller, the other top contender and the **apotheosis** of liberal Republicanism. — Sam Tanenhaus"
+   ]
   },
   {
    "word": "apposite",
@@ -351,6 +399,17 @@
    "examples": [
     "… a life of **arduous** toil. — A. C. Cole",
     "An **arduous** task"
+   ]
+  },
+  {
+   "word": "arid",
+   "pos": "adjective",
+   "definition": "Having little or no rain; dry, barren and lifeless",
+   "origin": "Borrowed from French & Latin; French *aride,* going back to Middle French, borrowed from Latin *āridus, ārdus* \"dry, waterless, withered, austere (of style),\" derivative, with the adjective suffix *-idus,* of *ārēre* \"to be dry, parched, withered,\" going back to Indo-European **h2eh1s-eh1-,* stative derivative of a verbal base **h2eh1s-* \"make dry with heat,\" whence also Tocharian A *asatär* \"(it) dries up,\" Tocharian B *osotär*; also from the same base a root noun **h2eh1s-,* whence Hittite *ḫāšš-* \"ashes, dust,\" from which as thematic derivatives Sanskrit *ā́saḥ* \"ashes, dust,\" and (as a collective or noun of appurtenance?) **h2eh1s-eh2-,* whence Latin *āra* \"altar,\" Oscan *aasaí* (locative), Hittite *ḫāššā-* \"hearth,\" Old High German *essa, esse* \"forge\" (from **asjō-*), Old Swedish *æsia, æssia* \"smith's fire,\" Old Icelandic *esja* \"soapstone (used in hearths)\" (both from **asjōn-*). First known use: 1652.",
+   "ipa": "ˈærəd",
+   "examples": [
+    "An **arid** region",
+    "**Arid** textbooks"
    ]
   },
   {
@@ -650,11 +709,27 @@
    ]
   },
   {
+   "word": "bruxism",
+   "pos": "noun",
+   "definition": "Habitual grinding or clenching of the teeth, often in sleep",
+   "origin": "Irregular from Greek *brychein* to gnash the teeth + English *-ism*. First known use: 1932.",
+   "ipa": "ˈbrəkˌsɪzəm",
+   "examples": []
+  },
+  {
    "word": "bucolic",
    "pos": "adjective",
    "definition": "Relating to the pleasant aspects of country life",
    "origin": "Latin *bucolicus*, from Greek *boukolikos*, from *boukolos* cowherd, from *bous* head of cattle + *-kolos* (akin to Latin *colere* to cultivate). First known use: circa 1609.",
    "ipa": "bjuˈkɑlɪk",
+   "examples": []
+  },
+  {
+   "word": "bumfuzzle",
+   "pos": "verb",
+   "definition": "To confuse or fluster completely",
+   "origin": "Of uncertain origin, perhaps a fanciful alteration of *bamboozle*; an American and British dialect word.",
+   "ipa": "ˈbəmˌfəzəl",
    "examples": []
   },
   {
@@ -930,6 +1005,17 @@
    ]
   },
   {
+   "word": "clamorous",
+   "pos": "adjective",
+   "definition": "Loud and noisy; insistently demanding",
+   "origin": "Middle English *clamourus, clamorous,* from *clamour* clamour + *-ous, -us* -ous. First known use: 15th century.",
+   "ipa": "ˈklæmrəs",
+   "examples": [
+    "**Clamorous** city streets",
+    "**Clamorous** demands"
+   ]
+  },
+  {
    "word": "clamour",
    "pos": "noun",
    "definition": "A loud and confused noise, especially of protest",
@@ -959,6 +1045,17 @@
    "examples": [
     "Her coyness grows **cloying** after a while … — Elysa Gardner",
     "**Cloying** sweetness"
+   ]
+  },
+  {
+   "word": "coarse",
+   "pos": "adjective",
+   "definition": "Rough in texture; crude or vulgar in manner",
+   "origin": "Middle English *cors*, perhaps from *course*, noun. First known use: 14th century.",
+   "ipa": "ˈkɔrs",
+   "examples": [
+    "Of what **coarse** metal ye are molded … — Shakespeare",
+    "A **coarse** saw with large teeth"
    ]
   },
   {
@@ -1197,6 +1294,17 @@
    ]
   },
   {
+   "word": "crisp",
+   "pos": "adjective",
+   "definition": "Firm, dry and brittle; fresh and bracing; briskly clear",
+   "origin": "Middle English, from Old English, from Latin *crispus*; akin to Welsh *crych* curly. First known use: before 12th century.",
+   "ipa": "ˈkrɪsp",
+   "examples": [
+    "A **crisp** tale of intrigue",
+    "A **crisp** cracker"
+   ]
+  },
+  {
    "word": "cupidity",
    "pos": "noun",
    "definition": "Greed for money or possessions",
@@ -1240,6 +1348,17 @@
    ]
   },
   {
+   "word": "deafening",
+   "pos": "adjective",
+   "definition": "So loud as to make hearing impossible",
+   "origin": "From present participle of *deafen*, from *deaf* + *-en*.",
+   "ipa": "ˈdɛfənɪŋ",
+   "examples": [
+    "Fell with a **deafening** clap",
+    "Their silence on the issue was **deafening**."
+   ]
+  },
+  {
    "word": "dearth",
    "pos": "noun",
    "definition": "A scarcity or lack",
@@ -1256,6 +1375,17 @@
    "origin": "French *débâcle*, from *débâcler* to clear, from Middle French *desbacler*, from *des-* de- + *bacler* to block, perhaps from Vulgar Latin **bacculare*, from Latin *baculum* staff. First known use: 1802.",
    "ipa": "diˈbɑkəl",
    "examples": []
+  },
+  {
+   "word": "debilitated",
+   "pos": "adjective",
+   "definition": "Severely weakened, as by illness or hardship",
+   "origin": "Latin *debilitatus*, past participle of *debilitare* to weaken, from *debilis* weak. First known use: 1533.",
+   "ipa": "dɪˈbɪləˌteɪtəd",
+   "examples": [
+    "An economy **debilitated** by years of civil war",
+    "Sailors **debilitated** by scurvy"
+   ]
   },
   {
    "word": "debonair",
@@ -1335,6 +1465,17 @@
    "examples": [
     "In the novel's **denouement**, the two hostages escape to freedom.",
     "It is an intentionally unsettling **denouement**, which is in keeping with the tone and purpose of the entire miniseries. — David Wiegand"
+   ]
+  },
+  {
+   "word": "deplorable",
+   "pos": "adjective",
+   "definition": "Deserving strong condemnation; shockingly bad",
+   "origin": "From French *déplorable*, from *déplorer* to lament, from Latin *deplorare* to weep bitterly.",
+   "ipa": "dɪˈplɔrəbəl",
+   "examples": [
+    "**Deplorable** behaviour",
+    "**Deplorable** living conditions"
    ]
   },
   {
@@ -1440,6 +1581,14 @@
     "Mr. Carroll often criticizes the superficial lives of the **dilettantes** … who mingle in New York. — Mark Stevens",
     "Whitman ran an amateurish campaign … and was painted as an aristocratic **dilettante**. — Eleanor Clift"
    ]
+  },
+  {
+   "word": "diminutive",
+   "pos": "adjective",
+   "definition": "Extremely or unusually small",
+   "origin": "Middle English *diminutif*, from Medieval Latin *diminutivum*, alteration of Late Latin *deminutivum*, from neuter of *deminutivus*, adjective, from *deminutus*, past participle of *deminuere* \"to lessen\". First known use: 14th century.",
+   "ipa": "dəˈmɪnjətɪv",
+   "examples": []
   },
   {
    "word": "discomfit",
@@ -1595,6 +1744,16 @@
    "ipa": "dʊˈplɪsəti",
    "examples": [
     "… the simplicity and openness of their lives brought out for him the **duplicity** that lay at the bottom of ours. — Mary Austin"
+   ]
+  },
+  {
+   "word": "dysphoria",
+   "pos": "noun",
+   "definition": "A profound state of unease or dissatisfaction",
+   "origin": "Borrowed from New Latin, borrowed from Greek *dysphoría* \"malaise, discomfort, vexation,\" from *dýsphoros* \"hard to bear, grievous\" (from *dys-* dys- + *-phoros,* nominal ablaut derivative from the base of *phérein* \"to carry, bear\") + *-ia* -ia. First known use: circa 1842.",
+   "ipa": "dɪsˈfɔriə",
+   "examples": [
+    "Paradoxically, chronic cocaine use eventually leads to **dysphoria**—a depressed, low-energy state characterized by flattened emotions, a lack of interest in sex, and physical immobility. — James Lieber"
    ]
   },
   {
@@ -1759,6 +1918,16 @@
    "examples": []
   },
   {
+   "word": "enervated",
+   "pos": "adjective",
+   "definition": "Drained of energy or vitality; exhausted",
+   "origin": "Latin *enervatus*, past participle of *enervare*, from *e-* + *nervus* sinew. First known use: 1605.",
+   "ipa": "ˈɛnərˌveɪtəd",
+   "examples": [
+    "A government **enervated** by corruption"
+   ]
+  },
+  {
    "word": "engender",
    "pos": "verb",
    "definition": "To cause or give rise to",
@@ -1904,6 +2073,17 @@
    "examples": []
   },
   {
+   "word": "euphoric",
+   "pos": "adjective",
+   "definition": "Intensely happy and excited",
+   "origin": "From *euphoria*, New Latin, from Greek *euphoros* healthy, from *eu-* well + *pherein* to bear.",
+   "ipa": "juˈfɔrɪk",
+   "examples": [
+    "He knew he was going to win big, big, big, and he was **euphoric** about it. — Russell Baker",
+    "A **euphoric** mood"
+   ]
+  },
+  {
    "word": "evanescent",
    "pos": "adjective",
    "definition": "Quickly fading from sight or memory",
@@ -1950,6 +2130,14 @@
     "**Exigent** circumstances",
     "An **exigent** client"
    ]
+  },
+  {
+   "word": "exorbitant",
+   "pos": "adjective",
+   "definition": "Unreasonably high, as a price; far beyond what is fair",
+   "origin": "Middle English, from Late Latin *exorbitant-, exorbitans*, present participle of *exorbitare* to deviate, from Latin *ex-* + *orbita* track of a wheel, rut, from *orbis* disk, hoop. First known use: 15th century.",
+   "ipa": "ɪgˈzɔrbətənt",
+   "examples": []
   },
   {
    "word": "expiate",
@@ -1999,6 +2187,17 @@
    "examples": [
     "Replied in a **facetious** tone",
     "… a … possibly **facetious** suggestion that Texas should secede if Washington doesn't ease off … — Todd J. Gillman"
+   ]
+  },
+  {
+   "word": "facile",
+   "pos": "adjective",
+   "definition": "Easily done; overly simple, glib or superficial",
+   "origin": "Borrowed from Anglo-French & Latin; Anglo-French, borrowed from Latin *facilis* \"easy, accommodating, nimble,\" from *fac-,* stem of *facere* \"to make, bring about, perform, do\" + *-ilis* -ile. First known use: 15th century.",
+   "ipa": "ˈfæsəl",
+   "examples": [
+    "… I am not concerned … with offering any **facile** solution for so complex a problem … — T. S. Eliot",
+    "A **facile** victory"
    ]
   },
   {
@@ -2127,6 +2326,14 @@
    ]
   },
   {
+   "word": "flibbertigibbet",
+   "pos": "noun",
+   "definition": "A flighty, frivolous and overly talkative person",
+   "origin": "Middle English *flepergebet*. First known use: 15th century.",
+   "ipa": "ˌflɪbərtiˈdʒɪbət",
+   "examples": []
+  },
+  {
    "word": "florid",
    "pos": "adjective",
    "definition": "Elaborately ornate; also, flushed red",
@@ -2158,6 +2365,14 @@
     "Was accused of **fomenting** a riot",
     "**Foment** a rebellion"
    ]
+  },
+  {
+   "word": "fopdoodle",
+   "pos": "noun",
+   "definition": "A fool; a silly, insignificant person",
+   "origin": "From *fop* a foolish person + *doodle* a simpleton. First known use: 17th century.",
+   "ipa": "ˈfɑpˌdudəl",
+   "examples": []
   },
   {
    "word": "forbearance",
@@ -2198,6 +2413,17 @@
    "examples": [
     "A **fractious** crowd",
     "A **fractious** political campaign"
+   ]
+  },
+  {
+   "word": "frenetic",
+   "pos": "adjective",
+   "definition": "Fast, energetic and wildly uncontrolled",
+   "origin": "Middle English *frenetik, frentik, frantike* \"temporarily deranged, delirious,\" borrowed from Anglo-French *frenetic, frenetique,* borrowed from Latin *phrenēticus* \"suffering from madness,\" borrowed from Greek *phrenētikós,* late variant of *phrenītikós,* from *phrenîtis* \"inflammation of the brain, delirium, insanity\" (from *phren-, phrḗn* \"midriff, seat of the passions, mind, wit\" —of uncertain origin— + *-ītis* -itis) + *-ikos* -ic. First known use: circa 1529.",
+   "ipa": "frɪˈnɛtɪk",
+   "examples": [
+    "A **frenetic** attempt to beat a deadline",
+    "… succumb to exhaustion merely trying to keep up with the president's **frenetic** schedule."
    ]
   },
   {
@@ -2297,6 +2523,17 @@
    ]
   },
   {
+   "word": "gelid",
+   "pos": "adjective",
+   "definition": "Icy cold; extremely chilly",
+   "origin": "Latin *gelidus*, from *gelu* frost, cold. First known use: 1599.",
+   "ipa": "ˈdʒɛləd",
+   "examples": [
+    "A man of **gelid** reserve",
+    "**Gelid** water"
+   ]
+  },
+  {
    "word": "germane",
    "pos": "adjective",
    "definition": "Relevant to the subject",
@@ -2344,6 +2581,14 @@
    "examples": []
   },
   {
+   "word": "gobbledygook",
+   "pos": "noun",
+   "definition": "Wordy, jargon-laden language that is hard to understand",
+   "origin": "Irregular from *gobble*, noun. First known use: 1944.",
+   "ipa": "ˈgɑbəldiˌgʊk",
+   "examples": []
+  },
+  {
    "word": "gossamer",
    "pos": "adjective",
    "definition": "Very light, thin and delicate",
@@ -2371,6 +2616,25 @@
     "Is friendly, outgoing, and **gregarious**",
     "**Gregarious** animals"
    ]
+  },
+  {
+   "word": "grotesque",
+   "pos": "adjective",
+   "definition": "Strangely distorted or ugly; absurdly incongruous",
+   "origin": "French, from Italian *grottesca*, a style of painting found in excavated Roman ruins, from *grotta* grotto.",
+   "ipa": "groʊˈtɛsk",
+   "examples": [
+    "A **grotesque** distortion of the facts",
+    "A **grotesque** Halloween costume"
+   ]
+  },
+  {
+   "word": "grumbletonian",
+   "pos": "noun",
+   "definition": "A habitual grumbler or complainer",
+   "origin": "From *grumble* + *-tonian*, modelled on sect names like *Muggletonian*; first used of 17th-century critics of the English court.",
+   "ipa": "ˌgrəmbəlˈtoʊniən",
+   "examples": []
   },
   {
    "word": "guile",
@@ -2462,6 +2726,17 @@
    ]
   },
   {
+   "word": "herculean",
+   "pos": "adjective",
+   "definition": "Requiring great strength or effort, as a herculean task",
+   "origin": "From *Hercules*, the Greek hero famed for his twelve great labours.",
+   "ipa": "ˌhərkjəˈliən",
+   "examples": [
+    "**Herculean** tasks",
+    "**Herculean** proportions"
+   ]
+  },
+  {
    "word": "heterodox",
    "pos": "adjective",
    "definition": "Not conforming to accepted standards or beliefs",
@@ -2491,6 +2766,14 @@
    "examples": [
     "**Hidebound** traditions"
    ]
+  },
+  {
+   "word": "hiraeth",
+   "pos": "noun",
+   "definition": "A deep longing for a home one can't return to, or that never was",
+   "origin": "Welsh, longing, homesickness.",
+   "ipa": "ˈhɪraɪθ",
+   "examples": []
   },
   {
    "word": "hirsute",
@@ -2593,6 +2876,17 @@
    "examples": [
     "America's president and scientific establishment became furiously embroiled with a few writers of popular nature books for children. The **imbroglio** ended in the rout of the nature writers … — Matt Cartmill",
     "Survived the political **imbroglio**"
+   ]
+  },
+  {
+   "word": "immaculate",
+   "pos": "adjective",
+   "definition": "Perfectly clean and tidy; free from flaw or error",
+   "origin": "Middle English *immaculat*, from Latin *immaculatus*, from *in-* + *maculatus* stained. First known use: 15th century.",
+   "ipa": "ɪˈmækjələt",
+   "examples": [
+    "An **immaculate** record of service",
+    "An **immaculate** kitchen"
    ]
   },
   {
@@ -2729,6 +3023,17 @@
    "examples": [
     "Evidence of **incipient** racial tension",
     "An **incipient** solar system"
+   ]
+  },
+  {
+   "word": "incisive",
+   "pos": "adjective",
+   "definition": "Sharp and penetrating in thought; clear and direct",
+   "origin": "From Medieval Latin *incisivus*, from Latin *incisus*, past participle of *incidere* to cut into.",
+   "ipa": "ɪnˈsaɪsɪv",
+   "examples": [
+    "An **incisive** analysis",
+    "An **incisive** unsentimental writer"
    ]
   },
   {
@@ -2885,6 +3190,16 @@
    ]
   },
   {
+   "word": "intrepid",
+   "pos": "adjective",
+   "definition": "Fearless and adventurous",
+   "origin": "Latin *intrepidus*, from *in-* + *trepidus* alarmed. First known use: 1680.",
+   "ipa": "ɪnˈtrɛpəd",
+   "examples": [
+    "An **intrepid** explorer"
+   ]
+  },
+  {
    "word": "inure",
    "pos": "verb",
    "definition": "To accustom to something unpleasant",
@@ -2992,6 +3307,22 @@
    ]
   },
   {
+   "word": "kaleidoscopic",
+   "pos": "adjective",
+   "definition": "Brightly varied in colour and pattern; ever-changing",
+   "origin": "Greek *kalos* beautiful + *eidos* form + English *-scope*. First known use: 1817.",
+   "ipa": "kəˌlaɪdəˈskɑpɪk",
+   "examples": []
+  },
+  {
+   "word": "kilig",
+   "pos": "noun",
+   "definition": "The giddy, fluttery thrill of being near someone you like",
+   "origin": "Tagalog, the thrill or exhilaration of romance; added to the Oxford English Dictionary in 2016.",
+   "ipa": "kɪˈlɪg",
+   "examples": []
+  },
+  {
    "word": "labyrinthine",
    "pos": "adjective",
    "definition": "Intricate and confusing, like a maze",
@@ -3010,6 +3341,16 @@
    "examples": [
     "Tended to become **lachrymose** when he was drunk",
     "A **lachrymose** drama"
+   ]
+  },
+  {
+   "word": "lackadaisical",
+   "pos": "adjective",
+   "definition": "Lacking enthusiasm and determination; carelessly lazy",
+   "origin": "Irregular from *lackaday* + *-ical*. First known use: 1768.",
+   "ipa": "ˌlækəˈdeɪzɪkəl",
+   "examples": [
+    "Teachers who are impatient with **lackadaisical** students"
    ]
   },
   {
@@ -3164,6 +3505,17 @@
    ]
   },
   {
+   "word": "lollygag",
+   "pos": "verb",
+   "definition": "To dawdle or fool around; to waste time",
+   "origin": "Origin unknown. First known use: 1862.",
+   "ipa": "ˈlɑliˌgæg",
+   "examples": [
+    "Stop **lollygagging** and get to work.",
+    "We were slow because the girl was **lollygagging**, the photographer was photographing, and I was on crutches. — James Robison"
+   ]
+  },
+  {
    "word": "loquacious",
    "pos": "adjective",
    "definition": "Tending to talk a great deal",
@@ -3211,6 +3563,17 @@
    "examples": [
     "… dark, dramatic and **lugubrious** brooding … — V. S. Pritchett",
     "The tour de force of **lugubrious** cliche is ten times longer than this review — Martin Amis"
+   ]
+  },
+  {
+   "word": "luminous",
+   "pos": "adjective",
+   "definition": "Giving off light; bright, shining or radiant",
+   "origin": "Middle English *luminouse, luminose,* borrowed from Anglo-French & Latin; Anglo-French *luminous,* borrowed from Latin *lūminōsus* \"full of light, dazzling,\" from *lūmin-, lūmen* \"light, source of light\" + *-ōsus* -ous. First known use: 15th century.",
+   "ipa": "ˈlumənəs",
+   "examples": [
+    "… **luminous** objects—the nebula, the stars, the planets … — Lincoln La Paz",
+    "**Luminous** with sunlight"
    ]
   },
   {
@@ -3296,6 +3659,14 @@
    "examples": [
     "His boss suspected him of **malingering** because of his frequent absences from work."
    ]
+  },
+  {
+   "word": "mamihlapinatapai",
+   "pos": "noun",
+   "definition": "A look shared by two people, each wishing the other would act first",
+   "origin": "Yaghan, a language of Tierra del Fuego; often cited as one of the world's most concise words.",
+   "ipa": "ˌmɑmiˌlɑpinəˈtɑpaɪ",
+   "examples": []
   },
   {
    "word": "martinet",
@@ -3493,6 +3864,17 @@
    ]
   },
   {
+   "word": "mournful",
+   "pos": "adjective",
+   "definition": "Feeling, expressing or causing sorrow",
+   "origin": "From *mourn* + *-ful*; *mourn* from Old English *murnan*.",
+   "ipa": "ˈmɔrnfəl",
+   "examples": [
+    "A **mournful** face",
+    "A **mournful** howl"
+   ]
+  },
+  {
    "word": "mumpsimus",
    "pos": "noun",
    "definition": "A stubborn adherence to error despite correction",
@@ -3507,6 +3889,17 @@
    "examples": [
     "**Munificent** donors",
     "A **munificent** gift"
+   ]
+  },
+  {
+   "word": "murky",
+   "pos": "adjective",
+   "definition": "Dark and gloomy; cloudy, as water; obscure or questionable",
+   "origin": "From *murk* + *-y*. *Murk*: Middle English *mirke*, probably from Old Norse *myrkr* darkness; akin to Old English *mirce* gloom. First known use: 14th century.",
+   "ipa": "ˈmərki",
+   "examples": [
+    "The **murky** bottom of the lake",
+    "Handicapped by my seasickness and by the **murky** skies, I hardly ever could make my star sights work. — Robert Shenk"
    ]
   },
   {
@@ -3584,6 +3977,14 @@
    ]
   },
   {
+   "word": "novel",
+   "pos": "adjective",
+   "definition": "New and unusual; interestingly original",
+   "origin": "Middle English, from Anglo-French, from Latin *novellus*, diminutive of *novus* new.",
+   "ipa": "ˈnɑvəl",
+   "examples": []
+  },
+  {
    "word": "nugatory",
    "pos": "adjective",
    "definition": "Of no value or importance",
@@ -3600,6 +4001,14 @@
    "definition": "Having a strong spiritual or divine quality",
    "origin": "Latin *numin-, numen* numen. First known use: 1647.",
    "ipa": "ˈnumənəs",
+   "examples": []
+  },
+  {
+   "word": "obdormition",
+   "pos": "noun",
+   "definition": "Numbness of a limb that has fallen asleep from pressure",
+   "origin": "From Late Latin *obdormitio*, from Latin *obdormire* to fall asleep, from *ob-* + *dormire* to sleep.",
+   "ipa": "ˌɑbdɔrˈmɪʃən",
    "examples": []
   },
   {
@@ -3734,6 +4143,14 @@
    ]
   },
   {
+   "word": "orenda",
+   "pos": "noun",
+   "definition": "In Iroquoian belief, a spiritual power in all things that can effect change",
+   "origin": "From Huron (Wendat), an Iroquoian word for a spiritual force; brought into English by anthropologist J. N. B. Hewitt in 1902.",
+   "ipa": "ɔˈrɛndə",
+   "examples": []
+  },
+  {
    "word": "ossify",
    "pos": "verb",
    "definition": "To become rigid and unable to change",
@@ -3818,6 +4235,17 @@
    ]
   },
   {
+   "word": "paltry",
+   "pos": "adjective",
+   "definition": "Small or meagre; petty and worthless",
+   "origin": "Obsolete *paltry* trash, from dialect *palt, pelt* piece of coarse cloth, trash; akin to Middle Low German *palte* rag. First known use: 1565.",
+   "ipa": "ˈpɔltri",
+   "examples": [
+    "Built **paltry** houses unfit for occupancy",
+    "They in their greatness don't have to bother with such **paltry** restrictions — Vanessa Feltz"
+   ]
+  },
+  {
    "word": "panacea",
    "pos": "noun",
    "definition": "A cure for all ills",
@@ -3849,6 +4277,14 @@
    ]
   },
   {
+   "word": "paracosm",
+   "pos": "noun",
+   "definition": "A detailed imaginary world, often one created in childhood",
+   "origin": "From Greek *para-* beside + *kosmos* world; coined in the 1970s.",
+   "ipa": "ˈpærəˌkɑzəm",
+   "examples": []
+  },
+  {
    "word": "paragon",
    "pos": "noun",
    "definition": "A model of excellence",
@@ -3857,6 +4293,28 @@
    "examples": [
     "Was a **paragon** of goodness",
     "A **paragon** of a wife"
+   ]
+  },
+  {
+   "word": "paramount",
+   "pos": "adjective",
+   "definition": "More important than anything else; supreme",
+   "origin": "Anglo-French *paramont*, from *par* by (from Latin *per*) + *amunt* above, from *a* to (from Latin *ad*) + *munt* mountain. First known use: 1530.",
+   "ipa": "ˈpɛrəˌmaʊnt",
+   "examples": [
+    "A matter of **paramount** importance",
+    "Unemployment was the **paramount** issue in the election."
+   ]
+  },
+  {
+   "word": "parched",
+   "pos": "adjective",
+   "definition": "Extremely dry; very thirsty",
+   "origin": "From Middle English *parch*. First known use: 14th century.",
+   "ipa": "ˈpɑrtʃt",
+   "examples": [
+    "He was **parched** after the long hike.",
+    "**Parched** land"
    ]
   },
   {
@@ -4026,6 +4484,17 @@
    "examples": []
   },
   {
+   "word": "pervasive",
+   "pos": "adjective",
+   "definition": "Spreading through every part of something",
+   "origin": "From Latin *pervasus*, past participle of *pervadere* to go through, + English *-ive*.",
+   "ipa": "pərˈveɪsɪv",
+   "examples": [
+    "Social media's **pervasive** influence on our culture",
+    "This is one of the most persistent and **pervasive** problems in the music business. — Shaun Harper"
+   ]
+  },
+  {
    "word": "petrichor",
    "pos": "noun",
    "definition": "The pleasant smell of rain on dry earth",
@@ -4035,6 +4504,25 @@
     "Australian scientists first documented the process of **petrichor** formation in 1964 … — Tim Logan",
     "The intensity of the **petrichor** smell can vary with the type of soil and how heavily the rain is falling. — John Boyer"
    ]
+  },
+  {
+   "word": "petrified",
+   "pos": "adjective",
+   "definition": "So frightened one cannot move; turned to stone",
+   "origin": "From past participle of petrify. First known use: 15th century.",
+   "ipa": "ˈpɛtrəˌfaɪd",
+   "examples": [
+    "And at the Los Angeles County Museum of Natural History's annual dinosaur ball, about 800 patrons in black tie or gown waltz among the **petrified** remains of the once-glorious creatures. — Sheldon Teitelbaum",
+    "Was **petrified** of speaking in public"
+   ]
+  },
+  {
+   "word": "pettifogger",
+   "pos": "noun",
+   "definition": "One who quibbles over trivial details; a petty lawyer",
+   "origin": "Probably from *petty* + obsolete English *fogger* pettifogger. First known use: 1564.",
+   "ipa": "ˈpɛtiˌfɔgər",
+   "examples": []
   },
   {
    "word": "petulant",
@@ -4054,6 +4542,16 @@
    "origin": "Middle English *fleumatik, flemmatik, fleugmatik,* borrowed from Anglo-French & Late Latin; Anglo-French *fleumatike,* borrowed from Late Latin *phlegmaticus* \"relating to or producing the humour phlegm,\" borrowed from Greek *phlegmatikós* \"abounding in phlegm,\" from *phlegmat-, phlégma* \"flame, inflammation, phlegm\" + *-ikos* -ic. First known use: 14th century.",
    "ipa": "flɛgˈmætɪk",
    "examples": []
+  },
+  {
+   "word": "phosphene",
+   "pos": "noun",
+   "definition": "Light seen with closed eyes, as when they are rubbed",
+   "origin": "International Scientific Vocabulary *phos-* + Greek *phainein* to show. First known use: 1852.",
+   "ipa": "ˈfɑsˌfin",
+   "examples": [
+    "Early studies have demonstrated that direct electrical stimulation to neurons of the visual system will cause a subject to perceive points of light (**phosphenes**). — George Scarlatis"
+   ]
   },
   {
    "word": "picaresque",
@@ -4093,6 +4591,17 @@
    "examples": []
   },
   {
+   "word": "placid",
+   "pos": "adjective",
+   "definition": "Calm and peaceful, with little movement or excitement",
+   "origin": "Latin *placidus*, from *placēre* to please. First known use: 1614.",
+   "ipa": "ˈplæsəd",
+   "examples": [
+    "**Placid** skies",
+    "A **placid** disposition"
+   ]
+  },
+  {
    "word": "platitude",
    "pos": "noun",
    "definition": "A remark used too often to be interesting",
@@ -4123,6 +4632,14 @@
     "… Grand Cayman offers a **plethora** of bustling restaurants, ritzy resorts and comfortable condos … — Susanne Cummings",
     "… a world whose credibility is threatened by the meaningless **plethora** of material goods it goes on producing. — W. Roy Niblett"
    ]
+  },
+  {
+   "word": "plush",
+   "pos": "adjective",
+   "definition": "Richly luxurious and comfortable",
+   "origin": "Middle French *peluche*. First known use: 1590.",
+   "ipa": "ˈpləʃ",
+   "examples": []
   },
   {
    "word": "poignant",
@@ -4160,6 +4677,14 @@
    "examples": [
     "They **prattled** on into the night about the old days."
    ]
+  },
+  {
+   "word": "precipitate",
+   "pos": "adjective",
+   "definition": "Done suddenly and without careful thought; hasty",
+   "origin": "Latin *praecipitatus*, past participle of *praecipitare*, from *praecipit-, praeceps*. First known use: 1528.",
+   "ipa": "prɪˈsɪpəˌteɪt",
+   "examples": []
   },
   {
    "word": "precocious",
@@ -4459,6 +4984,17 @@
    "examples": []
   },
   {
+   "word": "ravenous",
+   "pos": "adjective",
+   "definition": "Extremely hungry; fiercely eager for satisfaction",
+   "origin": "Middle English *ravynous, raveynous,* from *ravyn, raveyn* \"robbery, rapacity\" + *-ous* -ous. First known use: 15th century.",
+   "ipa": "ˈrævənəs",
+   "examples": [
+    "**Ravenous** wolves",
+    "A **ravenous** appetite"
+   ]
+  },
+  {
    "word": "recalcitrant",
    "pos": "adjective",
    "definition": "Uncooperative toward authority",
@@ -4577,6 +5113,16 @@
    "examples": [
     "\"… from this day I diet him on bread and water— **rescind** his pocket-money! …\" — George Meredith",
     "… the bean counters send letters that seem to suggest they can **rescind** the patient's good health unless he pays up immediately. — Karen Stabiner"
+   ]
+  },
+  {
+   "word": "resplendent",
+   "pos": "adjective",
+   "definition": "Shining brilliantly; splendid in appearance",
+   "origin": "Middle English, from Latin *resplendent-, resplendens*, present participle of *resplendēre* to shine back, from *re-* + *splendēre* to shine. First known use: 15th century.",
+   "ipa": "rɪˈsplɛndənt",
+   "examples": [
+    "Meadows **resplendent** with wildflowers …"
    ]
   },
   {
@@ -4730,6 +5276,17 @@
    "examples": []
   },
   {
+   "word": "saturated",
+   "pos": "adjective",
+   "definition": "Thoroughly soaked; holding as much as it can absorb",
+   "origin": "Latin *saturatus*, past participle of *saturare*, from *satur* well-fed. First known use: 1538.",
+   "ipa": "ˈsætʃəˌreɪtəd",
+   "examples": [
+    "If more material is added to a **saturated** solution, no further dissolving will take place. The extra material will simply settle to the bottom of the solution. — Merill C. Fellger",
+    "The early spring sky is a deep **saturated** blue next to the muddy brown of the dry, scrubby hills … — Sonia Shaw"
+   ]
+  },
+  {
    "word": "saturnine",
    "pos": "adjective",
    "definition": "Slow and gloomy; sullen",
@@ -4850,6 +5407,43 @@
    ]
   },
   {
+   "word": "sibylline",
+   "pos": "adjective",
+   "definition": "Prophetic and mysterious; cryptically foreboding",
+   "origin": "Middle English *sibile, sybylle*, from Anglo-French & Latin; Anglo-French *sibile*, from Latin *sibylla*, from Greek. First known use: 14th century.",
+   "ipa": "ˈsɪbəˌlaɪn",
+   "examples": []
+  },
+  {
+   "word": "sidesplitting",
+   "pos": "adjective",
+   "definition": "Extremely funny; causing uproarious laughter",
+   "origin": "From *side* + *splitting*, as if laughter could split one's sides.",
+   "ipa": "ˈsaɪdˌsplɪtɪŋ",
+   "examples": [
+    "A **sidesplitting** comedy"
+   ]
+  },
+  {
+   "word": "silken",
+   "pos": "adjective",
+   "definition": "Soft, smooth and lustrous, like silk",
+   "origin": "Old English *seolcen*, from *seolc* silk + *-en*.",
+   "ipa": "ˈsɪlkən",
+   "examples": [
+    "… the same **silken** surroundings encountered at the restaurant's far more expensive evening meal. — Elaine Tait",
+    "A **silken** voice"
+   ]
+  },
+  {
+   "word": "sillage",
+   "pos": "noun",
+   "definition": "The trail of scent left in the air by someone's perfume; a wake",
+   "origin": "French, the wake of a ship, from *sillon* furrow.",
+   "ipa": "siˈjɑʒ",
+   "examples": []
+  },
+  {
    "word": "simulacrum",
    "pos": "noun",
    "definition": "An image or imitation, often unsatisfactory",
@@ -4876,11 +5470,45 @@
    "examples": []
   },
   {
+   "word": "slugabed",
+   "pos": "noun",
+   "definition": "One who lazily lies in bed late",
+   "origin": "From *slug* to be lazy + *abed* in bed. First known use: late 16th century.",
+   "ipa": "ˈsləgəˌbɛd",
+   "examples": []
+  },
+  {
+   "word": "sluggish",
+   "pos": "adjective",
+   "definition": "Slow-moving or inactive; lacking energy",
+   "origin": "From *slug* + *-ish*. *Slug*: Middle English *slugge*, of Scandinavian origin; akin to Norwegian dialect *slugga* to walk sluggishly. First known use: 15th century.",
+   "ipa": "ˈsləgɪʃ",
+   "examples": []
+  },
+  {
+   "word": "snollygoster",
+   "pos": "noun",
+   "definition": "A shrewd, unprincipled person, especially a politician",
+   "origin": "Probably alteration of *snallygaster* a mythical creature that preys on poultry and children. First known use: 1845.",
+   "ipa": "ˈsnɑliˌgɑstər",
+   "examples": [
+    "Truman lamented that Dwight Eisenhower had given in to congressional \"**snollygosters**\"—unprincipled politicians. — Orme Wilson"
+   ]
+  },
+  {
    "word": "sobriquet",
    "pos": "noun",
    "definition": "A nickname",
    "origin": "From French *sobriquet*. First known use: 1646.",
    "ipa": "ˈsoʊbrɪˌkeɪ",
+   "examples": []
+  },
+  {
+   "word": "solace",
+   "pos": "noun",
+   "definition": "Comfort or consolation in a time of distress",
+   "origin": "Middle English *solas*, from Anglo-French, from Latin *solacium*, from *solari* to console.",
+   "ipa": "ˈsɑləs",
    "examples": []
   },
   {
@@ -4951,6 +5579,27 @@
    "examples": [
     "The **spurious** eminence of the pop celebrity",
     "**Spurious** excuses"
+   ]
+  },
+  {
+   "word": "squalid",
+   "pos": "adjective",
+   "definition": "Extremely dirty and unpleasant; morally sordid",
+   "origin": "Latin *squalidus* rough, dirty, from *squalēre* to be covered with scales or dirt, from *squalus* dirty; perhaps akin to Latin *squama* scale. First known use: 1596.",
+   "ipa": "ˈskwɑləd",
+   "examples": [
+    "Lived in **squalid** conditions",
+    "A **squalid** affair"
+   ]
+  },
+  {
+   "word": "statuesque",
+   "pos": "adjective",
+   "definition": "Tall, graceful and dignified, like a statue",
+   "origin": "From *statue* + *-esque*.",
+   "ipa": "ˌstætʃəˈwɛsk",
+   "examples": [
+    "A **statuesque** actress"
    ]
   },
   {
@@ -5181,6 +5830,17 @@
    ]
   },
   {
+   "word": "torrid",
+   "pos": "adjective",
+   "definition": "Scorchingly hot; full of passion or intensity",
+   "origin": "Borrowed from French & Latin; French *torride,* going back to Middle French, borrowed from Latin *torridus* \"dried by exposure to heat, parched, scorched,\" adjective derivative from the stem of *torreō, torrēre* \"to heat so as to dry, scorch, parch\". First known use: 1545.",
+   "ipa": "ˈtɔrəd",
+   "examples": [
+    "**Torrid** sands",
+    "**Torrid** love letters"
+   ]
+  },
+  {
    "word": "tractable",
    "pos": "adjective",
    "definition": "Easy to control or influence",
@@ -5197,6 +5857,17 @@
    "origin": "Origin unknown. First known use: 1656.",
    "ipa": "trænsˈmɑgrəˌfaɪ",
    "examples": []
+  },
+  {
+   "word": "treacherous",
+   "pos": "adjective",
+   "definition": "Guilty of betrayal; hazardous where danger is hidden",
+   "origin": "Middle English *trecherous*, from Anglo-French *trecherus*, from *trecher* to cheat.",
+   "ipa": "ˈtrɛtʃərəs",
+   "examples": [
+    "A **treacherous** memory",
+    "**Treacherous** quicksand"
+   ]
   },
   {
    "word": "trenchant",
@@ -5219,6 +5890,25 @@
     "**Trepidation** about starting a new job",
     "Travers sent the book to press with some **trepidation**, fearing that a children's book might undermine her hard-won literary cachet. — Caitlin Flanagan"
    ]
+  },
+  {
+   "word": "trivial",
+   "pos": "adjective",
+   "definition": "Of little value or importance",
+   "origin": "Latin *trivialis* found everywhere, commonplace, from *trivium* crossroads, from *tri-* + *via* way. First known use: 1589.",
+   "ipa": "ˈtrɪviəl",
+   "examples": [
+    "A **trivial** solution to a linear equation",
+    "A **trivial** objection"
+   ]
+  },
+  {
+   "word": "trouvaille",
+   "pos": "noun",
+   "definition": "A lucky find; something lovely discovered by chance",
+   "origin": "French, from *trouver* to find.",
+   "ipa": "truˈvaɪ",
+   "examples": []
   },
   {
    "word": "truculent",
@@ -5264,6 +5954,17 @@
    ]
   },
   {
+   "word": "unassailable",
+   "pos": "adjective",
+   "definition": "Impossible to attack, defeat or question",
+   "origin": "From *un-* + *assailable*, from *assail*, ultimately from Latin *ad-* + *salire* to leap.",
+   "ipa": "ˌənəˈseɪləbəl",
+   "examples": [
+    "An **unassailable** argument",
+    "An **unassailable** alibi"
+   ]
+  },
+  {
    "word": "unctuous",
    "pos": "adjective",
    "definition": "Excessively flattering; oily",
@@ -5282,6 +5983,16 @@
    "ipa": "ˈəndʒələt",
    "examples": [
     "The **undulate** margin of a leaf"
+   ]
+  },
+  {
+   "word": "unruffled",
+   "pos": "adjective",
+   "definition": "Calm and composed; not upset or agitated",
+   "origin": "From *un-* + *ruffled*, past participle of *ruffle*.",
+   "ipa": "ˌənˈrəfəld",
+   "examples": [
+    "**Unruffled** water"
    ]
   },
   {
@@ -5458,6 +6169,17 @@
    ]
   },
   {
+   "word": "vexatious",
+   "pos": "adjective",
+   "definition": "Causing annoyance, frustration or worry",
+   "origin": "From *vexation* + *-ous*; ultimately from Latin *vexare* to harass.",
+   "ipa": "vɛkˈseɪʃəs",
+   "examples": [
+    "A **vexatious** period in her life",
+    "**Vexatious** delays"
+   ]
+  },
+  {
    "word": "vicarious",
    "pos": "adjective",
    "definition": "Experienced through another person's actions",
@@ -5493,6 +6215,17 @@
    "origin": "Middle English, from Latin *viragin-, virago*, from *vir* man. First known use: 14th century.",
    "ipa": "vəˈrɑgoʊ",
    "examples": []
+  },
+  {
+   "word": "virtuosic",
+   "pos": "adjective",
+   "definition": "Showing dazzling technical skill, especially in music",
+   "origin": "Virtuoso + -ic. First known use: 1879.",
+   "ipa": "ˌvərtʃuˈɑsɪk",
+   "examples": [
+    "Generally speaking, the banjo and jazz parted ways many decades back, but **virtuosic** banjoist Bela Fleck is almost single-handedly lobbying for reconciliation. — Gina Arnold",
+    "Yet it was from his craftsman father that he learned everything that there was to know about brick, and his use of that humble but infinitely versatile material was **virtuosic**. — Martin Filler"
+   ]
   },
   {
    "word": "virulent",
