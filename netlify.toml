@@ -7,3 +7,9 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+# Lets the app open word-mark.ca/w/… and /l links itself (Apple's universal links); Apple wants it as JSON.
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
