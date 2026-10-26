@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["D86JH44SW8.ca.word-mark.WordMark"],
+        "components": [
+          { "/": "/w/*", "comment": "One word shared from the app" },
+          { "/": "/l", "comment": "A list of words shared from the app" }
+        ]
+      }
+    ]
+  }
+}
