@@ -21,7 +21,10 @@ export default async (req: Request) => {
   // Found words are kept for good; "not found" is rechecked after a month, in case the lookup improves.
   const kept = await store.get(`details-v3/word/${word}`, { type: "json" }) as (WordDetails & { at: string }) | null;
   const found = (d: WordDetails) => !!(d.origin || d.ipa || d.partOfSpeech || d.examples.length);
-  if (kept && (found(kept) || Date.now() - Date.parse(kept.at) < 30 * 86_400_000)) return json(reply(word, kept));
+  if (kept && (found(kept) || Date.now() - Date.parse(kept.at) < 30 * 86_400_000)) {
+    await countReader(store, word);
+    return json(reply(word, kept));
+  }
 
   const day = new Date().toLocaleDateString("en-CA", { timeZone: "America/Vancouver" });
   const countKey = `count/${day}/${id}`;
@@ -32,12 +35,20 @@ export default async (req: Request) => {
   try {
     const details = await detailsOf(word);
     await store.setJSON(`details-v3/word/${word}`, { ...details, at: new Date().toISOString() });
+    await countReader(store, word);
     return json(reply(word, details));
   } catch (error) {
     if (!(error instanceof LookupUnavailable)) console.error(error);
     return json({ error: "Lookup failed" }, 502);
   }
 };
+
+/** Roughly how many readers have collected the word: the app looks each word up once and keeps the answer.
+ *  Only the word is counted, never who asked; scripts/new-words.py ranks words for the word bank by it. */
+async function countReader(store: ReturnType<typeof getStore>, word: string) {
+  const key = `readers/word/${word}`;
+  await store.set(key, String(Number(await store.get(key) ?? 0) + 1));
+}
 
 const reply = (word: string, d: WordDetails) => ({
   word,
