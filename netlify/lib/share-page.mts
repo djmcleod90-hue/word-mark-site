@@ -106,8 +106,8 @@ function cta(addLabel?: string): string {
   const get = APP_STORE_ID && addLabel
     ? `<a class="btn btn-solid" href="https://apps.apple.com/app/id${APP_STORE_ID}">${addLabel}</a>` : "";
   return `<div class="share-cta"><div class="share-inner">
-  <h2>Collect the words you meet in books</h2>
-  <p class="body-text">Word&#8209;Mark is a bookmark you write new words on as you read. The app reads your handwriting and keeps every word, so you can learn it later.</p>
+  <h2>Collect the words you find in books</h2>
+  <p class="body-text">Word&#8209;Mark™ is a vocabulary bookmark for readers, writers, and thinkers. Jot down new words as you read. When you set your book down, look them up and write their meanings — this forms the first step in remembering them. The app reads your handwriting and keeps every word, so you can practise them later and welcome them into your active vocabulary.</p>
   <div class="share-buttons">${get}<a class="btn" href="/">Discover Word&#8209;Mark</a></div>
 </div></div>`;
 }
