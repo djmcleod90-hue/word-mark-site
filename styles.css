@@ -10,6 +10,7 @@
   --cream:     #f0efef;
   --cream-alt: #e3e2e2;
   --gold:      #c08a2b;   /* bright gilt, on black */
+  --gilt:      linear-gradient(100deg, #c9922e 0%, #e8be5c 22%, #f6d98a 38%, #fff1bf 46%, #e2b04f 60%, #c9922e 80%, #e2b04f 100%);   /* the app's foil: banner link and quotes block only */
   --purple:    #5b2a92;   /* the app's secondary: small headings and figures to read, on both cream tones */
   --hair:      0.5px solid rgba(26,24,20,0.15);
   --pad:       3rem;          /* horizontal page padding */
@@ -983,3 +984,17 @@ footer {
 .btn-solid { background: var(--ink); color: var(--cream); }
 .btn-solid:hover { background: none; color: var(--ink); }
 @media (max-width: 600px) { .share-buttons .btn { flex: 1 1 100%; text-align: center; } }
+
+/* ─── GILT ────────────────────────────────────────────────── */
+/* Foil, as in the app, kept to three places: the banner link, and the quotes block's heading and author name. */
+.announce-link,
+.quotes-inner .eyebrow,
+.quote-author {
+  background-image: var(--gilt);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration-color: var(--gold);
+}
+.quotes-inner .eyebrow { width: fit-content; margin-left: auto; margin-right: auto; }
+.announce-link:hover { -webkit-text-fill-color: var(--cream); }
