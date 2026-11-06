@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { creditPurchase, type Store } from "../lib/allowance.mts";
-import { verifyPurchase } from "../lib/purchases.mts";
+import { PRODUCTS, verifyPurchase } from "../lib/purchases.mts";
 
 function memoryStore(): Store {
   const data = new Map<string, unknown>();
@@ -22,15 +22,26 @@ function xcodeTransaction(fields: Record<string, unknown> = {}): string {
     bundleId: "ca.word-mark.WordMark", environment: "Xcode", signedDate: Date.now(), ...fields })}.signature`;
 }
 
-test("a purchase adds its scans once, however often it's sent", async () => {
+test("a purchase adds its Close Reads once, however often it's sent", async () => {
   const store = memoryStore();
   const now = new Date("2026-10-16T12:00:00-07:00");
-  const first = await creditPurchase(store, "PHONE", "T1", 15, now);
+  const first = await creditPurchase(store, "PHONE", "T1", { scans: 15 }, now);
   assert.equal(first.result, "added");
-  assert.equal(first.allowance.left, 5 + 15);
-  const again = await creditPurchase(store, "PHONE", "T1", 15, now);
+  assert.equal(first.allowance.left, 15 + 15);
+  const again = await creditPurchase(store, "PHONE", "T1", { scans: 15 }, now);
   assert.equal(again.result, "already-added");
-  assert.equal(again.allowance.left, 20);
+  assert.equal(again.allowance.left, 30);
+});
+
+test("a purchase of sentence checks adds them once, and leaves Close Reads alone", async () => {
+  const store = memoryStore();
+  const now = new Date("2026-10-16T12:00:00-07:00");
+  const first = await creditPurchase(store, "PHONE", "T2", PRODUCTS["ca.word_mark.WordMark.checks150"], now);
+  assert.equal(first.allowance.checks, 150 + 150);
+  assert.equal(first.allowance.left, 15);
+  const again = await creditPurchase(store, "PHONE", "T2", PRODUCTS["ca.word_mark.WordMark.checks150"], now);
+  assert.equal(again.result, "already-added");
+  assert.equal(again.allowance.checks, 300);
 });
 
 test("unsigned Xcode test purchases are refused unless testing is switched on", async () => {

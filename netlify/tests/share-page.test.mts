@@ -16,7 +16,7 @@ test("a word's page shows what it has and leaves out what it doesn't", () => {
   const page = wordPage({ word: "petrichor", pos: "noun", definition: "The pleasant smell of rain on dry earth", ipa: "ˈpɛtrəˌkɔr" }, "https://word-mark.ca/w/petrichor");
   assert.match(page, /<h1 class="share-word">petrichor<\/h1>/);
   assert.match(page, /The pleasant smell of rain on dry earth/);
-  assert.doesNotMatch(page, /Origin|In use/);
+  assert.doesNotMatch(page, /Origin/);
   assert.match(page, /<link rel="canonical" href="https:\/\/word-mark.ca\/w\/petrichor">/);
 });
 

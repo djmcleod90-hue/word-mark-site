@@ -1,62 +1,30 @@
-// GET /api/word?word=churlish — what the app's word page shows from Merriam-Webster:
-// pronunciation (IPA and a recording), part of speech, examples and etymology.
-// Each word is looked up once and kept, so later requests for it cost nothing.
+// GET /api/word?word=churlish — counts that a reader collected a word: the app asks once for each word it
+// collects. Only the word is counted, never who asked; scripts/new-words.py ranks words for the word bank by it.
 
 import type { Config } from "@netlify/functions";
 import { getStore } from "@netlify/blobs";
-import { isLookupWord, LookupUnavailable } from "../lib/etymology.mts";
-import { detailsOf, type WordDetails } from "../lib/word-details.mts";
 import { deviceID, json } from "../lib/http.mts";
+import { isLookupWord, normalize } from "../lib/share-page.mts";
 
-/** New lookups (not already kept) a phone may make in a day, shared with /api/etymology. */
-const DAILY_LOOKUPS = 60;
+/** Words a phone may count in a day. */
+const DAILY_COUNTS = 60;
 
 export default async (req: Request) => {
   const id = deviceID(req);
   if (!id) return json({ error: "Missing device ID" }, 400);
-  const word = (new URL(req.url).searchParams.get("word") ?? "").trim().toLowerCase().replace(/’/g, "'");
+  const word = normalize(new URL(req.url).searchParams.get("word") ?? "");
   if (!isLookupWord(word)) return json({ error: "Not a word" }, 400);
 
   const store = getStore({ name: "word-mark-etymology", consistency: "strong" });
-  // Found words are kept for good; "not found" is rechecked after a month, in case the lookup improves.
-  const kept = await store.get(`details-v3/word/${word}`, { type: "json" }) as (WordDetails & { at: string }) | null;
-  const found = (d: WordDetails) => !!(d.origin || d.ipa || d.partOfSpeech || d.examples.length);
-  if (kept && (found(kept) || Date.now() - Date.parse(kept.at) < 30 * 86_400_000)) {
-    await countReader(store, word);
-    return json(reply(word, kept));
-  }
-
   const day = new Date().toLocaleDateString("en-CA", { timeZone: "America/Vancouver" });
   const countKey = `count/${day}/${id}`;
   const count = Number(await store.get(countKey) ?? 0);
-  if (count >= DAILY_LOOKUPS) return json({ error: "Try again tomorrow" }, 429);
+  if (count >= DAILY_COUNTS) return json({ error: "Try again tomorrow" }, 429);
   await store.set(countKey, String(count + 1));
 
-  try {
-    const details = await detailsOf(word);
-    await store.setJSON(`details-v3/word/${word}`, { ...details, at: new Date().toISOString() });
-    await countReader(store, word);
-    return json(reply(word, details));
-  } catch (error) {
-    if (!(error instanceof LookupUnavailable)) console.error(error);
-    return json({ error: "Lookup failed" }, 502);
-  }
-};
-
-/** Roughly how many readers have collected the word: the app looks each word up once and keeps the answer.
- *  Only the word is counted, never who asked; scripts/new-words.py ranks words for the word bank by it. */
-async function countReader(store: ReturnType<typeof getStore>, word: string) {
   const key = `readers/word/${word}`;
   await store.set(key, String(Number(await store.get(key) ?? 0) + 1));
-}
-
-const reply = (word: string, d: WordDetails) => ({
-  word,
-  origin: d.origin || null,
-  ipa: d.ipa || null,
-  audio: d.audio || null,
-  partOfSpeech: d.partOfSpeech || null,
-  examples: d.examples,
-});
+  return json({ word });
+};
 
 export const config: Config = { path: "/api/word" };

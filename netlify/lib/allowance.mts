@@ -1,9 +1,8 @@
-// How many Close Reads (AI readings) each phone may use: a few free ones, more from pack codes, and a daily cap.
+// What each phone may use of the services that cost money: Close Reads (AI readings) and sentence checks.
+// Each has a free allowance, and more can be bought in the app. Close Reads also have a daily cap.
 // Pure logic over a small key-value store, so it can be tested without Netlify.
 
-import { createHmac } from "node:crypto";
-
-export const LIMITS = { free: 5, perCode: 15, perDay: 10, failedCodesPerDay: 10 };
+export const LIMITS = { free: 15, perDay: 10, freeChecks: 150 };
 
 /** Minimal storage the rules need; Netlify Blobs in production, a Map in tests. */
 export interface Store {
@@ -14,14 +13,14 @@ export interface Store {
 
 export interface Device {
   free: number;      // free readings left
-  bought: number;    // readings left from redeemed codes
+  bought: number;    // readings left from purchases
   day: string;       // the day `today` counts, in Vancouver time
   today: number;     // readings used that day
-  failedCodes: number;
+  checks: number;    // sentence checks left, free and bought together
 }
 
-/** `free` is how many of `left` are the free ones every phone starts with. */
-export interface Allowance { left: number; leftToday: number; free: number }
+/** `free` is how many of `left` are the free ones every phone starts with; `checks` is sentence checks left. */
+export interface Allowance { left: number; leftToday: number; free: number; checks: number }
 
 export function dayIn(now: Date): string {
   return now.toLocaleDateString("en-CA", { timeZone: "America/Vancouver" }); // YYYY-MM-DD
@@ -29,7 +28,7 @@ export function dayIn(now: Date): string {
 
 export function allowanceOf(device: Device): Allowance {
   const left = device.free + device.bought;
-  return { left, leftToday: Math.min(left, Math.max(0, LIMITS.perDay - device.today)), free: device.free };
+  return { left, leftToday: Math.min(left, Math.max(0, LIMITS.perDay - device.today)), free: device.free, checks: device.checks };
 }
 
 const deviceKey = (id: string) => `devices/${id}`;
@@ -37,8 +36,9 @@ const deviceKey = (id: string) => `devices/${id}`;
 async function loadDevice(store: Store, id: string, now: Date) {
   const found = await store.getJSON<Device>(deviceKey(id));
   const day = dayIn(now);
-  const device: Device = found?.value ?? { free: LIMITS.free, bought: 0, day, today: 0, failedCodes: 0 };
-  if (device.day !== day) Object.assign(device, { day, today: 0, failedCodes: 0 });
+  const device: Device = found?.value ?? { free: LIMITS.free, bought: 0, day, today: 0, checks: LIMITS.freeChecks };
+  device.checks ??= LIMITS.freeChecks; // phones recorded before sentence checks were counted
+  if (device.day !== day) Object.assign(device, { day, today: 0 });
   return { device, exists: found !== null, etag: found?.etag };
 }
 
@@ -74,75 +74,29 @@ export async function spendScan(store: Store, id: string, now: Date): Promise<Al
   return allowanceOf(device);
 }
 
+/** Records one sentence check that came back with a verdict. A check that failed on our side isn't counted. */
+export async function spendCheck(store: Store, id: string, now: Date): Promise<Allowance> {
+  const { device } = await updateDevice(store, id, now, (d) => { d.checks = Math.max(0, d.checks - 1); });
+  return allowanceOf(device);
+}
+
 export async function currentAllowance(store: Store, id: string, now: Date): Promise<Allowance> {
   return allowanceOf((await loadDevice(store, id, now)).device);
 }
 
-// ---- Pack codes: "WM-<serial>-<check>", the check signed with a secret, so no list of codes is stored.
-
-const ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"; // Crockford base 32: no I, L, O or U
-
-function toBase32(n: number, width = 0): string {
-  let out = "";
-  do { out = ALPHABET[n % 32] + out; n = Math.floor(n / 32); } while (n > 0);
-  return out.padStart(width, "0");
-}
-
-function fromBase32(text: string): number | null {
-  let n = 0;
-  for (const ch of text) {
-    const i = ALPHABET.indexOf(ch);
-    if (i < 0) return null;
-    n = n * 32 + i;
-  }
-  return n;
-}
-
-function checkPart(serial: number, secret: string): string {
-  const digest = createHmac("sha256", secret).update(`word-mark-code:${serial}`).digest();
-  return toBase32(digest.readUIntBE(0, 5)).padStart(8, "0").slice(-6); // 30 bits
-}
-
-export function makeCode(serial: number, secret: string): string {
-  return `WM-${toBase32(serial, 3)}-${checkPart(serial, secret)}`;
-}
-
-/** Accepts what people type: any case, spaces, and O/I/L mistaken for 0/1. Returns the serial if genuine. */
-export function readCode(input: string, secret: string): number | null {
-  const cleaned = input.toUpperCase().replace(/[\s-]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1");
-  const match = /^WM([0-9A-Z]{3,})([0-9A-Z]{6})$/.exec(cleaned);
-  if (!match) return null;
-  const serial = fromBase32(match[1]);
-  if (serial === null || checkPart(serial, secret) !== match[2]) return null;
-  return serial;
-}
-
-export type RedeemResult = "added" | "invalid" | "already-used" | "too-many-tries";
-
-export async function redeemCode(store: Store, id: string, input: string, secret: string, now: Date): Promise<{ result: RedeemResult; allowance: Allowance }> {
-  const { device } = await loadDevice(store, id, now);
-  if (device.failedCodes >= LIMITS.failedCodesPerDay) return { result: "too-many-tries", allowance: allowanceOf(device) };
-
-  const serial = readCode(input, secret);
-  if (serial === null) {
-    const { device: updated } = await updateDevice(store, id, now, (d) => { d.failedCodes += 1; });
-    return { result: "invalid", allowance: allowanceOf(updated) };
-  }
-  // Claiming the code first means two phones can't both redeem it.
-  const claimed = await store.setJSON(`codes/${serial}`, { device: id, at: now.toISOString() }, { onlyIfNew: true });
-  if (!claimed) return { result: "already-used", allowance: allowanceOf(device) };
-
-  const { device: updated } = await updateDevice(store, id, now, (d) => { d.bought += LIMITS.perCode; });
-  return { result: "added", allowance: allowanceOf(updated) };
-}
-
-// ---- In-app purchases: each Apple transaction is credited once, like a pack code.
+// ---- In-app purchases: each Apple transaction is credited once.
 
 export type PurchaseResult = "added" | "already-added";
 
-export async function creditPurchase(store: Store, id: string, transactionId: string, scans: number, now: Date): Promise<{ result: PurchaseResult; allowance: Allowance }> {
-  const claimed = await store.setJSON(`purchases/${transactionId}`, { device: id, scans, at: now.toISOString() }, { onlyIfNew: true });
+/** What a purchase adds to a phone. */
+export interface Credit { scans?: number; checks?: number }
+
+export async function creditPurchase(store: Store, id: string, transactionId: string, credit: Credit, now: Date): Promise<{ result: PurchaseResult; allowance: Allowance }> {
+  const claimed = await store.setJSON(`purchases/${transactionId}`, { device: id, ...credit, at: now.toISOString() }, { onlyIfNew: true });
   if (!claimed) return { result: "already-added", allowance: await currentAllowance(store, id, now) };
-  const { device } = await updateDevice(store, id, now, (d) => { d.bought += scans; });
+  const { device } = await updateDevice(store, id, now, (d) => {
+    d.bought += credit.scans ?? 0;
+    d.checks += credit.checks ?? 0;
+  });
   return { result: "added", allowance: allowanceOf(device) };
 }
