@@ -1,6 +1,6 @@
 // App Attest: proof that a request comes from the genuine Word-Mark app on a real iPhone, not a script.
 // Each phone makes a key in its Secure Enclave and has Apple vouch for it once (an attestation); after that,
-// requests that cost money (Close Reads, sentence checks, pack codes) carry a signature from that key
+// requests that cost money (Close Reads, sentence checks) carry a signature from that key
 // (an assertion). See Apple's "Validating apps that connect to your server".
 // Pure logic over the same small store as the allowance rules, so it can be tested without Netlify.
 

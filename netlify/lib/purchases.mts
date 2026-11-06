@@ -1,12 +1,16 @@
-// In-app purchases of Close Reads: checks Apple's signature on the purchase before crediting it.
+// In-app purchases of Close Reads and sentence checks: checks Apple's signature on the purchase before crediting it.
 
 import { Environment, SignedDataVerifier, type JWSTransactionDecodedPayload } from "@apple/app-store-server-library";
+import type { Credit } from "./allowance.mts";
 import { APPLE_ROOT_CA_G3 } from "./apple-roots.mts";
 
 const BUNDLE_ID = "ca.word-mark.WordMark";
 
-/** What each scan product adds. The price is set in App Store Connect. */
-export const SCAN_PRODUCTS: Record<string, number> = { "ca.word_mark.WordMark.scans15": 15 };
+/** What each product adds. The price is set in App Store Connect. */
+export const PRODUCTS: Record<string, Credit> = {
+  "ca.word_mark.WordMark.scans15": { scans: 15 },
+  "ca.word_mark.WordMark.checks150": { checks: 150 },
+};
 
 export interface VerifiedPurchase { transactionId: string; productId: string; environment: string }
 

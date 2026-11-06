@@ -2,8 +2,9 @@
 
 import type { Config } from "@netlify/functions";
 import { getStore } from "@netlify/blobs";
+import { currentAllowance, spendCheck } from "../lib/allowance.mts";
 import { checkSentence, cleanRequest } from "../lib/sentence.mts";
-import { attestedJSON, deviceID, json } from "../lib/http.mts";
+import { attestedJSON, blobStore, deviceID, json } from "../lib/http.mts";
 
 /** Checks a phone may ask for in a day. */
 const DAILY_CHECKS = 20;
@@ -18,6 +19,10 @@ export default async (req: Request) => {
   if ("response" in attested) return attested.response;
   const request = cleanRequest(attested.body);
   if (!request) return json({ error: "Expected a word and a sentence" }, 400);
+
+  const allowanceStore = blobStore();
+  const before = await currentAllowance(allowanceStore, id, new Date());
+  if (before.checks <= 0) return json({ error: "none-left", allowance: before }, 402);
 
   const store = getStore({ name: "word-mark-sentences", consistency: "strong" });
   const day = new Date().toLocaleDateString("en-CA", { timeZone: "America/Vancouver" });
@@ -34,7 +39,8 @@ export default async (req: Request) => {
 
   try {
     const verdict = await checkSentence(request);
-    return json({ ...verdict, left: DAILY_CHECKS - count - 1 });
+    const allowance = await spendCheck(allowanceStore, id, new Date());
+    return json({ ...verdict, left: DAILY_CHECKS - count - 1, allowance });
   } catch (error) {
     console.error("check-sentence failed", error);
     return json({ error: "check-failed" }, 502);
