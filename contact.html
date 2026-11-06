@@ -61,6 +61,11 @@
     <span class="eyebrow">Contact</span>
     <h2 class="section-title">Get in touch</h2>
     <p class="body-text contact-intro">For wholesale enquiries, press, or general questions. We read every message and reply within two business days.</p>
+    <!-- For Netlify Forms only: the app's suggested changes to definitions arrive through this, sent by /api/suggest-definition. -->
+    <form name="definition-suggestion" data-netlify="true" hidden>
+      <input type="hidden" name="form-name" value="definition-suggestion">
+      <input name="word"><input name="definition"><input name="reason"><textarea name="note"></textarea>
+    </form>
     <form id="contactForm" name="wholesale-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="wholesale-contact">
       <input type="hidden" name="subject" value="New message from word-mark.ca (%{formName})">
