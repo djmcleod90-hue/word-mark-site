@@ -2,16 +2,16 @@
 // word-mark.ca/l?w=petrichor,susurrus for a list. Only the words travel in the link, never a reader's own
 // definitions or sentences, and nothing is stored.
 
-import { isLookupWord } from "./etymology.mts";
-
 export interface SharedWord {
   word: string;
   pos?: string;
   definition?: string;
   origin?: string;
   ipa?: string;
-  examples?: string[];
 }
+
+/** Whether text could be a word, or a short phrase like "en masse". */
+export const isLookupWord = (word: string) => /^\p{L}[\p{L} '’-]{0,38}\p{L}$/u.test(word);
 
 /** The most words a list link carries; the app shares no more than this. */
 export const MAX_LIST = 50;
@@ -31,7 +31,7 @@ export function listWords(param: string | null): string[] {
 const escape = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
-/** Merriam-Webster's **bold** and *italics*, kept as Markdown in the word bank, as HTML. */
+/** **Bold** and *italics*, kept as Markdown in the word bank, as HTML. */
 export const styled = (s: string) =>
   escape(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 
@@ -45,7 +45,6 @@ export function wordPage(w: SharedWord, url: string): string {
   const meta = [w.ipa ? `/${escape(w.ipa)}/` : "", w.pos ? `<i>${escape(w.pos)}</i>` : ""].filter(Boolean).join("");
   const blocks = [
     w.origin ? `<div class="share-block"><p class="share-label">Origin</p><p>${styled(w.origin)}</p></div>` : "",
-    w.examples?.length ? `<div class="share-block"><p class="share-label">In use</p>${w.examples.map((e) => `<p>${styled(e)}</p>`).join("")}</div>` : "",
   ].join("");
   const description = w.definition ? `${w.word}: ${plain(w.definition)}. Shared from Word-Mark.` : `${w.word}, a word shared from Word-Mark.`;
   return page({

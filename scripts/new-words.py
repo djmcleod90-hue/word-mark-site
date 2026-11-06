@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Words readers have collected in the app that aren't in wordbank.json yet, for choosing which to add.
 
-The app looks up each word it collects at /api/word, and the service keeps what Merriam-Webster had for it
-(netlify/functions/word.mts), with a count of how many readers looked it up. This lists those words, most
-collected first, with the details a word bank entry would take from them. Only words, never who collected them.
+The app tells /api/word about each word it collects (netlify/functions/word.mts), and the service counts how
+many readers collected it. This lists those words, most collected first. Only words, never who collected them.
 
-  NETLIFY_AUTH_TOKEN=… NETLIFY_SITE_ID=… python3 scripts/new-words.py [--all] [--csv new-words.csv]
+  NETLIFY_AUTH_TOKEN=… NETLIFY_SITE_ID=… python3 scripts/new-words.py [--csv new-words.csv]
 
 The token is a Netlify personal access token (User settings › Applications); the site ID is under
-Site configuration › General. Words Merriam-Webster didn't recognize (often misreads) are left out unless --all.
+Site configuration › General.
 """
 
 import argparse
@@ -16,7 +15,6 @@ import csv
 import json
 import os
 import sys
-import urllib.error
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -24,7 +22,6 @@ from pathlib import Path
 
 API = "https://api.netlify.com/api/v1/blobs"
 STORE = "site:word-mark-etymology"  # getStore({ name: "word-mark-etymology" }) in the functions
-DETAILS = "details-v3/word/"
 READERS = "readers/word/"
 
 
@@ -58,7 +55,6 @@ def value(site, token, key):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--all", action="store_true", help="include words Merriam-Webster didn't recognize")
     parser.add_argument("--csv", help="also write the list to this CSV file")
     args = parser.parse_args()
     token, site = os.environ.get("NETLIFY_AUTH_TOKEN"), os.environ.get("NETLIFY_SITE_ID")
@@ -67,27 +63,18 @@ def main():
 
     bank = json.loads((Path(__file__).resolve().parent.parent / "wordbank.json").read_text())
     known = {entry["word"].lower() for entry in bank["words"]}
-    words = [k[len(DETAILS):] for k in keys(site, token, DETAILS)]
+    words = [k[len(READERS):] for k in keys(site, token, READERS)]
     words = [w for w in words if w not in known]
 
-    def details(word):
-        entry = json.loads(value(site, token, DETAILS + word))
-        try:
-            readers = int(value(site, token, READERS + word))
-        except urllib.error.HTTPError:  # looked up before readers were counted
-            readers = 0
-        return {"word": word, "readers": readers, "pos": entry.get("partOfSpeech", ""), "ipa": entry.get("ipa", ""),
-                "origin": entry.get("origin", ""), "examples": " | ".join(entry.get("examples", [])),
-                "first seen": entry.get("at", "")[:10]}
+    def row(word):
+        return {"word": word, "readers": int(value(site, token, READERS + word))}
 
     with ThreadPoolExecutor(8) as pool:
-        rows = list(pool.map(details, words))
-    if not args.all:
-        rows = [r for r in rows if r["pos"] or r["ipa"] or r["origin"]]
+        rows = list(pool.map(row, words))
     rows.sort(key=lambda r: (-r["readers"], r["word"]))
 
     for r in rows:
-        print(f"{r['readers']:>4}  {r['word']:<24} {r['pos']:<18} {r['ipa']}")
+        print(f"{r['readers']:>4}  {r['word']}")
     print(f"\n{len(rows)} collected words not in the word bank ({len(known)} in it).")
     if args.csv:
         with open(args.csv, "w", newline="") as file:

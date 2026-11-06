@@ -1,12 +1,9 @@
 // GET /w/petrichor and /l?w=petrichor,susurrus — the pages a word or list shared from the app opens.
-// Words come from the word bank, or, for a word a reader collected that isn't in it, from what
-// Merriam-Webster had when the app looked it up (kept by /api/word; no definition).
+// Words come from the word bank. A word readers collected that isn't in it shows as the word alone.
 
 import type { Config, Context } from "@netlify/functions";
 import { getStore } from "@netlify/blobs";
-import { isLookupWord } from "../lib/etymology.mts";
-import type { WordDetails } from "../lib/word-details.mts";
-import { listPage, listWords, normalize, notFoundPage, wordPage, type SharedWord } from "../lib/share-page.mts";
+import { isLookupWord, listPage, listWords, normalize, notFoundPage, wordPage, type SharedWord } from "../lib/share-page.mts";
 
 let bank: Promise<Map<string, SharedWord>> | undefined;
 
@@ -22,9 +19,8 @@ function wordBank(origin: string): Promise<Map<string, SharedWord>> {
 async function lookUp(word: string, origin: string): Promise<SharedWord | null> {
   const found = (await wordBank(origin)).get(word);
   if (found) return found;
-  const kept = await getStore("word-mark-etymology").get(`details-v3/word/${word}`, { type: "json" }) as WordDetails | null;
-  if (!kept || !(kept.origin || kept.ipa || kept.partOfSpeech || kept.examples.length)) return null;
-  return { word, pos: kept.partOfSpeech, origin: kept.origin, ipa: kept.ipa, examples: kept.examples };
+  const collected = await getStore("word-mark-etymology").get(`readers/word/${word}`);
+  return collected ? { word } : null;
 }
 
 const html = (body: string, status = 200) => new Response(body, {
