@@ -17,6 +17,7 @@ export interface Device {
   day: string;       // the day `today` counts, in Vancouver time
   today: number;     // readings used that day
   checks: number;    // sentence checks left, free and bought together
+  freeRaised?: boolean; // has had the one-time raise to the current free allowance
 }
 
 /** `free` is how many of `left` are the free ones every phone starts with; `checks` is sentence checks left. */
@@ -36,8 +37,10 @@ const deviceKey = (id: string) => `devices/${id}`;
 async function loadDevice(store: Store, id: string, now: Date) {
   const found = await store.getJSON<Device>(deviceKey(id));
   const day = dayIn(now);
-  const device: Device = found?.value ?? { free: LIMITS.free, bought: 0, day, today: 0, checks: LIMITS.freeChecks };
+  const device: Device = found?.value ?? { free: LIMITS.free, bought: 0, day, today: 0, checks: LIMITS.freeChecks, freeRaised: true };
   device.checks ??= LIMITS.freeChecks; // phones recorded before sentence checks were counted
+  // Phones recorded under the old, smaller allowance are raised to the new one, once.
+  if (!device.freeRaised) Object.assign(device, { free: Math.max(device.free, LIMITS.free), freeRaised: true });
   if (device.day !== day) Object.assign(device, { day, today: 0 });
   return { device, exists: found !== null, etag: found?.etag };
 }

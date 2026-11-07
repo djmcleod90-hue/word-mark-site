@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "words": [
   {
    "word": "abature",
@@ -589,7 +589,7 @@
    "pos": "noun",
    "definition": "A box fitted with strings, usually tuned alike, that sound in shifting harmonics when the wind blows across them",
    "origin": "From *Aeolus*, the god of the winds in Greek mythology, + *harp*. The instrument is sounded by the wind.",
-   "ipa": "iˈoʊliən hɑrp",
+   "ipa": "iˈoʊliən ˈhɑrp",
    "say": "ee-OH-lee-un HARP",
    "examples": [
     "The dead girl's **aeolian harp** still sang in the window when the wind came home."
@@ -3911,7 +3911,7 @@
    "pos": "noun",
    "definition": "The time of twilight, just before sunrise or after sunset, when the sky is filled with deep blue light",
    "origin": "A translation of French *l'heure bleue*.",
-   "ipa": "ˈblu ˌaʊər",
+   "ipa": "ˈblu ˈaʊər",
    "say": "BLOO OW-ur",
    "examples": [
     "In the **blue hour**, the snow and the sky agreed to keep each other's secrets."
@@ -4021,7 +4021,7 @@
    "pos": "noun",
    "definition": "Someone who enjoys the good things in life, especially fine food and drink, and good company",
    "origin": "From French *bon vivant*, literally \"one who lives well\", from *bon* \"good\" + *vivant* \"living\". First known use: 1674.",
-   "ipa": "ˌbɑnviˈvɑnt",
+   "ipa": "ˈbɑn viˈvɑnt",
    "say": "bon vee-VAHNT",
    "examples": [
     "Champagne from his deathbed, ordered with a second glass: a **bon vivant** to the last."
@@ -6386,7 +6386,7 @@
    "pos": "noun",
    "definition": "Improvised Italian comedy of the 1500s to 1700s, built on stock situations and masked stock characters such as Harlequin",
    "origin": "From Italian, literally \"comedy of the profession\", that is, of trained actors. First known use: 1823.",
-   "ipa": "kəˌmeɪdiədɛlˈɑrti",
+   "ipa": "kəˈmeɪdiə dɛlˈɑrteɪ",
    "say": "kuh-MAY-dee-uh del-AR-tay",
    "examples": [
     "Their marriage had become **commedia dell'arte**: same masks, new insults nightly."
@@ -7002,7 +7002,7 @@
    "pos": "noun",
    "definition": "Love at first sight; also, any sudden, overwhelming event",
    "origin": "From French *coup de foudre*, literally \"lightning strike\".",
-   "ipa": "ˌku də ˈfudrə",
+   "ipa": "ˈku də ˈfudrə",
    "say": "koo duh FOO-druh",
    "examples": [
     "It was a **coup de foudre**, she said, and the barn had burned down twice since."
@@ -8102,7 +8102,7 @@
    "pos": "noun",
    "definition": "The very latest fashion; the last word in style",
    "origin": "From French, literally \"last cry\". First known use: 1896.",
-   "ipa": "ˌdɛrnˌjeɪˈkri",
+   "ipa": "dɛrnˈjeɪ ˈkri",
    "say": "dair-nyay KREE",
    "examples": [
     "In Paris her hat was the **dernier cri**; on the prairie, a nesting site."
@@ -8806,7 +8806,7 @@
    "pos": "noun",
    "definition": "Pleasant, carefree idleness; the sweetness of doing nothing",
    "origin": "From Italian, \"sweet idleness\", literally \"sweet to do nothing\". First known use: 1814.",
-   "ipa": "ˈdoʊltʃiˌfɑrniˈɛnti",
+   "ipa": "ˈdoʊltʃeɪ ˈfɑr niˈɛnteɪ",
    "say": "DOHL-chay far nee-EN-tay",
    "examples": [
     "They spent that lost August in **dolce far niente**, while the letters piled up in town."
@@ -9895,7 +9895,7 @@
    "pos": "adverb",
    "definition": "In the open air; outdoors",
    "origin": "From French *en plein air*, literally \"in the full air\", that is, out of doors.",
-   "ipa": "ɑn ˌplɛn ˈɛr",
+   "ipa": "ɑn ˈplɛn ˈɛr",
    "say": "ahn plen AIR",
    "examples": [
     "She painted the battlefield **en plein air** while flies came to watch."
@@ -11358,7 +11358,7 @@
    "pos": "noun",
    "definition": "Something already done that cannot be reversed, often before anyone could object",
    "origin": "From French *fait accompli*, literally \"accomplished fact\". First known use: 1845.",
-   "ipa": "ˈfeɪtəˌkɑmˈpli",
+   "ipa": "ˈfeɪt əkɑmˈpli",
    "say": "fayt uh-kom-PLEE",
    "examples": [
     "By the time the family arrived, the marriage was a **fait accompli**, and so was the baby."
@@ -11512,7 +11512,7 @@
    "pos": "noun",
    "definition": "A mirage in which distant objects appear distorted, inverted, or stacked, especially at sea",
    "origin": "From Italian *fata Morgana* \"the fairy Morgan\", that is, Morgan le Fay, to whom such mirages were ascribed. First known use: 1785.",
-   "ipa": "ˌfɑtəmɔrˈgɑnə",
+   "ipa": "ˈfɑtə mɔrˈgɑnə",
    "say": "FAH-tuh mor-GAH-nuh",
    "examples": [
     "A **fata morgana** hung a whole city over the strait; sailors wept for home."
@@ -14295,7 +14295,7 @@
    "pos": "noun",
    "definition": "A word or form that occurs only once in a text, an author's work, or a body of writing",
    "origin": "From Greek, \"a thing said once\", from *hapax* \"once\" + *legomenon* \"being said\". First known use: 1692.",
-   "ipa": "ˌhæˌpækslɪˈgɑməˌnɑn",
+   "ipa": "ˈhæpæks lɪˈgɑməˌnɑn",
    "say": "HAP-aks lih-GOM-uh-non",
    "examples": [
     "The word was a **hapax legomenon**, and with the scribe died all it had meant."
@@ -14933,7 +14933,7 @@
    "pos": "noun",
    "definition": "The ordinary people; the general public, as distinct from an elite",
    "origin": "From Greek *hoi polloi* \"the many\". First known use: 1837.",
-   "ipa": "ˌhɔɪpəˈlɔɪ",
+   "ipa": "ˈhɔɪ pəˈlɔɪ",
    "say": "hoy puh-LOY",
    "examples": [
     "The **hoi polloi** poured in through the palace gates, admiring the good curtains."
@@ -15362,7 +15362,7 @@
    "pos": "noun",
    "definition": "A figure of speech that puts last things first, reversing the natural order, as in \"Let us die, and rush into battle\"",
    "origin": "From Late Latin, from Greek *hysteron proteron* \"the latter first\", from *hysteros* \"later\" + *proteros* \"earlier\". First known use: 1555.",
-   "ipa": "ˌhɪstəˌrɑnˈprɑtəˌrɑn",
+   "ipa": "ˈhɪstəˌrɑn ˈprɑtəˌrɑn",
    "say": "HISS-tur-on PROT-ur-on",
    "examples": [
     "\"Bury me, and let me die,\" he moaned, in a fine **hysteron proteron**."
@@ -15494,7 +15494,7 @@
    "pos": "noun",
    "definition": "A deceptive hope or goal; literally, a flickering light seen over marshes at night, a will-o'-the-wisp",
    "origin": "From Medieval Latin *ignis fatuus*, literally \"foolish fire\", a light that misleads travellers. First known use: 1563.",
-   "ipa": "ˈɪgnəsˈfætʃəwəs",
+   "ipa": "ˈɪgnəs ˈfætʃəwəs",
    "say": "IG-nis FACH-oo-us",
    "examples": [
     "Yukon gold was his **ignis fatuus**, leading him on into the cold."
@@ -16209,7 +16209,7 @@
    "pos": "adjective",
    "definition": "Beneath one's dignity; undignified",
    "origin": "A shortening of Latin *infra dignitatem*, meaning \"below one's dignity\". First known use: 1824.",
-   "ipa": "ˈɪnfrəˈdɪg",
+   "ipa": "ˈɪnfrə ˈdɪg",
    "say": "IN-fruh DIG",
    "examples": [
     "To carry one's own bag was **infra dig**, so she stood in the rain beside it."
@@ -16990,7 +16990,7 @@
    "pos": "noun",
    "definition": "Exuberant enjoyment of life; zest for living",
    "origin": "From French, \"the joy of being alive\". First known use: 1889.",
-   "ipa": "ˌʒwɑdəˈvivrə",
+   "ipa": "ˈʒwɑ də ˈvivrə",
    "say": "zhwah duh VEE-vruh",
    "examples": [
     "Her **joie de vivre** survived the flood, two husbands, and the Temperance League."
@@ -17430,7 +17430,7 @@
    "pos": "noun",
    "definition": "Thinking of the perfect reply only after the chance to say it has passed; literally, staircase wit",
    "origin": "From French, literally \"the wit of the staircase\", that is, the retort thought of on the way out.",
-   "ipa": "lɛˌspri də lɛˌskælˈjeɪ",
+   "ipa": "lɛˈspri də lɛskælˈjeɪ",
    "say": "less-PREE duh less-kal-YAY",
    "examples": [
     "Twenty years later, in the bath, her **l'esprit de l'escalier** finally struck."
@@ -18618,7 +18618,7 @@
    "pos": "noun",
    "definition": "A sky covered with rows of small, fleecy clouds, patterned like the markings on a mackerel",
    "origin": "From *mackerel* + *sky*, the pattern of clouds recalling the markings on a mackerel's back.",
-   "ipa": "ˈmækərəl ˌskaɪ",
+   "ipa": "ˈmækərəl ˈskaɪ",
    "say": "MAK-ur-ul SKY",
    "examples": [
     "Under a **mackerel sky**, fishermen hauled up their boats and looked at no one."
@@ -19751,7 +19751,7 @@
    "pos": "noun",
    "definition": "A wistful awareness of the impermanence or transience of things",
    "origin": "From Japanese *mono no aware*, \"the sorrow of things\".",
-   "ipa": "ˌmoʊnoʊ noʊ ɑˈwɑreɪ",
+   "ipa": "ˈmoʊnoʊ ˈnoʊ ɑˈwɑreɪ",
    "say": "MOH-noh noh ah-WAH-ray",
    "examples": [
     "She swept up the blossoms with **mono no aware** and a very good broom."
@@ -21522,7 +21522,7 @@
    "pos": "noun",
    "definition": "A large bay window that juts out from an upper storey, supported by a bracket",
    "origin": "From Old French *oriol*, a gallery or porch, perhaps from Medieval Latin, + *window*.",
-   "ipa": "ˈɔriəlˈwɪndoʊ",
+   "ipa": "ˈɔriəl ˈwɪndoʊ",
    "say": "OR-ee-ul WIN-doh",
    "examples": [
     "From the **oriel window**, she watched each of them arrive."
@@ -21720,7 +21720,7 @@
    "pos": "noun",
    "definition": "A stanza of eight lines rhyming abababcc",
    "origin": "From Italian, \"octave rhyme\", from *ottava* \"eighth\" + *rima* \"rhyme\". First known use: 1776.",
-   "ipa": "oʊˌtɑvəˈrimə",
+   "ipa": "oʊˈtɑvə ˈrimə",
    "say": "oh-TAH-vuh REE-muh",
    "examples": [
     "He proposed in **ottava rima**; she corrected the scansion."
@@ -28034,7 +28034,7 @@
    "pos": "noun",
    "definition": "A bright patch of light seen beside the sun, made by ice crystals bending sunlight; a parhelion",
    "origin": "From *sun* + *dog*, perhaps because the bright spots seem to follow the sun as a dog follows its owner. First known use: 1571.",
-   "ipa": "ˈsənˌdɔg",
+   "ipa": "ˈsən ˈdɔg",
    "say": "SUN dog",
    "examples": [
     "A **sun dog** burned beside the sun; the trappers made camp early."
@@ -29816,7 +29816,7 @@
    "pos": "noun",
    "definition": "A handy reference book carried for regular use; also, any useful object one carries about",
    "origin": "From Latin *vade mecum* \"go with me\". First known use: 1629.",
-   "ipa": "ˌveɪdiˈmikəm",
+   "ipa": "ˈveɪdi ˈmikəm",
    "say": "vay-dee MEE-kum",
    "examples": [
     "Her **vade mecum** was a small book of poisons, disguised as a guide to British birds."
@@ -31587,7 +31587,7 @@
    "pos": "noun",
    "definition": "A faint, cone-shaped glow seen in the west after twilight or in the east before dawn, caused by sunlight on dust in space",
    "origin": "From *zodiacal* + *light*.",
-   "ipa": "zoʊˈdaɪəkəl ˌlaɪt",
+   "ipa": "zoʊˈdaɪəkəl ˈlaɪt",
    "say": "zoh-DYE-uh-kul LITE",
    "examples": [
     "A **zodiacal light** rose over the Saskatchewan before the sun; the dog looked at it."
@@ -31664,7 +31664,7 @@
    "pos": "noun",
    "definition": "The vital life force driving evolution and creativity, in the philosophy of Henri Bergson",
    "origin": "From French *élan vital* \"vital impetus\", a term coined by the philosopher Henri Bergson.",
-   "ipa": "eɪˌlɑn viˈtɑl",
+   "ipa": "eɪˈlɑn viˈtɑl",
    "say": "ay-LAHN vee-TAHL",
    "examples": [
     "Bergson's **élan vital** got her through the seminar and the man who taught it."

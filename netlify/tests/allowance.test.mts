@@ -55,7 +55,22 @@ test("sentence checks count down from 150 and don't go below nothing", async () 
 test("a phone recorded before checks were counted starts with the full 150", async () => {
   const store = memoryStore();
   await store.setJSON(`devices/${phone}`, { free: 2, bought: 0, day: "2026-10-03", today: 3, failedCodes: 0 });
-  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 2, leftToday: 2, free: 2, checks: 150 });
+  assert.deepEqual(await currentAllowance(store, phone, day1), { left: 15, leftToday: 7, free: 15, checks: 150 });
+});
+
+test("a phone on the old allowance is raised to 15 free once, and bought readings are untouched", async () => {
+  const store = memoryStore();
+  await store.setJSON(`devices/${phone}`, { free: 4, bought: 3, day: "2026-10-03", today: 0, checks: 150 });
+  assert.equal((await currentAllowance(store, phone, day1)).free, 15);
+  assert.deepEqual(await spendScan(store, phone, day1), { left: 17, leftToday: 9, free: 14, checks: 150 });
+  // Spent readings stay spent: the raise doesn't happen again.
+  assert.equal((await currentAllowance(store, phone, day2)).free, 14);
+});
+
+test("a new phone that spends its free readings isn't raised again", async () => {
+  const store = memoryStore();
+  await spendScan(store, phone, day1);
+  assert.equal((await currentAllowance(store, phone, day2)).free, 14);
 });
 
 test("two readings at once from the same phone are both counted", async () => {
