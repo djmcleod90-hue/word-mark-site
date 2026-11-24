@@ -21,9 +21,10 @@
 <meta name="twitter:description" content="For readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow.">
 <meta name="twitter:image" content="https://word-mark.ca/og-image.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Figtree:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDMgMzg3LjUiPjxwYXRoIGZpbGw9IiMxYTE4MTQiIGQ9Ik01MzcsMjVMNTA5LjUsMGwtMTI1LjUsMTQ2LjVMMjcxLjUsMTQuNWwtMTEyLjUsMTMyTDMzLjUsMCw2LDI1bDEzMy41LDE1N0wwLDM1OC41bDMwLjUsMjYuNSwxMTYtMTQ1LDEyNSwxNDcuNSwxMjUtMTQ3LjUsMTE2LDE0NSwzMC41LTI2LjUtMTM5LjUtMTc2LjVMNTM3LDI1Wk0yNzEuNSw3NC41bDEwNS41LDEyMy41LTEwNS41LDEyNC41LTEwNS41LTEyNC41LDEwNS41LTEyMy41Wk01MzAuNSwzNTcuNWwtMTgsMTMtMTE2LTE0NS0xMjUsMTQ4LTEyNS0xNDhMMzAuNSwzNzAuNWwtMTgtMTMsMTMzLjUtMTY4LDEyNS41LDE0NywxMjUuNS0xNDcsMTMzLjUsMTY4WiIvPjwvc3ZnPg==">
 <link rel="stylesheet" href="styles.css">
+<noscript><style>.how-more{display:none}.tphone{flex-grow:3;max-height:40rem;opacity:1;visibility:visible}.legend-more{grid-template-rows:1fr;opacity:1}.num-off{display:none}.num-on{display:inline}</style></noscript>
 </head>
 <body>
 
@@ -60,7 +61,7 @@
       <div class="hero-left">
         <span class="eyebrow hero-eyebrow">Made in Vancouver, Canada</span>
         <h1 class="hero-title">A better kind of bookmark</h1>
-        <p class="hero-body">Vocabulary bookmark and reading system for readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow.</p>
+        <p class="hero-body">Vocabulary bookmark and reading system for readers, writers, and thinkers. Capture new words as you read — without losing your place, focus, or flow. Plus a companion app to bring the words into your active vocabulary.</p>
         <a class="btn" href="#how-it-works" onclick="event.preventDefault(); document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">Discover the product</a>
       </div>
       <div class="hero-images">
@@ -70,28 +71,65 @@
     </div>
   </div>
 
-  <!-- How It Works -->
-  <div class="how-section" id="how-it-works">
+  <!-- How It Works: the six steps as printed on the packaging; step 4 is the app -->
+  <div class="how-section" id="how-it-works" data-app="off">
     <div class="how-inner">
-      <span class="eyebrow">A new way to read, fully analog</span>
+      <span class="eyebrow">Reading stays fully analog</span>
       <h2 class="section-title">How it works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title">Read</div>
-          <p class="step-body">Place your Word-Mark in your book. When you meet a word you don't know, jot it down and keep reading with minimal interruption.</p>
+      <p class="app-lede app-lede--line">Analog reading and learning, with a beautiful keepsake to hold in your hands. Plus an optional app, for those who like that sort of thing, to bring your words into your active vocabulary.</p>
+      <div class="legend">
+        <div class="legend-item legend-item--paper">
+          <span class="track-label">On paper</span>
+          <p>When it comes to reading, phones are an unwanted distraction. Use your Word&#8209;Mark like any other bookmark.</p>
         </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title">Define</div>
-          <p class="step-body">At the end of your session, look up each word and write its meaning beside it. The act of writing commits it to memory.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title">Collect</div>
-          <p class="step-body">Once full, bind your bookmark into your book of new words with the brass brads. Start a fresh one. Watch your vocabulary grow.</p>
+        <div class="legend-item legend-item--phone">
+          <div class="legend-more"><div class="legend-more-inner">
+            <span class="track-label">On your phone</span>
+            <p>Once your book is set down and your Word&#8209;Mark is full, bring your words into the Word&#8209;Mark app to keep learning.</p>
+          </div></div>
+          <button type="button" class="how-more" aria-expanded="false" aria-controls="how-steps">
+            <span class="how-more-sign" aria-hidden="true"></span>
+            <span class="how-more-text">Show optional app steps</span>
+          </button>
         </div>
       </div>
+      <ol class="line" id="how-steps">
+        <li class="tstep">
+          <div class="step-num">01</div>
+          <div class="step-title">Read</div>
+          <p class="step-body">Whenever you encounter an unfamiliar word, jot it down and keep on reading.</p>
+        </li>
+        <li class="tstep">
+          <div class="step-num">02</div>
+          <div class="step-title">Define</div>
+          <p class="step-body">When you&#8217;re done reading, look up your word and record its meaning.</p>
+        </li>
+        <li class="tphone">
+          <ol class="tphone-inner">
+            <li class="tstep tstep--phone">
+              <div class="step-num">03</div>
+              <div class="step-title">Scan</div>
+              <p class="step-body">Scan your completed Word&#8209;Mark in the app to save your words.</p>
+            </li>
+            <li class="tstep tstep--phone">
+              <div class="step-num">04</div>
+              <div class="step-title">Practise</div>
+              <p class="step-body">Discover etymologies and play word games to reinforce what you&#8217;ve learned.</p>
+            </li>
+            <li class="tstep tstep--phone">
+              <div class="step-num">05</div>
+              <div class="step-title">Use</div>
+              <p class="step-body">Put each word in a sentence of your own, and welcome it into your active vocabulary.</p>
+            </li>
+          </ol>
+        </li>
+        <li class="tstep">
+          <div class="step-num"><span class="num-off">03</span><span class="num-on">06</span></div>
+          <div class="step-title">Collect</div>
+          <p class="step-body">Add your Word&#8209;Mark to your book of new words, for a beautiful physical record.</p>
+        </li>
+      </ol>
+      <p class="how-note">Then take out a new Word&#8209;Mark, repeat, and watch your vocabulary grow.</p>
     </div>
   </div>
 
@@ -189,9 +227,105 @@
       </div>
       <div class="combined-right">
         <span class="eyebrow">A note on materials</span>
-        <p class="body-text">Each component of Word&#8209;Mark has been meticulously chosen. Bookmarks and note pages are printed on 100 lb premium cardstock, chosen for its balance of weight and flexibility — sturdy for regular use, light against a hardback spine, and rewarding to write on. The classic 130 lb black cover, finished in gold ink, protects what's inside while earning its place on your bookshelf. Brass bindings are made to be assembled and reassembled as your book of new words grows. Packaging is made from PLA, a plant-based material that cuts greenhouse emissions by up to 70% compared to regular plastic packaging.</p>
+        <p class="body-text">Each component of Word&#8209;Mark has been meticulously chosen. Bookmarks and notes pages are printed on 100 lb premium cardstock, chosen for its balance of weight and flexibility — sturdy for regular use, light against a hardback spine, and rewarding to write on. The classic 130 lb black cover, finished in gold ink, protects what's inside while earning its place on your bookshelf. Brass bindings are made to be assembled and reassembled as your book of new words grows. Packaging is made from PLA, a plant-based material that cuts greenhouse emissions by up to 70% compared to regular plastic packaging.</p>
       </div>
     </div>
+  </div>
+
+  <!-- The companion app: Scan, Words, Collection and Learn share one grid; Known words stay known sits beside Quiet by design at the bottom -->
+  <div class="companion" id="the-app">
+   <div class="companion-top">
+    <div class="companion-main">
+      <span class="eyebrow">Word&#8209;Mark companion app, for those who like that sort of thing</span>
+      <h2 class="section-title">After the book is set down</h2>
+      <p class="app-lede">The Word&#8209;Mark app is free and optional. It&#8217;s designed to complement your bookmark, helping you expand your active vocabulary during those quiet moments when you&#8217;re not reading.</p>
+      <p class="app-platform">Currently available only on iPhone.</p>
+
+      <div class="features">
+        <section class="feature">
+          <div class="feature-media">
+            <div class="shot"><img src="img/shot-scan.jpg" width="750" height="1524" loading="lazy" alt="The Word-Mark app's Scan screen, with a Scan bookmark button and the tip to scan the front, then the back"></div>
+            <div class="shot"><img src="img/shot-scan-reading.jpg" width="750" height="1524" loading="lazy" alt="The app reading a bookmark: a photo of a handwritten bookmark with a band of light passing over it, and the words Reading it carefully"></div>
+          </div>
+          <div class="feature-text">
+            <h3 class="app-h3">Scan</h3>
+            <p class="body-text">Hold your phone over a full bookmark. Scan the front, then the back, and leave no word behind.</p>
+            <ul class="feature-list">
+              <li>Only your handwriting is read. The printed title, quote, and margin notes are skipped.</li>
+              <li>Unrecognized words are tagged so you can fix or keep them.</li>
+              <li>Correct any misreads, or swipe left to leave a word out, then save.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="feature feature--flip">
+          <div class="feature-media">
+            <div class="shot"><img src="img/shot-words.jpg" width="750" height="1524" loading="lazy" alt="My words, an alphabetical list of collected words with their meanings, each marked New, Learning, or Known"></div>
+            <div class="shot"><img src="img/shot-word.jpg" width="750" height="1524" loading="lazy" alt="A word page: the word pandiculation with its pronunciation, its definition, its Latin etymology, and the bookmark quote it came from"></div>
+          </div>
+          <div class="feature-text">
+            <h3 class="app-h3">Words</h3>
+            <p class="body-text">Your collected words appear in a list. Hear how each is said, read its history, and see your learning progress at a glance.</p>
+            <ul class="feature-list">
+              <li>Search by word or by definition, or slide along the alphabet at the edge to jump to a letter.</li>
+              <li>Add words of your own, and share one word or several.</li>
+              <li>Each word&#8217;s page also shows the bookmark quote it was collected from.</li>
+              <li>Words are tagged New, Learning, or Known. Filter by tag, or sort by what needs practice.</li>
+              <li>Practise any word from its own page.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="feature">
+          <div class="feature-media">
+            <div class="shot"><img src="img/shot-collect.jpg" width="750" height="1524" loading="lazy" alt="The Collection screen, with portraits of the writers quoted on the bookmarks, 8 of 25 collected"></div>
+            <div class="shot"><img src="img/shot-atlas.jpg" width="750" height="1527" loading="lazy" alt="The Atlas page: a map of where the reader's words come from, with a list of languages beneath it"></div>
+          </div>
+          <div class="feature-text">
+            <h3 class="app-h3">Collection</h3>
+            <p class="body-text">Collect portraits of the writers quoted on your bookmarks. See on a map where in the world your words originate, and on a calendar when you collected and learned each one.</p>
+            <ul class="feature-list">
+              <li>Scanning a bookmark adds the portrait of the writer quoted on it.</li>
+              <li>Portraits come in sets, each showing how many of its writers you&#8217;ve collected.</li>
+              <li>Tap a writer to read about them and see the words they helped you collect.</li>
+              <li>The Atlas also names your oldest word and the century it entered English.</li>
+              <li>Tap a day in the Almanac to see its words, with a tick on any that became known.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="feature feature--flip" id="learn">
+          <div class="feature-media">
+            <div class="shot"><img src="img/learn-tab.jpg" width="750" height="1527" loading="lazy" alt="The Learn tab: one of the reader&#8217;s own words, cabal, with its progress bar and a Continue button, then today&#8217;s word, a row of known words due a visit, and the word games"></div>
+            <div class="shot"><img src="img/learn-6-known.jpg" width="750" height="1527" loading="lazy" alt="Now you know it: the word didactic in gold with the reader&#8217;s sentence beneath it and gold leaf falling"></div>
+          </div>
+          <div class="feature-text">
+            <h3 class="app-h3">Learn</h3>
+            <p class="body-text">Take the words on your bookmark a step further. Play three short games, then use each word in a sentence of your own to make it part of your active vocabulary.</p>
+            <ul class="feature-list">
+              <li>Start with a word from your own bookmarks, or take the new word of the day.</li>
+              <li>Three short games get you more familiar with it, and a sentence of your own is the final test.</li>
+              <li>Get one wrong and it comes back sooner.</li>
+              <li>Once you know a word, it returns now and then for a quick visit, so it stays yours.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+   </div>
+
+    <aside class="companion-quiet" id="quiet">
+      <div class="companion-quiet-inner">
+        <span class="eyebrow">Quiet by design</span>
+        <blockquote class="quiet-quote">
+          <p>Word&#8209;Mark doesn&#8217;t send notifications. Nor do we employ psychological tricks, like streaks or red dots, to compete for your precious attention.</p>
+          <p>The only reminder is the bookmark in your book, which patiently awaits you.</p>
+        </blockquote>
+        <ul class="principles">
+          <li><span class="principle-title">You can only grow</span><p>Nothing you learn is ever taken away.</p></li>
+          <li><span class="principle-title">Absence costs nothing</span><p>No streaks to protect and no missed days to make up.</p></li>
+          <li><span class="principle-title">Depth over frequency</span><p>Rewards go to the words you truly know, however often you open the app.</p></li>
+        </ul>
+      </div>
+    </aside>
   </div>
 
   <!-- Word of the Week -->
@@ -326,12 +460,24 @@
     </div>
   </div>
 
-  <!-- Wholesale -->
-  <div class="wholesale-section">
-    <div class="wholesale-inner">
-      <span class="eyebrow">Wholesale</span>
-      <p class="wholesale-heading">Interested in stocking Word&#8209;Mark?</p>
-      <a class="btn" href="contact.html">Get in touch</a>
+  <!-- Get Word-Mark -->
+  <div class="get-section" id="get">
+    <div class="get-inner">
+      <span class="eyebrow">Grow your vocabulary. Grow your mind.</span>
+      <h2 class="section-title">Begin with a bookmark</h2>
+      <div class="get-grid">
+        <div class="get-col">
+          <h3 class="get-title">The bookmark</h3>
+          <p class="body-text">Now available in select stores. Each pack holds five bookmarks, two notes pages, a cover, and three brass bindings.</p>
+          <a class="btn" href="stocklist.html">Where to buy</a>
+        </div>
+        <div class="get-col">
+          <h3 class="get-title">The app</h3>
+          <p class="body-text">Free to download for iPhone. It works with any Word&#8209;Mark bookmark, and the bookmark works without it.</p>
+          <a class="btn" href="https://apps.apple.com/app/id6824696423">Download on the App Store</a>
+        </div>
+      </div>
+      <p class="get-wholesale">Interested in stocking Word&#8209;Mark? <a href="contact.html">Get in touch</a></p>
     </div>
   </div>
 
@@ -524,6 +670,21 @@ window.addEventListener('resize', () => {
     moveQuotes(e.deltaX > 0 ? 1 : -1);
     setTimeout(() => { wheelLocked = false; }, 400);
   }, { passive: false });
+})();
+</script>
+<script>
+// How it works: the button adds the three app steps between Define and Collect, and flips its own wording.
+(function () {
+  var section = document.getElementById('how-it-works');
+  var button = section && section.querySelector('.how-more');
+  if (!button) return;
+  var text = button.querySelector('.how-more-text');
+  button.addEventListener('click', function () {
+    var on = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', on ? 'true' : 'false');
+    text.textContent = on ? 'Hide optional app steps' : 'Show optional app steps';
+    section.setAttribute('data-app', on ? 'on' : 'off');
+  });
 })();
 </script>
 </body>
