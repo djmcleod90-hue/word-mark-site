@@ -100,7 +100,7 @@ body {
   text-transform: uppercase;
 }
 .announce-link {
-  color: var(--gold);
+  color: var(--purple-dark);                   /* the app's purple, lightened as it is in dark mode, to read on the black bar */
   text-decoration: underline;
   text-underline-offset: 2px;
   margin-left: 0.6em;
@@ -232,7 +232,7 @@ nav {
 
 /* ─── WORD OF THE WEEK ────────────────────────────────────── */
 .wotw-section {
-  background: var(--cream);
+  background: var(--cream-alt);
   border-bottom: var(--hair);
 }
 .wotw-inner {
@@ -316,7 +316,7 @@ nav {
 .anatomy-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 9rem var(--pad);
+  padding: 5rem var(--pad);
   text-align: center;
 }
 .anatomy-img {
@@ -362,11 +362,11 @@ nav {
 .anatomy-diagram {
   display: flex;
   justify-content: center;
-  padding: 4rem 0 2rem;
+  padding: 1rem 0 2rem;
 }
 .anatomy-diagram-frame {
   position: relative;
-  width: 440px;
+  width: 396px;   /* 10% smaller than the original 440px */
   flex: none;
 }
 .anatomy-diagram-frame img {
@@ -573,7 +573,7 @@ nav {
   justify-content: center;
   transition: border-color 0.2s ease, opacity 0.2s ease;
 }
-.carousel-btn:hover { border-color: var(--gold); color: var(--gold); }
+.carousel-btn:hover { border-color: #a58ac3; color: #a58ac3; }
 
 /* ─── LITERARY QUOTES ─────────────────────────────────────── */
 .quotes-section {
@@ -585,7 +585,7 @@ nav {
   padding: 5rem var(--pad);
   text-align: center;
 }
-.quotes-inner .eyebrow { color: var(--gold); }
+.quotes-inner .eyebrow { color: #a58ac3; }
 .quotes-inner .section-title { color: var(--cream); }
 .quotes-carousel {
   margin-top: 2rem;
@@ -633,7 +633,7 @@ nav {
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #a58ac3;
 }
 
 /* ─── SERIES (COMING SOON) ────────────────────────────────── */
@@ -985,16 +985,289 @@ footer {
 .btn-solid:hover { background: none; color: var(--ink); }
 @media (max-width: 600px) { .share-buttons .btn { flex: 1 1 100%; text-align: center; } }
 
-/* ─── GILT ────────────────────────────────────────────────── */
-/* Foil, as in the app, kept to three places: the banner link, and the quotes block's heading and author name. */
-.announce-link,
-.quotes-inner .eyebrow,
-.quote-author {
-  background-image: var(--gilt);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration-color: var(--gold);
-}
+/* ─── QUOTES EYEBROW ──────────────────────────────────────── */
 .quotes-inner .eyebrow { width: fit-content; margin-left: auto; margin-right: auto; }
-.announce-link:hover { -webkit-text-fill-color: var(--cream); }
+
+/* ─── HOW IT WORKS: black for paper, dashed purple for the app ──
+   Three paper steps by default. The switch (data-app="on" on the section) grows the app group into the gap between
+   Define and Collect, and Collect becomes step 6. */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 2.5rem;
+  text-align: left;
+}
+.legend-item { padding-right: 1.5rem; }
+.legend-item--paper { grid-column: 1 / 4; }
+.legend-item--phone { grid-column: 4 / 7; display: flex; flex-direction: column; }   /* the button sits where "On your phone" appears once it opens, level with "On paper" */
+.legend-more { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.6s ease, opacity 0.4s ease, visibility 0s 0.6s; visibility: hidden; }
+[data-app="on"] .legend-more { grid-template-rows: 1fr; opacity: 1; visibility: visible; transition: grid-template-rows 0.6s ease, opacity 0.5s ease 0.2s, visibility 0s; }
+.legend-more-inner { min-height: 0; overflow: hidden; }
+.legend-more-inner p { margin: 0 0 calc(1rem + 5px); }
+.how-more {                                     /* the click text under "On your phone"; its wording flips with the state */
+  display: inline-flex; align-items: center; gap: 0.75rem; margin-top: -5px; padding: 0; align-self: flex-start;   /* -5px puts the text on the same line as the labels beside it */
+  background: none; border: 0; font: inherit; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--purple); text-align: left; cursor: pointer;
+}
+.how-more-sign { position: relative; flex: none; width: 1.5rem; height: 1.5rem; border: 1.5px solid var(--purple); border-radius: 50%; transition: background-color 0.3s ease; }
+.how-more-sign::before, .how-more-sign::after { content: ""; position: absolute; top: 50%; left: 50%; width: 0.6rem; border-top: 1.5px solid var(--purple); transition: transform 0.3s ease, border-color 0.3s ease; }
+.how-more-sign::before { transform: translate(-50%, -50%); }
+.how-more-sign::after { transform: translate(-50%, -50%) rotate(90deg); }       /* the plus; it lies flat as a minus when the steps are showing */
+.how-more[aria-expanded="true"] .how-more-sign::after { transform: translate(-50%, -50%) rotate(0deg); }
+.how-more:hover .how-more-sign { background: rgba(91, 42, 146, 0.12); }
+.how-more:hover .how-more-text { text-decoration: underline; text-underline-offset: 0.35em; }
+.how-more:focus-visible { outline: 2px solid var(--purple); outline-offset: 5px; border-radius: 4px; }
+.track-label { display: block; margin-bottom: 0.6rem; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); }
+.track-label::before { content: ""; display: inline-block; width: 2rem; margin-right: 0.75rem; vertical-align: middle; border-top: 1.5px solid var(--ink); }
+.legend-item--phone .track-label { color: var(--purple); }
+.legend-item--phone .track-label::before { height: 2px; border-top: 0; background: repeating-linear-gradient(to right, var(--purple) 0 8px, transparent 8px 22px); }
+.legend-item p { font-size: 0.875rem; line-height: 1.85; color: var(--ink-soft); }
+
+.line {
+  list-style: none;
+  display: flex;
+  margin: 3rem 0 0;
+  padding: 0;
+  text-align: left;
+}
+.tstep { flex: 1 1 0; min-width: 0; padding: 1.5rem 0 0; border-top: 1.5px solid var(--ink); }   /* the gap between steps sits on the text, so every column is the same width */
+.tstep .step-body { padding-right: 1.5rem; }
+.line > .tstep:last-child .step-body { padding-right: 0; }
+.tphone {                                       /* the app steps: no width until the switch is on */
+  flex: 0 1 0; min-width: 0; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden;
+  background: repeating-linear-gradient(to right, var(--purple) 0 8px, transparent 8px 22px) left top / 100% 2px no-repeat;
+  transition: flex-grow 0.6s ease, max-height 0.6s ease, opacity 0.4s ease, visibility 0s 0.6s;
+}
+[data-app="on"] .tphone { flex-grow: 3; max-height: 40rem; opacity: 1; visibility: visible; transition: flex-grow 0.6s ease, max-height 0.6s ease, opacity 0.5s ease 0.2s, visibility 0s; }
+.tphone-inner { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(9rem, 1fr)); }
+.tstep--phone { border-top: 0; }
+.tstep--phone .step-num { color: rgba(91, 42, 146, 0.22); }
+.tstep--phone .step-title { color: var(--purple); }
+.num-on { display: none; }
+[data-app="on"] .num-off { display: none; }
+[data-app="on"] .num-on { display: inline; }
+.how-note {
+  margin-top: 3rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-mute);
+}
+@media (max-width: 1000px) {
+  .legend { display: block; }
+  .legend-item { padding-right: 0; margin-bottom: 1.75rem; }
+  .line { display: block; margin-top: 2.5rem; }
+  .tstep { padding: 0 0 2rem 1.5rem; border-top: 0; border-left: 1.5px solid var(--ink); }
+  .line > .tstep:last-child { padding: 0 0 0 1.5rem; }
+  .tstep .step-body { padding-right: 0; }
+  .tphone { display: grid; grid-template-rows: 0fr; max-height: none; background: none; transition: grid-template-rows 0.6s ease, opacity 0.4s ease, visibility 0s 0.6s; }
+  [data-app="on"] .tphone { grid-template-rows: 1fr; max-height: none; transition: grid-template-rows 0.6s ease, opacity 0.5s ease 0.2s, visibility 0s; }
+  .tphone-inner { display: block; min-height: 0; overflow: hidden; }
+  .tstep--phone { border-left: 1.5px solid transparent; }
+  .tphone-inner { background: repeating-linear-gradient(to bottom, var(--purple) 0 8px, transparent 8px 22px) left top / 1.5px 100% no-repeat; }   /* one run of dashes down the whole group, level with the black line above */
+}
+@media (prefers-reduced-motion: reduce) {
+  .tphone, .legend-more, .how-more-sign, .how-more-sign::before, .how-more-sign::after { transition: none !important; }
+}
+
+/* ─── THE COMPANION APP ──────────────────────────────────────
+   Top row, two columns: Scan, Words and Collection (left) beside Quiet by design on a very deep purple (right).
+   Below it, Learn spans both columns, so it follows on from Scan, Words and Collection. */
+:root { --deep-purple: #1d0c31; --purple-dark: #a58ac3; --glow-line: drop-shadow(0 0 3px rgba(91,42,146,0.45)) drop-shadow(0 0 10px rgba(91,42,146,0.2)); }
+.companion {
+  --pl: max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad)));
+  --gap: 1.25rem;
+  --d: 1.5rem;                                  /* gutter at each end of the screens grid: how far the Learn line stands off the first and third screens */
+  --edge: calc(var(--pl) - var(--d));           /* the margin to the right of the screens grid, matching the left */
+  /* every screenshot is 56% larger than the old six-across size (30%, then a further 20%) */
+  --shot: calc((min(100vw, var(--max)) - 2 * var(--pad) - 5 * var(--gap)) / 6 * 1.56);
+  background: var(--cream);
+  border-bottom: var(--hair);
+}
+.companion-main { min-width: 0; padding: 9rem var(--edge) 0 var(--pl); }
+.app-lede { max-width: 32rem; font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.9; margin-top: -0.75rem; }
+.app-lede--line { max-width: none; }     /* the How it works line stays on one line */
+.app-platform { margin-top: 1rem; font-size: 0.82rem; font-style: italic; color: var(--ink-mute); }
+
+/* Scan, Words and Collection: one row each, image and text in two columns, the side swapping from row to row */
+.features { display: grid; row-gap: 6rem; margin-top: 3.5rem; }
+.feature {
+  display: grid;
+  grid-template-columns: calc(2 * var(--shot) + var(--gap)) minmax(0, 1fr);
+  column-gap: 4rem;
+  align-items: center;
+}
+.feature--flip { grid-template-columns: minmax(0, 1fr) calc(2 * var(--shot) + var(--gap)); }
+.feature--flip .feature-media { order: 2; }
+.feature-media { display: flex; align-items: flex-start; gap: var(--gap); }
+.feature-media .shot { width: var(--shot); flex: none; }
+.feature-text { max-width: 22rem; }
+.feature-text .body-text { font-size: 0.9375rem; line-height: 1.85; }
+.feature-text .app-h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.12em; }   /* Scan, Words, Collection only; Learn keeps the shared size */
+.feature-list { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.feature-list li {
+  position: relative; padding-left: 1.4rem; margin-top: 0.7rem;
+  font-size: 0.875rem; line-height: 1.7; color: var(--ink-soft);
+}
+.feature-list li::before { content: ""; position: absolute; left: 0; top: 0.85em; width: 0.75rem; border-top: 1px solid var(--purple); }
+.feature-media .shot:nth-child(2) { margin-top: 3.5rem; }      /* the second screen of each pair sits lower */
+.feature-media .shot img {                                      /* a deeper, two-layer shadow lifts the white screens off the cream */
+  box-shadow: 0 2px 6px rgba(26,24,20,0.10), 0 18px 44px rgba(26,24,20,0.24);
+}
+.shot--fade img {                               /* a cropped screen fades out where it is cut */
+  border-radius: 1rem 1rem 0 0;
+  border-bottom: 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+}
+.shot img { display: block; width: 100%; height: auto; border-radius: 1rem; border: var(--hair); box-shadow: 0 10px 28px rgba(26,24,20,0.16); }
+.app-h3 { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); margin-bottom: 1rem; }
+
+/* The Learn area keeps to the page grid on both sides. The seven-column grid below has a
+   small gutter at each end, so the line's turns sit exactly the same distance outside the first and third screens. */
+.learn-inner {
+  padding: 3.5rem var(--edge) 0 var(--pl);      /* same margin each side; no bottom padding, so the purple block ends at the bottom of the section */
+}
+.learn-head { max-width: none; }
+.learn-head .body-text { font-size: 0.875rem; line-height: 1.85; }
+
+.lgrid {
+  display: grid;
+  grid-template-columns: var(--d) var(--shot) minmax(0, 1fr) var(--shot) minmax(0, 1fr) var(--shot) var(--d);
+  margin-left: calc(var(--d) * -1);            /* so the first screen lines up under Scan */
+}
+.lgrid > * { grid-column: var(--c); grid-row: var(--r); }
+
+.lsteps {
+  --lw: 1.5px;
+  --rad: 1.25rem;
+  --wrap-h: 4.5rem;                            /* the gap the line runs back along, under the first row's captions */
+  --mid: calc(var(--shot) * 1.018);            /* half the height of a screenshot */
+  grid-template-rows: auto var(--wrap-h) auto;
+  margin-top: 3rem;
+}
+.lstep { position: relative; min-width: 0; }
+.lstep .shot { width: var(--shot); }
+.lsteps > .lstep:last-child .shot img {         /* "Now you know it": a celebratory purple glow in place of the neutral shadow, static */
+  box-shadow: 0 0 14px 2px rgba(124, 77, 184, 0.45), 0 0 56px 10px rgba(91, 42, 146, 0.28);
+}
+.lstep-title { margin: 1rem 0 0.4rem; font-size: 0.64rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; color: var(--ink); }
+.lstep-text { margin: 0; font-size: 0.8rem; line-height: 1.65; color: var(--ink-mute); }
+
+.llink {                                       /* straight link between two screens */
+  align-self: start;
+  margin-top: calc(var(--mid) - var(--lw) / 2);
+  border-top: var(--lw) solid var(--purple);
+}
+.lturn {                                       /* out of the third screen, then down with a rounded corner */
+  margin-top: calc(var(--mid) - var(--lw) / 2);
+  border-top: var(--lw) solid var(--purple);
+  border-right: var(--lw) solid var(--purple);
+  border-top-right-radius: var(--rad);
+}
+.llink, .lturn, .wrap-u, .wrap-l, .lenter { filter: var(--glow-line); }   /* a soft purple glow that follows only the drawn line, not the empty sides of each box */
+.lstep-wrap { grid-column: 1 / -1; grid-row: 2; position: relative; }
+.wrap-u {                                      /* down, round the corner, and back along the gap */
+  position: absolute;
+  top: 0;
+  height: calc(var(--wrap-h) / 2);
+  right: 0;
+  left: var(--rad);
+  border-right: var(--lw) solid var(--purple);
+  border-bottom: var(--lw) solid var(--purple);
+  border-bottom-right-radius: var(--rad);
+}
+.wrap-l {                                      /* the corner at the far left, then down */
+  position: absolute;
+  top: calc(var(--wrap-h) / 2 - var(--lw));
+  bottom: 0;
+  left: 0;
+  width: var(--rad);
+  border-left: var(--lw) solid var(--purple);
+  border-top: var(--lw) solid var(--purple);
+  border-top-left-radius: var(--rad);
+}
+.lenter {                                      /* down the left, round the corner, into the fourth screen */
+  height: calc(var(--mid) + var(--lw) / 2);
+  border-left: var(--lw) solid var(--purple);
+  border-bottom: var(--lw) solid var(--purple);
+  border-bottom-left-radius: var(--rad);
+}
+
+/* Bottom row, on the same grid: the note on known words, then Quiet by design as a full-width band */
+.learn-after { align-items: start; margin-top: 6rem; }
+.known { grid-column: 2 / 5; grid-row: 1; }   /* spans two screenshot columns, from the first screen's left edge to the second screen's right edge */
+.known .body-text { font-size: 0.875rem; line-height: 1.85; }
+.companion-quiet { margin-top: 6rem; }
+
+.companion-quiet { background: var(--deep-purple); color: var(--cream); }
+/* Deliberately off the page grid: the block hugs the right edge of the screen instead of keeping the 1100px content margin */
+.companion-quiet-inner { padding: 4rem 1.75rem 4rem 2rem; }
+.companion-quiet .eyebrow { color: #bba5de; }
+.quiet-quote { margin: 1.5rem 0 0; padding: 0 0 0 1.5rem; border-left: 1.5px solid #8a63c4; }
+.quiet-quote p { font-size: clamp(0.875rem, 1.33vw, 1.155rem); font-weight: 300; line-height: 1.6; color: var(--cream); margin-bottom: 1.25rem; }
+.quiet-quote p:last-child { margin-bottom: 0; }
+.quiet-quote { margin-bottom: 3.5rem; }
+.principles { list-style: none; margin: 0; padding: 0; }
+.principles li { padding: 1.25rem 0; border-top: 0.5px solid rgba(240,239,239,0.2); }
+.principle-title { display: block; margin-bottom: 0.5rem; font-size: 0.74rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); }
+.principles p { font-size: 0.875rem; line-height: 1.8; color: rgba(240,239,239,0.74); }
+
+@media (min-width: 0px) {
+  /* Quiet by design as a full-width band beneath the app rows, at every width */
+  /* the paragraph on the left and the three points on the right, within the page grid */
+  .companion-quiet-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 6rem; align-items: start; padding: 4rem var(--edge) 4rem var(--pl); }
+  .companion-quiet-inner .eyebrow { grid-column: 1; grid-row: 1; }
+  .quiet-quote { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+  .principles { grid-column: 2; grid-row: 2; }
+}
+@media (max-width: 900px) {
+  .companion-quiet-inner { display: block; max-width: 36rem; margin: 0 auto; padding: 4rem var(--pad); }
+  .quiet-quote { margin-bottom: 3.5rem; }
+}
+@media (max-width: 1000px) {
+  .companion { --pl: var(--pad); --edge: var(--pad); --shot: min(14.04rem, calc((100vw - 2 * var(--pad) - 2 * var(--gap)) / 3)); }
+  .companion-main { padding: 5rem var(--pad) 1rem; }
+  .features { row-gap: 4rem; }
+  .feature, .feature--flip { display: block; }
+  .feature-media { margin-bottom: 1.5rem; }
+  .feature-text { max-width: 30rem; }
+  .learn-inner { padding: 1rem var(--pad) 0; }
+  /* too narrow for anything beside the known words: the purple band simply follows them */
+  .learn-after { display: block; margin-left: 0; margin-top: 4rem; }
+  .known .body-text { max-width: 28rem; }
+  .companion-quiet { margin-top: 4rem; }
+}
+@media (max-width: 700px) {
+  .companion-main { padding: 4rem var(--pad) 0.5rem; }
+  .feature-media .shot { width: calc((100% - var(--gap)) / 2); }
+  .learn-inner { padding: 0.5rem var(--pad) 0; }
+  .lgrid { display: block; margin-left: 0; }
+  .companion { --shot: 14.04rem; }
+  .lsteps { --shot: 14.82rem; position: relative; margin-top: 2rem; padding-left: 1.75rem; }
+  .lsteps::before { content: ""; position: absolute; left: 0.35rem; top: 0.5rem; bottom: 0.5rem; border-left: var(--lw) solid var(--purple); filter: var(--glow-line); }
+  .lstep { margin-bottom: 3rem; }
+  .lstep::before {
+    content: ""; position: absolute; left: calc(-1.75rem + 3.4px); top: 0.25rem;
+    width: 7px; height: 7px; border-radius: 50%; background: var(--purple); filter: var(--glow-line);
+  }
+  .llink, .lturn, .lenter, .lstep-wrap { display: none; }
+  .learn-after { margin-top: 3rem; }
+  .companion-quiet { margin-top: 3rem; }
+}
+
+/* ─── GET WORD-MARK ───────────────────────────────────────── */
+.get-section { background: var(--cream-alt); border-bottom: var(--hair); }
+.get-inner { max-width: 820px; margin: 0 auto; padding: 8rem var(--pad); text-align: center; }
+.get-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 1rem; text-align: center; }
+.get-title { font-family: 'Aboreto', serif; font-weight: 400; font-size: 1.15rem; color: var(--ink); margin-bottom: 1rem; }
+.get-col .body-text { margin-bottom: 1.75rem; }
+.get-wholesale { margin-top: 4.5rem; padding-top: 2rem; border-top: var(--hair); font-size: 0.82rem; color: var(--ink-mute); }
+.get-wholesale a { color: var(--ink); }
+
+@media (max-width: 700px) {
+  .how-note { margin-top: 2rem; }
+  .get-inner { padding: 4rem var(--pad); }
+  .get-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+.btn[hidden] { display: none; }
+.get-col .btn { padding: 0.85rem 1.75rem; white-space: nowrap; }
